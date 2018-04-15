@@ -16,11 +16,11 @@ tags: 博客
 
 
 #### 初始化文件
-> hexo init <floderName>
+> hexo init <folderName>
 
-#### 切换至floderName
-> cd floderName
-在floderName下输入hexo命令出现：ERROR local hexo not found in floderName尝试升级nodejs版本，可以解决该问题
+#### 切换至folderName
+> cd folderName
+在folderName下输入hexo命令出现：ERROR local hexo not found in folderName尝试升级nodejs版本，可以解决该问题
 
 #### 下载hexo所需的一些依赖
 > npm install
@@ -52,3 +52,5 @@ npm install 下载所需依赖，因为next目录下的.gitignore忽略node-modu
 > INFO Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.
 
 可以打开浏览器输入:localhost:4000访问
+
+#### 更多next主题个性化设置:http://theme-next.iissnan.com/getting-started.html
