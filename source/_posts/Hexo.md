@@ -16,7 +16,7 @@ tags: 博客
 
 
 #### 初始化文件
-> hexo init <folderName>
+> hexo init folderName
 
 #### 切换至folderName
 > cd folderName
