@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Z-Blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2018-05-20T07:36:23.463Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>zdg</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo</title>
+    <link href="http://yoursite.com/2018/04/14/Hexo/"/>
+    <id>http://yoursite.com/2018/04/14/Hexo/</id>
+    <published>2018-04-14T08:11:13.000Z</published>
+    <updated>2018-05-20T07:36:23.463Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><h2 id="一-Linux环境-Ubuntu"><a href="#一-Linux环境-Ubuntu" class="headerlink" title="一 :Linux环境(Ubuntu)"></a>一 :Linux环境(Ubuntu)</h2><p>安装hexo博客框架之前首先在机器中安装好nodejs，使用node -v命令可以查看nodejs版本,npm -v命令可以查看npm版本。</p><h3 id="1-安装Hexo"><a href="#1-安装Hexo" class="headerlink" title="1:安装Hexo"></a>1:安装Hexo</h3><a id="more"></a>    <h4 id="下载hexo"><a href="#下载hexo" class="headerlink" title="下载hexo"></a>下载hexo</h4><blockquote><p>npm install hexo-cli -g<br>输入hexo命令检查是否安装成功,出现hexo comand not found 检查环境变量是否配置</p></blockquote><h4 id="初始化文件"><a href="#初始化文件" class="headerlink" title="初始化文件"></a>初始化文件</h4><blockquote><p>hexo init folderName</p></blockquote><h4 id="切换至folderName"><a href="#切换至folderName" class="headerlink" title="切换至folderName"></a>切换至folderName</h4><blockquote><p>cd folderName<br>在folderName下输入hexo命令出现：ERROR local hexo not found in folderName尝试升级nodejs版本，可以解决该问题</p></blockquote><h4 id="下载hexo所需的一些依赖"><a href="#下载hexo所需的一些依赖" class="headerlink" title="下载hexo所需的一些依赖"></a>下载hexo所需的一些依赖</h4><blockquote><p>npm install</p></blockquote><h4 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h4><blockquote><p>hexo generate/hexo g</p></blockquote><h4 id="启动hexo服务"><a href="#启动hexo服务" class="headerlink" title="启动hexo服务"></a>启动hexo服务</h4><blockquote><p>hexo server/hexo s</p></blockquote><p>打开浏览器输入localhost:4000出现Hexo默认界面安装成功</p><h3 id="2-自定义主题-next主题"><a href="#2-自定义主题-next主题" class="headerlink" title="2:自定义主题(next主题)"></a>2:自定义主题(next主题)</h3><p>在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。<br>站点根目录下称为<strong>站点配置文件</strong>,主题目录下称为<strong>主题配置文件</strong></p><h4 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h4><blockquote><p>cd your-hexo-side<br>git clone <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next</a> themes/next 最新版本</p></blockquote><h4 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h4><p>克隆完成后,打开<strong>站点配置文件</strong></p><blockquote><p>vim _config.yml 没有权限读写文件可以使用su root变为管理员<br>找到theme,将值改为next theme： next</p></blockquote><h4 id="验证主题"><a href="#验证主题" class="headerlink" title="验证主题"></a>验证主题</h4><p>在验证前可以使用hexo clean清理缓存</p><blockquote><p>hexo generate/hexo g 生成静态文件<br>hexo s –debug/hexo server –debug 启动hexo服务并开启debug<br>npm install 下载所需依赖，因为next目录下的.gitignore忽略node-modules所以需要重新下载</p></blockquote><p>出现下列信息时</p><blockquote><p>INFO Hexo is running at <a href="http://0.0.0.0:4000/" target="_blank" rel="noopener">http://0.0.0.0:4000/</a>. Press Ctrl+C to stop.</p></blockquote><p>可以打开浏览器输入:localhost:4000访问</p><h4 id="更多next主题个性化设置-http-theme-next-iissnan-com-getting-started-html"><a href="#更多next主题个性化设置-http-theme-next-iissnan-com-getting-started-html" class="headerlink" title="更多next主题个性化设置:http://theme-next.iissnan.com/getting-started.html"></a>更多next主题个性化设置:<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">http://theme-next.iissnan.com/getting-started.html</a></h4>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Hexo&quot;&gt;&lt;a href=&quot;#Hexo&quot; class=&quot;headerlink&quot; title=&quot;Hexo&quot;&gt;&lt;/a&gt;Hexo&lt;/h1&gt;&lt;h2 id=&quot;一-Linux环境-Ubuntu&quot;&gt;&lt;a href=&quot;#一-Linux环境-Ubuntu&quot; class=&quot;headerlink&quot; title=&quot;一 :Linux环境(Ubuntu)&quot;&gt;&lt;/a&gt;一 :Linux环境(Ubuntu)&lt;/h2&gt;&lt;p&gt;安装hexo博客框架之前首先在机器中安装好nodejs，使用node -v命令可以查看nodejs版本,npm -v命令可以查看npm版本。&lt;/p&gt;
+&lt;h3 id=&quot;1-安装Hexo&quot;&gt;&lt;a href=&quot;#1-安装Hexo&quot; class=&quot;headerlink&quot; title=&quot;1:安装Hexo&quot;&gt;&lt;/a&gt;1:安装Hexo&lt;/h3&gt;
+    
+    </summary>
+    
+    
+      <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+</feed>
