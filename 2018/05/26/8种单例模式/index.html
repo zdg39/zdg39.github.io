@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="创建单例一：饿汉式单例(静态成员变量初始化)123456789public class Singleton&amp;#123;  private static final Singleton singleton = new Singleton();  private Singleton()&amp;#123;&amp;#125;  public static Singleton getInstance()&amp;#123;">
+<meta name="description" content="创建单例 本文介绍使用Java创建单例的8种方式，后续会增加各种单例的优缺点分析。  一：饿汉式单例(静态成员变量初始化)">
 <meta name="keywords" content="设计模式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="9种单例模式">
+<meta property="og:title" content="8种单例模式">
 <meta property="og:url" content="http://yoursite.com/2018/05/26/8种单例模式/index.html">
 <meta property="og:site_name" content="Z-Blog">
-<meta property="og:description" content="创建单例一：饿汉式单例(静态成员变量初始化)123456789public class Singleton&amp;#123;  private static final Singleton singleton = new Singleton();  private Singleton()&amp;#123;&amp;#125;  public static Singleton getInstance()&amp;#123;">
+<meta property="og:description" content="创建单例 本文介绍使用Java创建单例的8种方式，后续会增加各种单例的优缺点分析。  一：饿汉式单例(静态成员变量初始化)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-26T13:51:58.096Z">
+<meta property="og:updated_time" content="2018-05-26T14:02:58.905Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="9种单例模式">
-<meta name="twitter:description" content="创建单例一：饿汉式单例(静态成员变量初始化)123456789public class Singleton&amp;#123;  private static final Singleton singleton = new Singleton();  private Singleton()&amp;#123;&amp;#125;  public static Singleton getInstance()&amp;#123;">
+<meta name="twitter:title" content="8种单例模式">
+<meta name="twitter:description" content="创建单例 本文介绍使用Java创建单例的8种方式，后续会增加各种单例的优缺点分析。  一：饿汉式单例(静态成员变量初始化)">
 
 
 
@@ -128,7 +128,7 @@
 
 
 
-  <title>9种单例模式 | Z-Blog</title>
+  <title>8种单例模式 | Z-Blog</title>
   
 
 
@@ -282,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">9种单例模式</h1>
+          <h1 class="post-title" itemprop="name headline">8种单例模式</h1>
         
 
         <div class="post-meta">
@@ -331,7 +331,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  359 字
+                  389 字
                 </span>
               
 
@@ -368,7 +368,11 @@
       
 
       
-        <h1 id="创建单例"><a href="#创建单例" class="headerlink" title="创建单例"></a>创建单例</h1><h2 id="一：饿汉式单例-静态成员变量初始化"><a href="#一：饿汉式单例-静态成员变量初始化" class="headerlink" title="一：饿汉式单例(静态成员变量初始化)"></a>一：饿汉式单例(静态成员变量初始化)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class Singleton&#123;</span><br><span class="line">  private static final Singleton singleton = new Singleton();</span><br><span class="line"></span><br><span class="line">  private Singleton()&#123;&#125;</span><br><span class="line"></span><br><span class="line">  public static Singleton getInstance()&#123;</span><br><span class="line">    return singleton;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="创建单例"><a href="#创建单例" class="headerlink" title="创建单例"></a>创建单例</h1><blockquote>
+<p>本文介绍使用Java创建单例的8种方式，后续会增加各种单例的优缺点分析。</p>
+</blockquote>
+<h2 id="一：饿汉式单例-静态成员变量初始化"><a href="#一：饿汉式单例-静态成员变量初始化" class="headerlink" title="一：饿汉式单例(静态成员变量初始化)"></a>一：饿汉式单例(静态成员变量初始化)</h2><a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class Singleton&#123;</span><br><span class="line">  private static final Singleton singleton = new Singleton();</span><br><span class="line"></span><br><span class="line">  private Singleton()&#123;&#125;</span><br><span class="line"></span><br><span class="line">  public static Singleton getInstance()&#123;</span><br><span class="line">    return singleton;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="二：饿汉式单例-静态代码块"><a href="#二：饿汉式单例-静态代码块" class="headerlink" title="二：饿汉式单例(静态代码块)"></a>二：饿汉式单例(静态代码块)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class Singleton&#123;</span><br><span class="line">  private static Singleton singleton;</span><br><span class="line"></span><br><span class="line">  static&#123;</span><br><span class="line">    singleton = new Singleton();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  private Singleton()&#123;&#125;</span><br><span class="line"></span><br><span class="line">  public static Singleton getInstance()&#123;</span><br><span class="line">    return singleton;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="三：懒汉式单例-多线程不可用"><a href="#三：懒汉式单例-多线程不可用" class="headerlink" title="三：懒汉式单例(多线程不可用)"></a>三：懒汉式单例(多线程不可用)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class Singleton&#123;</span><br><span class="line"></span><br><span class="line">  private static Singleton singleton;</span><br><span class="line"></span><br><span class="line">  private Singleton()&#123;&#125;</span><br><span class="line"></span><br><span class="line">  public static Singleton getInstance()&#123;</span><br><span class="line">    if (null == singleton) &#123;</span><br><span class="line">      singleton = new Singleton();</span><br><span class="line">    &#125;</span><br><span class="line">    return singleton;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="四：懒汉式单例-同步方法"><a href="#四：懒汉式单例-同步方法" class="headerlink" title="四：懒汉式单例(同步方法)"></a>四：懒汉式单例(同步方法)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class Singleton&#123;</span><br><span class="line"></span><br><span class="line">  private static Singleton singleton;</span><br><span class="line"></span><br><span class="line">  private Singleton()&#123;&#125;</span><br><span class="line"></span><br><span class="line">  public static synchronized Singleton getInstance()&#123;</span><br><span class="line">    if (null == singleton) &#123;</span><br><span class="line">      singleton = new Singleton();</span><br><span class="line">    &#125;</span><br><span class="line">    return singleton;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
