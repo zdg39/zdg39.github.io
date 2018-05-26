@@ -1,7 +1,7 @@
 ---
 title: 阻塞队列(BlockingQueue)
-categories: 数据结构
-tags: Queue,Concurrent,Java
+categories: Java
+tags: Queue,Concurrent,数据结构
 ---
 # 一 阻塞队列(BlockingQueue)
 
@@ -9,4 +9,6 @@ java.util.concurrent包中的 BlockingQueue 接口表示一个线程安放入和
 
 ## BlockingQueue的用法
 BlockingQueue通常用于一个线程生产数据，另一个线程消费数据的场景，基本原理如下：
-![](/source/images/zdg.jpg)
+<center>
+![](/source/images/java/concurrent/queue/BlockingQueue接口.png)
+</center>
