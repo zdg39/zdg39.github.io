@@ -15,7 +15,7 @@ tags: Maven
 ## 二，使用Maven
 
 首先使用idea建立一个maven项目Demo1,在resource下建立dev,pro,test三个目录分别代表开发，生产，测试三种环境，在目录中新建db.properties文件，db.properties文件中填写数据库的连接信息，不同的环境填写在不同的目录下。大致结构目录如下：
-<center> ![](/source/images/maven/环境配置/目录结构.png)
+<center> ![](/images/maven/环境配置/目录结构.png)
 <center> 图一
 
 添加完成后再pom.xml文件中填写以下配置:
@@ -96,7 +96,7 @@ tags: Maven
   </build>
 ```
 在pom文件中添加完成后打开idea右侧的maven projects视图，大致展现结果：
-<center> ![](/source/images/maven/环境配置/maven视图.png)
+<center> ![](/images/maven/环境配置/maven视图.png)
 <center> 图二
 
 pom文件的配置自动加载的是dev下的配置，如果想要加载其他环境的配置只需要在图二中勾选其他环境然后点击左上角刷新按钮即可加载其他环境配置。当发布项目时可以使用-Pxxx选项来选择加载哪个目录下配置文件，例如-Ptest即加载test目录下的配置文件。
