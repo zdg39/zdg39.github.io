@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="博客," />
+  <meta name="keywords" content="Git," />
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="Hexo一 :Linux环境(Ubuntu)安装hexo博客框架之前首先在机器中安装好nodejs，使用node -v命令可以查看nodejs版本,npm -v命令可以查看npm版本。 1:安装Hexo">
-<meta name="keywords" content="博客">
+<meta name="description" content="在使用git时，通常会建立几个分支来管理不同环境的代码，通常会建立develop，test，master等几个分支来管理开发，测试，生产环境的代码。通常master分支固定一个版本，develop分支迭代开发新的功能，当开发完新的功能时将develop分支合并到test分支，将test分支的代码打包发布到测试服务器测试通过后再将test分支合并到master分支以更新正式生产环境新的版本。当然">
+<meta name="keywords" content="Git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/2018/04/14/Hexo/index.html">
+<meta property="og:title" content="Git系列之解决合并分支冲突">
+<meta property="og:url" content="http://yoursite.com/2018/06/08/Git系列之解决合并分支冲突/index.html">
 <meta property="og:site_name" content="Z-Blog">
-<meta property="og:description" content="Hexo一 :Linux环境(Ubuntu)安装hexo博客框架之前首先在机器中安装好nodejs，使用node -v命令可以查看nodejs版本,npm -v命令可以查看npm版本。 1:安装Hexo">
+<meta property="og:description" content="在使用git时，通常会建立几个分支来管理不同环境的代码，通常会建立develop，test，master等几个分支来管理开发，测试，生产环境的代码。通常master分支固定一个版本，develop分支迭代开发新的功能，当开发完新的功能时将develop分支合并到test分支，将test分支的代码打包发布到测试服务器测试通过后再将test分支合并到master分支以更新正式生产环境新的版本。当然">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-20T07:36:23.463Z">
+<meta property="og:updated_time" content="2018-06-09T14:50:11.832Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="Hexo一 :Linux环境(Ubuntu)安装hexo博客框架之前首先在机器中安装好nodejs，使用node -v命令可以查看nodejs版本,npm -v命令可以查看npm版本。 1:安装Hexo">
+<meta name="twitter:title" content="Git系列之解决合并分支冲突">
+<meta name="twitter:description" content="在使用git时，通常会建立几个分支来管理不同环境的代码，通常会建立develop，test，master等几个分支来管理开发，测试，生产环境的代码。通常master分支固定一个版本，develop分支迭代开发新的功能，当开发完新的功能时将develop分支合并到test分支，将test分支的代码打包发布到测试服务器测试通过后再将test分支合并到master分支以更新正式生产环境新的版本。当然">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/14/Hexo/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/08/Git系列之解决合并分支冲突/"/>
 
 
 
 
 
-  <title>Hexo | Z-Blog</title>
+  <title>Git系列之解决合并分支冲突 | Z-Blog</title>
   
 
 
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/14/Hexo/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/08/Git系列之解决合并分支冲突/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zdg">
@@ -282,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hexo</h1>
+          <h1 class="post-title" itemprop="name headline">Git系列之解决合并分支冲突</h1>
         
 
         <div class="post-meta">
@@ -294,8 +294,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-14T16:11:13+08:00">
-                2018-04-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-08T21:05:24+08:00">
+                2018-06-08
               </time>
             
 
@@ -331,7 +331,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  487 字
+                  1,156 字
                 </span>
               
 
@@ -347,7 +347,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 分钟
+                  4 分钟
                 </span>
               
             </div>
@@ -368,45 +368,77 @@
       
 
       
-        <h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><h2 id="一-Linux环境-Ubuntu"><a href="#一-Linux环境-Ubuntu" class="headerlink" title="一 :Linux环境(Ubuntu)"></a>一 :Linux环境(Ubuntu)</h2><p>安装hexo博客框架之前首先在机器中安装好nodejs，使用node -v命令可以查看nodejs版本,npm -v命令可以查看npm版本。</p>
-<h3 id="1-安装Hexo"><a href="#1-安装Hexo" class="headerlink" title="1:安装Hexo"></a>1:安装Hexo</h3><a id="more"></a>    
-<h4 id="下载hexo"><a href="#下载hexo" class="headerlink" title="下载hexo"></a>下载hexo</h4><blockquote>
-<p>npm install hexo-cli -g<br>输入hexo命令检查是否安装成功,出现hexo comand not found 检查环境变量是否配置</p>
-</blockquote>
-<h4 id="初始化文件"><a href="#初始化文件" class="headerlink" title="初始化文件"></a>初始化文件</h4><blockquote>
-<p>hexo init folderName</p>
-</blockquote>
-<h4 id="切换至folderName"><a href="#切换至folderName" class="headerlink" title="切换至folderName"></a>切换至folderName</h4><blockquote>
-<p>cd folderName<br>在folderName下输入hexo命令出现：ERROR local hexo not found in folderName尝试升级nodejs版本，可以解决该问题</p>
-</blockquote>
-<h4 id="下载hexo所需的一些依赖"><a href="#下载hexo所需的一些依赖" class="headerlink" title="下载hexo所需的一些依赖"></a>下载hexo所需的一些依赖</h4><blockquote>
-<p>npm install</p>
-</blockquote>
-<h4 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h4><blockquote>
-<p>hexo generate/hexo g</p>
-</blockquote>
-<h4 id="启动hexo服务"><a href="#启动hexo服务" class="headerlink" title="启动hexo服务"></a>启动hexo服务</h4><blockquote>
-<p>hexo server/hexo s</p>
-</blockquote>
-<p>打开浏览器输入localhost:4000出现Hexo默认界面安装成功</p>
-<h3 id="2-自定义主题-next主题"><a href="#2-自定义主题-next主题" class="headerlink" title="2:自定义主题(next主题)"></a>2:自定义主题(next主题)</h3><p>在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。<br>站点根目录下称为<strong>站点配置文件</strong>,主题目录下称为<strong>主题配置文件</strong></p>
-<h4 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h4><blockquote>
-<p>cd your-hexo-side<br>git clone <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next</a> themes/next 最新版本</p>
-</blockquote>
-<h4 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h4><p>克隆完成后,打开<strong>站点配置文件</strong></p>
+        <p>  在使用git时，通常会建立几个分支来管理不同环境的代码，通常会建立develop，test，master等几个分支来管理开发，测试，生产环境的代码。通常master分支固定一个版本，develop分支迭代开发新的功能，当开发完新的功能时将develop分支合并到test分支，将test分支的代码打包发布到测试服务器测试通过后再将test分支合并到master分支以更新正式生产环境新的版本。当然也可以建立管理其他分支，例如在测试服务器和正式服务器之间还需要灰度服务器来过渡，这时可以建立一个gray分支来管理灰度服务器的代码；也可以建立一个专门用来修复bug的分支，当生产环境出现bug时，开发人员从master分支新建一个temp分支，在temp分支上修复bug，当修复完成后再将temp分支合并回master分支。<br>  <a id="more"></a><br>  git鼓励大家多使用分支，在开发新的模块时每一个开发人员可以根据不同的模块以develop分支为基础来建立不同的分支，当开发完成时，再合并回develop分支。git的分支功能的确使得开发变得简单高效，但是分支之间的合并却并不简单，接下来所要介绍的便是一些合并分支出现冲突的解决办法。</p>
+<h1 id="一-版本回退解决冲突"><a href="#一-版本回退解决冲突" class="headerlink" title="一:版本回退解决冲突"></a>一:版本回退解决冲突</h1><p>  在合并分支时，如果只是单纯地进行两个分支之间的合并，假如这时存在冲突只需要接受其中我们所需要的一个版本即可，这种冲突情况解决无疑很简单。但仍然有一些比较复杂的情况，如果单纯地接受其中一个版本无疑会越加混乱。最近在公司使用git进行多人开发时遇见了一种合并冲突情况，于是将解决办法记录下来，大致情况是：远程有test和develop分支，本地有test和develop分支，因为开发时所用分支为test分支所以想要将test分支合并到develop分支以后便切换到develop分支开发。所做操作如下：</p>
+<ul>
+<li>1 拉取分支test:<ul>
+<li>git pull origin test</li>
+</ul>
+</li>
+<li>2 切换到develop分支:<ul>
+<li>git checkout develop</li>
+</ul>
+</li>
+<li>3 合并分支test，有冲突接受test分支的版本:<ul>
+<li>git merge test</li>
+</ul>
+</li>
+<li>4 pull分支develop，有冲突并未检查直接add-&gt;commit-&gt;push:<ul>
+<li>git pull origin develop</li>
+<li>git add .</li>
+<li>git commit -m “some message”</li>
+<li>git push origin develop</li>
+</ul>
+</li>
+</ul>
 <blockquote>
-<p>vim _config.yml 没有权限读写文件可以使用su root变为管理员<br>找到theme,将值改为next theme： next</p>
+<p>当合并两个分支时有冲突可以借助idea查看两个分支的区别。</p>
 </blockquote>
-<h4 id="验证主题"><a href="#验证主题" class="headerlink" title="验证主题"></a>验证主题</h4><p>在验证前可以使用hexo clean清理缓存</p>
+<p>进过上诉操作，这时远程分支develop已经被污染，解决办法如果是选用修改有冲突的文件无疑浪费很多时间，这时可以使用git的回退功能，具体操作如下：</p>
+<ul>
+<li>1 在本地develop回退到合并test分支前一个版本:<ul>
+<li>git reset HEAD~1</li>
+</ul>
+</li>
+<li>2 使用-f选项将develop分支强制覆盖远程develop分支代码:<ul>
+<li>git push origin develop -f</li>
+</ul>
+</li>
+<li>3 重新拉取分支develop:<ul>
+<li>git pull origin develop</li>
+</ul>
+</li>
+<li>4 合并分支test,有冲突接受test分支的版本:<ul>
+<li>git merge test</li>
+</ul>
+</li>
+<li>5 push分支develop:<ul>
+<li>git push origin develop</li>
+</ul>
+</li>
+</ul>
+<h1 id="二-使用git的储藏功能解决冲突"><a href="#二-使用git的储藏功能解决冲突" class="headerlink" title="二:使用git的储藏功能解决冲突"></a>二:使用git的储藏功能解决冲突</h1><p>git还有一个功能十分强大，就是储藏(stash)功能，储藏会将你所做的修改保存在栈中，这时你就可以切换到其他分支进行工作。在团队合作开发中当你在本地更改一些文件后想要将将他们推送到远程仓库时这时发现有冲突，因为可能有其他团队成员更改了相同的文件并且将其推送到了远程仓库，这时你再往远程分支必定会有冲突。这时就可以使用到git的储藏功能，具体操作如下:</p>
+<ul>
+<li>1 先将本地代码储藏下来:<ul>
+<li>git stash</li>
+</ul>
+</li>
+<li>2 将远程代码拉取下来:<ul>
+<li>git pull origin develop</li>
+</ul>
+</li>
+<li>3 恢复储藏的代码:<ul>
+<li>git stash pop</li>
+</ul>
+</li>
+<li>4 借助idea工具查看两个版本的区别，并决定接受哪个版本。</li>
+</ul>
+<p>因为储藏的版本和远程仓库版本会存在冲突，这时恢复储藏时就相当于合并两个分支会存在冲突。<br>git的储藏功能也十分好用，以下介绍一些相关命令:</p>
 <blockquote>
-<p>hexo generate/hexo g 生成静态文件<br>hexo s –debug/hexo server –debug 启动hexo服务并开启debug<br>npm install 下载所需依赖，因为next目录下的.gitignore忽略node-modules所以需要重新下载</p>
+<p>git stash:储藏 <br><br>  git stash pop:恢复最新的储藏<br><br>  git stash list:显示有哪些储藏<br><br>  git stash apply stashName:应用储藏stashName</p>
 </blockquote>
-<p>出现下列信息时</p>
-<blockquote>
-<p>INFO Hexo is running at <a href="http://0.0.0.0:4000/" target="_blank" rel="noopener">http://0.0.0.0:4000/</a>. Press Ctrl+C to stop.</p>
-</blockquote>
-<p>可以打开浏览器输入:localhost:4000访问</p>
-<h4 id="更多next主题个性化设置-http-theme-next-iissnan-com-getting-started-html"><a href="#更多next主题个性化设置-http-theme-next-iissnan-com-getting-started-html" class="headerlink" title="更多next主题个性化设置:http://theme-next.iissnan.com/getting-started.html"></a>更多next主题个性化设置:<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">http://theme-next.iissnan.com/getting-started.html</a></h4>
+<p>  <center>持续更新中…</center></p>
+
       
     </div>
     
@@ -423,7 +455,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/博客/" rel="tag"># 博客</a>
+            <a href="/tags/Git/" rel="tag"># Git</a>
           
         </div>
       
@@ -436,15 +468,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/06/02/Maven系列之管理不同环境的配置文件/" rel="next" title="Maven系列之管理不同环境的配置文件">
+                <i class="fa fa-chevron-left"></i> Maven系列之管理不同环境的配置文件
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/26/8种单例模式/" rel="prev" title="8种单例模式">
-                8种单例模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -603,7 +635,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo"><span class="nav-number">1.</span> <span class="nav-text">Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-Linux环境-Ubuntu"><span class="nav-number">1.1.</span> <span class="nav-text">一 :Linux环境(Ubuntu)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安装Hexo"><span class="nav-number">1.1.1.</span> <span class="nav-text">1:安装Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#下载hexo"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">下载hexo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#初始化文件"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">初始化文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#切换至folderName"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">切换至folderName</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下载hexo所需的一些依赖"><span class="nav-number">1.1.1.4.</span> <span class="nav-text">下载hexo所需的一些依赖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成静态文件"><span class="nav-number">1.1.1.5.</span> <span class="nav-text">生成静态文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启动hexo服务"><span class="nav-number">1.1.1.6.</span> <span class="nav-text">启动hexo服务</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-自定义主题-next主题"><span class="nav-number">1.1.2.</span> <span class="nav-text">2:自定义主题(next主题)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#下载主题"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">下载主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启用主题"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">启用主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#验证主题"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">验证主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更多next主题个性化设置-http-theme-next-iissnan-com-getting-started-html"><span class="nav-number">1.1.2.4.</span> <span class="nav-text">更多next主题个性化设置:http://theme-next.iissnan.com/getting-started.html</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-版本回退解决冲突"><span class="nav-number">1.</span> <span class="nav-text">一:版本回退解决冲突</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-使用git的储藏功能解决冲突"><span class="nav-number">2.</span> <span class="nav-text">二:使用git的储藏功能解决冲突</span></a></li></ol></div>
             
 
           </div>
