@@ -16,3 +16,5 @@ Hexo分支作为整个博客站点仓库
 git ls-files --stage | grep 160000
 
 git rm --cached themes/next
+
+## 博文名称不能使用中文命名,集成gittalk评论博文名称不能太长最好使用英文,中文转码后会变长很多则会出现Error: Validation Failed
