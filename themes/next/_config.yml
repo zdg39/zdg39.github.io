@@ -18,6 +18,18 @@ override: false
 daovoice: true
 daovoice_app_id: 225f3678
 
+gitalk:
+  enable: true
+  githubID: zdg39  # 例：nelucifer
+  repo: zdg39.github.io   # 存储你评论 issue 的 Github 仓库名（建议直接用 GitHub Page 的仓库名） 例：nelucifer.github.io
+  ClientID: 0700f039a1c0281ca949
+  ClientSecret: 230d67e4bae115fe966011594ece2ae418aea12c
+  #owner: 'Github 用户名',
+  adminUser: ['zdg39'] #指定可初始化评论账户，Github仓库的管理员，可以有多个
+  distractionFreeMode: true
+  #id: 'window.location.pathname' #页面的唯一标识，gitalk根据这个标识自动创建的issue的标签,此处使用页面的相对路径作为标识
+
+
 # ---------------------------------------------------------------
 # Site Information Settings
 # ---------------------------------------------------------------
