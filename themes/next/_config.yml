@@ -14,6 +14,10 @@
 # Useful if you don't want to inherit the theme _config.yml configurations.
 override: false
 
+# Online contact
+daovoice: true
+daovoice_app_id: 225f3678
+
 # ---------------------------------------------------------------
 # Site Information Settings
 # ---------------------------------------------------------------
