@@ -81,3 +81,9 @@ deploy:
   type: git
   repository: https://github.com/zdg39/zdg39.github.io.git
   branch: master
+
+#RSS
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
