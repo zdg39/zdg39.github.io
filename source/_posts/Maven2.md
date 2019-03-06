@@ -78,6 +78,8 @@ public static String stripHost(final String uri) {
 <center> ![](/images/maven/替换jar包的类/libs.png)
 
 编译ProxyUtils,用winrar打开libs下的littleproxy-1.1.2.jar,删除ProxyUtils.class，将编译后的ProxyUtils.class文件复制粘贴进去替换。修改pom文件如下所示:
+> 更新jar包可以使用jar -uvf littleproxy-1.1.2.jar ProxyUtils.class所在目录/ProxyUtils.class文件
+
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"

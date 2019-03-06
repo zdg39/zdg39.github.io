@@ -101,7 +101,7 @@
 <meta property="og:image" content="http://yoursite.com/images/maven/替换jar包的类/source.png">
 <meta property="og:image" content="http://yoursite.com/images/maven/替换jar包的类/ProxyUtils.png">
 <meta property="og:image" content="http://yoursite.com/images/maven/替换jar包的类/libs.png">
-<meta property="og:updated_time" content="2019-02-28T05:24:59.274Z">
+<meta property="og:updated_time" content="2019-03-06T09:43:17.506Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Maven系列之替换jar包中的类">
 <meta name="twitter:description" content="Maven系列之替换jar包中的类 在maven项目中引入第三方jar包时，某些特殊情况下第三方jar包无法满足我们的需求，这时可以对第三方jar包某些类进行修改，重新依赖新的jar包。  一，准备">
@@ -355,8 +355,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-02-28T13:24:59+08:00">
-                2019-02-28
+              <time title="更新于" itemprop="dateModified" datetime="2019-03-06T17:43:17+08:00">
+                2019-03-06
               </time>
             
           </span>
@@ -388,7 +388,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  684 字
+                  708 字
                 </span>
               
 
@@ -404,7 +404,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3 分钟
+                  4 分钟
                 </span>
               
             </div>
@@ -438,7 +438,11 @@
 <p>这时在stripHost方法中添加输出uri:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public static String stripHost(final String uri) &#123;</span><br><span class="line">       System.out.println(uri);</span><br><span class="line">       if (!HTTP_PREFIX.matcher(uri).matches()) &#123;</span><br><span class="line">           // It&apos;s likely a URI path, not the full URI (i.e. the host is</span><br><span class="line">           // already stripped).</span><br><span class="line">           return uri;</span><br><span class="line">       &#125;</span><br><span class="line">       final String noHttpUri = StringUtils.substringAfter(uri, &quot;://&quot;);</span><br><span class="line">       final int slashIndex = noHttpUri.indexOf(&quot;/&quot;);</span><br><span class="line">       if (slashIndex == -1) &#123;</span><br><span class="line">           return &quot;/&quot;;</span><br><span class="line">       &#125;</span><br><span class="line">       final String noHostUri = noHttpUri.substring(slashIndex);</span><br><span class="line">       return noHostUri;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
 <p>在demo项目下新建libs目录,找到littleshoot在本地maven仓库的jar包littleproxy-1.1.2.jar,复制后粘贴到libs,如下所示:</p>
 <p><center> <img src="/images/maven/替换jar包的类/libs.png" alt=""></center></p>
-<p>编译ProxyUtils,用winrar打开libs下的littleproxy-1.1.2.jar,删除ProxyUtils.class，将编译后的ProxyUtils.class文件复制粘贴进去替换。修改pom文件如下所示:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;</span><br><span class="line">         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line"></span><br><span class="line">    &lt;groupId&gt;com.demo&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;demo&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</span><br><span class="line"></span><br><span class="line">   &lt;dependencies&gt;</span><br><span class="line">       &lt;dependency&gt;</span><br><span class="line">           &lt;groupId&gt;org.littleshoot&lt;/groupId&gt;</span><br><span class="line">           &lt;artifactId&gt;littleproxy&lt;/artifactId&gt;</span><br><span class="line">           &lt;version&gt;1.1.2&lt;/version&gt;</span><br><span class="line">           &lt;scope&gt;system&lt;/scope&gt;</span><br><span class="line">           &lt;systemPath&gt;$&#123;project.basedir&#125;/libs/littleproxy-1.1.2.jar&lt;/systemPath&gt;</span><br><span class="line">       &lt;/dependency&gt;</span><br><span class="line">   &lt;/dependencies&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure></p>
+<p>编译ProxyUtils,用winrar打开libs下的littleproxy-1.1.2.jar,删除ProxyUtils.class，将编译后的ProxyUtils.class文件复制粘贴进去替换。修改pom文件如下所示:</p>
+<blockquote>
+<p>更新jar包可以使用jar -uvf littleproxy-1.1.2.jar ProxyUtils.class所在目录/ProxyUtils.class文件</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;</span><br><span class="line">         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line"></span><br><span class="line">    &lt;groupId&gt;com.demo&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;demo&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</span><br><span class="line"></span><br><span class="line">   &lt;dependencies&gt;</span><br><span class="line">       &lt;dependency&gt;</span><br><span class="line">           &lt;groupId&gt;org.littleshoot&lt;/groupId&gt;</span><br><span class="line">           &lt;artifactId&gt;littleproxy&lt;/artifactId&gt;</span><br><span class="line">           &lt;version&gt;1.1.2&lt;/version&gt;</span><br><span class="line">           &lt;scope&gt;system&lt;/scope&gt;</span><br><span class="line">           &lt;systemPath&gt;$&#123;project.basedir&#125;/libs/littleproxy-1.1.2.jar&lt;/systemPath&gt;</span><br><span class="line">       &lt;/dependency&gt;</span><br><span class="line">   &lt;/dependencies&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
 <p>这时所引入的依赖就是修改后的littleshoot。</p>
 
       
