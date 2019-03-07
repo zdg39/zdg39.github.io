@@ -114,6 +114,12 @@ jstack pid
 
 ---
 
+### jar命令
+- #### 更新jar包中的类
+jar -uvf jarName dirName/className.class
+
+---
+
 # 五:Linux
 ### 文件安装
 - #### 安装deb文件
