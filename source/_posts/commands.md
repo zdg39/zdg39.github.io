@@ -2,7 +2,6 @@
 title: 常用指令总结
 date: 2018-12-17 19:38:15
 tags: 工具
-top: 100
 ---
 # 一:数据库
 
@@ -58,6 +57,14 @@ mongo host port
 mongo host port/dbName
 - #### 指定用户名和密码连接到指定的MongoDB数据库
 mongo host port/dbName -u username -p password
+
+---
+
+- #### 导出数据(--type后接json或cvs文件，-f后接字段双引号内用逗号隔开)
+mongoexport -h host -u username -p password -d dbname -c collectionname -o file --type json/csv -f field
+- #### 导入数据(--headerline 如果导入的格式是csv，则可以使用第一行的标题作为导入的字段，其他同导出数据)
+mongoimport -h host -u username -p password -d dbname -c collectionname --file filename --headerline --type json/csv -f field
+
 
 
 # 二:Git
