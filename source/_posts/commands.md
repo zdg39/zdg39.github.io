@@ -94,9 +94,9 @@ git log dev...master
 - #### 对比两个分支提交的不同
 git log --left-right dev...master
 - #### 一个分支比另一个分支多
-git log..master
+git log dev..master
 - #### 一个分支有另一个分支没有
-git log ^master
+git log dev ^master
 
 ---
 
@@ -147,6 +147,14 @@ top -Hp pid
 netstat -na | grep ESTAB | grep 8080 | wc -l
 - #### 查看网络信息  每秒统计一次:
 sar -n TCP,ETCP 1
+
+---
+
+### 远程登录
+- #### 管理远程主机，可做mysql，redis服务器的连接测试
+telent ip port
+- #### 远程登录，免密码登录
+ssh user@ip
 
 ---
 
