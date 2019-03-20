@@ -175,3 +175,11 @@ storm deactivate [topology_name]
 storm activate [topology_name]
 - #### 指示Storm在集群的Worker之间重新平均分派任务不需要关闭或者重新提交现有的Topology,一个新的Supervisor节点添加到一个集群中,就需要执行这个命令
 storm rebalance [topology_name] [-w wait_time] [-n worker_count] [-e component_name=executer_count]
+
+---
+
+# 七:adb命令(Android调试工具)
+- #### 查看当前连接的设备
+adb devices
+- #### 连接设备
+adb connect ip:port
