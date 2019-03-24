@@ -183,3 +183,28 @@ storm rebalance [topology_name] [-w wait_time] [-n worker_count] [-e component_n
 adb devices
 - #### 连接设备
 adb connect ip:port
+
+---
+
+# 八:Python
+### 包管理工具(pip)
+- #### 下载最新版本的包
+pip install packageName
+- #### 下载指定版本的包
+pip install packageName=version
+- #### 下载最小版本
+pip install 'packageName>=version'
+- #### 升级包
+pip install --upgrade packageName
+- #### 卸载包
+pip uninstall packageName
+- #### 搜索包
+pip search packageName
+- #### 列出已安装的包
+pip list
+- #### 查看可升级的包
+pip list -o
+- #### 显示安装包信息
+pip show
+- #### 查看指定包的详细信息
+pip show -f packageName
