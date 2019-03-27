@@ -69,8 +69,8 @@ mongoimport -h host -u username -p password -d dbname -c collectionname --file f
 
 # 二:Git
 ### stash功能
-- #### 暂存
-git stash 保存在git整个栈中
+- #### 暂存(保存在git整个栈中)
+git stash
 - #### 设置保存名
 git stash save "stashName"
 - #### 查看暂存列表
@@ -155,6 +155,16 @@ sar -n TCP,ETCP 1
 telent ip port
 - #### 远程登录，免密码登录
 ssh user@ip
+
+---
+
+### 定时任务
+- #### 添加定时任务
+crontab -e
+- #### 展示所有定时任务
+crontab -l
+- #### 删除定时任务
+crontab -r
 
 ---
 
