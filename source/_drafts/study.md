@@ -30,6 +30,16 @@ TProfiler
 zooInspector
 elastic-job-lite-console
 
+破解app加密工具
+Appium
+apktool
+jadx apk
+xpoxed hook
+ida
+
+jd-gui:查看jar包中的类
+dex2jar:将的dex文件转换为jar
+
 java诊断工具
 arthas
 
