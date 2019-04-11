@@ -155,6 +155,12 @@ sar -n TCP,ETCP 1
 telent ip port
 - #### 远程登录，免密码登录
 ssh user@ip
+- #### 向远程主机发布命令
+ssh user@ip "command"
+- #### 向远程服务器发布文件
+scp localfile user@ip:folder
+- #### 向远程服务器发布目录
+scp -r localfolder user@ip:folder
 
 ---
 
