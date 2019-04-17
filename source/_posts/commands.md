@@ -118,6 +118,14 @@ hexo deploy/hexo d
 # 四:Java
 - #### 查看进程状态
 jstack pid
+- #### 查看当前堆中的各个对象的数量和大小(增加live只打印活跃的对象)
+jmap -histo[:live] <pid>
+- #### 查看java堆的配置情况和使用的GC算法
+jmap -heap <pid>
+- #### 查看等待执行finalize方法的对象
+jmap -finalizerinfo <pid>
+- #### dump当前堆的对象(增加live只打印活跃的对象)
+jmap -dump:[live,]format=b,file=<filename> <pid>
 
 ---
 
