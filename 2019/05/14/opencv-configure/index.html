@@ -94,19 +94,19 @@
 <meta name="keywords" content="opencv">
 <meta property="og:type" content="article">
 <meta property="og:title" content="opencv的环境配置">
-<meta property="og:url" content="http://yoursite.com/2019/05/14/opencv的环境配置/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/05/14/opencv-configure/index.html">
 <meta property="og:site_name" content="Z-Blog">
 <meta property="og:description" content="opencv的环境配置最近由于工作原因有机会学习一下opencv,在本地开发测试通过将要发布时,在linux环境opencv一直编译不成功,之后不断尝试编译安装不同版本,最后为了同时支持本地功能开发和linux编译成功,最后降级为2.4.11版本终于成功。 一,开发环境安装opencv环境 首先在opencv官网找到特定的版本下载到本地,例如windows环境下载选择windows版本,由于演示所">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/source/images/opencv/opencv-version.png">
-<meta property="og:image" content="http://yoursite.com/source/images/opencv/opencv-idea.png">
-<meta property="og:image" content="http://yoursite.com/source/images/opencv/opencv.png">
-<meta property="og:image" content="http://yoursite.com/source/images/opencv/opencv-gray.png">
-<meta property="og:updated_time" content="2019-05-14T08:49:43.068Z">
+<meta property="og:image" content="http://yoursite.com/images/opencv/opencv-version.png">
+<meta property="og:image" content="http://yoursite.com/images/opencv/opencv-idea.png">
+<meta property="og:image" content="http://yoursite.com/images/opencv/opencv.png">
+<meta property="og:image" content="http://yoursite.com/images/opencv/opencv-gray.png">
+<meta property="og:updated_time" content="2019-05-14T09:01:28.583Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="opencv的环境配置">
 <meta name="twitter:description" content="opencv的环境配置最近由于工作原因有机会学习一下opencv,在本地开发测试通过将要发布时,在linux环境opencv一直编译不成功,之后不断尝试编译安装不同版本,最后为了同时支持本地功能开发和linux编译成功,最后降级为2.4.11版本终于成功。 一,开发环境安装opencv环境 首先在opencv官网找到特定的版本下载到本地,例如windows环境下载选择windows版本,由于演示所">
-<meta name="twitter:image" content="http://yoursite.com/source/images/opencv/opencv-version.png">
+<meta name="twitter:image" content="http://yoursite.com/images/opencv/opencv-version.png">
 
 
 
@@ -136,7 +136,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/05/14/opencv的环境配置/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/14/opencv-configure/">
 
 
 
@@ -311,7 +311,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/14/opencv的环境配置/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/14/opencv-configure/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zdg">
@@ -356,7 +356,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-05-14T16:49:43+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-05-14T17:01:28+08:00">
                 2019-05-14
               </time>
             
@@ -431,13 +431,13 @@
 <li>首先在opencv<a href="https://opencv.org/releases/" target="_blank" rel="noopener">官网</a>找到特定的版本下载到本地,例如windows环境下载选择windows版本,由于演示所用的版本是2.4.11,所以下文linux安装演示所使用版本也是2.4.11;linux直接下载source编译安装即可.</li>
 </ul>
 <a id="more"></a>
-<center> <img src="/source/images/opencv/opencv-version.png" alt=""><br></center>
+<center> <img src="/images/opencv/opencv-version.png" alt=""><br></center>
 
 <hr>
 <ul>
 <li>下载opencv完成后将会得到opencv-2.4.11.exe,双击解压缩获得一个文件opencv;新建一个maven项目,在项目根目录下新建一个opencv目录;找到opencv中build下的java目录,将里面的内容拷贝至你的项目新建目录下</li>
 </ul>
-<center><br><img src="/source/images/opencv/opencv-idea.png" alt=""><br></center>
+<center><br><img src="/images/opencv/opencv-idea.png" alt=""><br></center>
 
 <hr>
 <ul>
@@ -451,9 +451,9 @@
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">  import org.opencv.core.Core;</span><br><span class="line">  import org.opencv.core.Mat;</span><br><span class="line">  import org.opencv.highgui.Highgui;</span><br><span class="line">  import org.opencv.imgproc.Imgproc;</span><br><span class="line"></span><br><span class="line">  public class Test &#123;</span><br><span class="line">    static &#123;</span><br><span class="line">        System.loadLibrary(Core.NATIVE_LIBRARY_NAME);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Mat image = Highgui.imread(&quot;D://opencv.png&quot;);</span><br><span class="line">        Mat imageGray = new Mat();</span><br><span class="line">        Imgproc.cvtColor(image,imageGray,Imgproc.COLOR_RGB2GRAY);</span><br><span class="line">        Highgui.imwrite(&quot;D://opencv-gray.png&quot;,imageGray);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>如果Test类可以正常运行可以得到一张灰度化后的图片</p>
-<center><img src="/source/images/opencv/opencv.png" alt=""><br>原图<br></center>
+<center><img src="/images/opencv/opencv.png" alt=""><br>原图<br></center>
 
-<center><img src="/source/images/opencv/opencv-gray.png" alt=""><br>灰度化后的图<br></center>
+<center><img src="/images/opencv/opencv-gray.png" alt=""><br>灰度化后的图<br></center>
 
 <p>到这里已经可以在开发环境使用opencv了,更多教程可以参考官方文档.</p>
 <h2 id="二-linux安装opencv环境"><a href="#二-linux安装opencv环境" class="headerlink" title="二,linux安装opencv环境"></a>二,linux安装opencv环境</h2><p>上文展示了如何在开发环境搭建opencv,但是在实际应用中需要在linux服务器上搭建。在liunx上搭建只需要安装一些依赖编译源码即可,下列教程演示如何安装opencv并且在war包可以正常使用opencv,war包部署在tomcat服务器。</p>
@@ -478,7 +478,8 @@
 </li>
 <li><p>在/usr/local/share/OpenCV/java/ 下找到libopencv_java320.so和  opencv-320.jar两个文件,将他们复制到配置的java.library.path路径下</p>
 </li>
-<li>启动tomcat即可使用opencv</li>
+<li><p>启动tomcat即可使用opencv</p>
+</li>
 </ul>
 
       
