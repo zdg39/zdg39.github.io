@@ -11,7 +11,7 @@ date: 2019-05-14 16:49:43
 -  首先在opencv[官网](https://opencv.org/releases/)找到特定的版本下载到本地,例如windows环境下载选择windows版本,由于演示所用的版本是2.4.11,所以下文linux安装演示所使用版本也是2.4.11;linux直接下载source编译安装即可.
 
 <!-- more -->
-<center> ![](/source/images/opencv/opencv-version.png)
+<center> ![](/images/opencv/opencv-version.png)
 </center>
 
 ---
@@ -19,7 +19,7 @@ date: 2019-05-14 16:49:43
 - 下载opencv完成后将会得到opencv-2.4.11.exe,双击解压缩获得一个文件opencv;新建一个maven项目,在项目根目录下新建一个opencv目录;找到opencv中build下的java目录,将里面的内容拷贝至你的项目新建目录下
 
 <center>
-![](/source/images/opencv/opencv-idea.png)
+![](/images/opencv/opencv-idea.png)
 </center>
 
 ---
@@ -87,11 +87,11 @@ date: 2019-05-14 16:49:43
 
 如果Test类可以正常运行可以得到一张灰度化后的图片
 
-<center>![](/source/images/opencv/opencv.png)
+<center>![](/images/opencv/opencv.png)
 原图
 </center>
 
-<center>![](/source/images/opencv/opencv-gray.png)
+<center>![](/images/opencv/opencv-gray.png)
 灰度化后的图
 </center>
 
@@ -122,4 +122,5 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -DBUILD_TES
   成功后再build目录下的bin目录得到一个jar包
 
 - 在/usr/local/share/OpenCV/java/ 下找到libopencv_java320.so和  opencv-320.jar两个文件,将他们复制到配置的java.library.path路径下
+
 - 启动tomcat即可使用opencv
