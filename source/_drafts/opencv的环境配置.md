@@ -3,10 +3,12 @@ title: opencv的环境配置
 tags: opencv
 ---
 # <center>opencv的环境配置
+最近由于工作原因有机会学习一下opencv,在本地开发测试通过将要发布时,在linux环境opencv一直编译不成功,之后不断尝试编译安装不同版本,最后为了同时支持本地功能开发和linux编译成功,最后降级为2.4.11版本终于成功。
 
 ## 一,开发环境安装opencv环境
 -  首先在opencv[官网](https://opencv.org/releases/)找到特定的版本下载到本地,例如windows环境下载选择windows版本,由于演示所用的版本是2.4.11,所以下文linux安装演示所使用版本也是2.4.11;linux直接下载source编译安装即可.
 
+<!-- more -->
 <center> ![](/source/images/opencv/opencv-version.png)
 </center>
 
@@ -118,3 +120,4 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -DBUILD_TES
   成功后再build目录下的bin目录得到一个jar包
 
 - 在/usr/local/share/OpenCV/java/ 下找到libopencv_java320.so和  opencv-320.jar两个文件,将他们复制到配置的java.library.path路径下
+- 启动tomcat即可使用opencv
