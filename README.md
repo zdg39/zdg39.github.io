@@ -7,6 +7,8 @@
   <a href="https://github.com/zdg39/zdg39.github.io/blob/hexo/LICENSE">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" target="_blank" />
   </a>
+  <!-- [![GitHub stars](https://img.shields.io/github/stars/zdg39/zdg39.github.io.svg?style=social&label=Stars)](https://github.com/zdg39/zdg39.github.io)
+  [![GitHub forks](https://img.shields.io/github/forks/zdg39/zdg39.github.io.svg?style=social&label=Fork)](https://github.com/zdg39/zdg39.github.io) -->
 </p>
 
 > 个人博客:https://zdg39.github.io
