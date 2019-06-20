@@ -1,5 +1,5 @@
 <h1 align="center">Welcome to Z-Blog 👋</h1>
-<p>
+<p align="center">
   <img src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <a href="https://zdg39.github.io/">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" target="_blank" />
