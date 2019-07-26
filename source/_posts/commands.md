@@ -232,3 +232,13 @@ pip list -o
 pip show
 - #### 查看指定包的详细信息
 pip show -f packageName
+
+### scrapy
+- #### 查看命令的详细信息
+scrapy command -h
+- #### 创建一个scrapy项目
+scrapy startproject project_name
+- #### 创建一个spider
+scrapy genspider spider_name mydomain.com
+- #### 运行一个spider
+scrapy crawl spider_name
