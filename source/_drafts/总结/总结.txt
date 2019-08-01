@@ -1,0 +1,422 @@
+不断循环请求     redis计数器限制请求次数，guava缓存请求次数
+502   异步  httpclient 超时时间的三个参数   
+js加密   增加web服务器
+入口过多  入口监控 命令模式  和职责链
+两台服务爬取ip改变  模板方法 添加钩子方法  通过redis缓存请求到另外一台服务器
+告警过多    区分网络IO异常和用户输入错误异常  过滤
+缓存穿透   布隆过滤或redis缓存一个UNKOWN值
+日志  logback日志
+
+服务不可用  curl命令请求静态页面
+数据库等应用不可用  telnet请求 ip port
+
+职责链不能闭环  如  社保登录 加载参数 -> 获取验证->  登录->  获取详情     错误后不能在一条链中使用登录->获取验证码
+
+引入storm-core包开发环境不能使用 <scope>provided</scope>
+st
+发送邮件  阿里云服务器已经只能通过465端口发送
+
+
+spring-data-redis集成redisTemplate时，注入RedisTemplate 属性名不能都为redsiTemplate   
+private RedisTemplate  redisTemplate1;
+private RedisTemplate  redisTemplate2;
+
+nginx设置负载均衡:一台tomcat宕机可以设置瞬时故障转移  重新连接时间
+proxy_connect_timeout       1;
+proxy_read_timeout          1;   
+proxy_send_timeout          1;
+
+idea中maven项目视图中其中一个模块是灰色  打开设置maven  其中ignored files去掉勾选恢复正常
+
+nginx可以配置当分发服务器出现5XX状态可以根据状态返回不同的页面
+
+aapt dump badging +客户端包所在路径+客户端包名称   查看appPackage和appActivity
+ 
+安装appium-desktop   nox_adb.exe connect 127.0.0.1:62001    adb.exe devices  出现已经连接设备
+安装android-sdk  启动platform-tools下的adb.exe   adb.exe connect 127.0.0.1:62001
+
+cookie字符串通过分号加空格分割
+
+mq发送一个bean序列化后的数据，在消费者需要反序列化为同一个bean  否则会反序列化错误
+
+linux切换一个账户出现:This account is currently not available  该用户不允许shell进入    解决办法: 进入/etc/password  将要切换的用户 /sbin/nologin  改为  /bin/bash
+
+重新替换jar包
+将源码source-jar解压，复制出要修改的java类，修改后新建同一个目录，将修改后的java文件粘贴，重新编译，找到本地仓库中的jar包，用rar打开将重新编译的类复制进去替换，
+再将jar包复制到工程中新建的一个libs目录下，在pom文件修改依赖路径，在依赖中l添加两个标签
+<scope>system</scope>
+<systemPath>${project.basedir}/libs/jarName.jar</systemPath>
+
+maven-dependency-plugin插件  加载指定目录的jar包并将其打包到war包中
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-dependency-plugin</artifactId>
+    <version>2.10</version>
+    <executions>
+        <execution>
+            <id>copy-dependencies</id>
+            <phase>compile</phase>
+            <goals>
+                <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+                <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/lib</outputDirectory>
+                <includeScope>system</includeScope>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
+
+
+正则贪婪模式
+
+nginx配置error日志 
+
+httpClient默认开启自动302
+
+idea中maven依赖视图出现依赖包红色下滑线 ，找到maven仓库重新下载
+
+java 使用attach机制需要和java进程的用户一样否则出现
+com.sun.tools.attach.AttachNotSupportedException: Unable to open socket file: target process not responding or HotSpot VM not loaded
+在启动tomcat时  root用户使用tomcat下的startup.sh命令启动，java进程用户就是root，再使用arthas；线上环境tomcat用户是非shell用户，不能使用shell登陆
+
+连接redis服务器的两种方式对比
+jedis:不使用连接池多线程线程不安全，使用连接池当连接数过多会造成资源浪费
+lettuce:个线程安全的redis客户端。提供同步，异步和reactive的 APIs.。如果可以避开阻塞和事务型的操作比如BLPOP 和MULTI/EXEC，多个线程可以分享同一个连接。多个连接被NIO框架netty有效的管理。并且支持哨兵模式，集群模式和数据模式。他的大部分方法对正好对应redis的命令。
+
+rabbitmq集成spring:
+spring-rabbit和amqp-client不能同时存在，否则会出现class引用错误
+
+spring-rabbit只需要一个jar就可以集成spring和rabbitmq
+
+storm三种语义:
+at-most-once  spout针对相同的tuple只发送一次即可，不需要实现fail和ack方法。
+at-least-once  是用acker机制实现的，我们需要实现spout的两个方法：fail和ack，在topology上增加一个ackerbolt，spout和bolt发出的每一个tuple都会被将跟踪信息写到ackerbolt，如果这个tuple正常被处理，则调用spout的ack方法，否则调用fail方法。
+exactly-once：使用storm的高级部分trident实现
+
+maven-jar-plugin插件的使用:
+可以将maven工程所依赖的jar包打包在同一目录，以后如果更新版本只需要打包工程重新上传就可以
+
+使用maven-dependency-plugin指定依赖的jar包打包到哪个目录
+<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                            <overWriteReleases>false</overWriteReleases>
+                            <overWriteSnapshots>false</overWriteSnapshots>
+                            <overWriteIfNewer>true</overWriteIfNewer>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+<plugin>
+
+<groupId>org.apache.maven.plugins</groupId>
+ <artifactId>maven-jar-plugin</artifactId>
+<configuration>
+<archive>
+<manifest>
+	<addClasspath>true</addClasspath>
+<classpathPrefix>lib/</classpathPrefix>
+	<mainClass>com.xinniu.appbasespider.loanprodproxy.LaunchMain</mainClass>
+</manifest>
+</archive>
+</configuration>
+</plugin>
+
+				
+maven-war-plugin插件的使用:
+ <plugin>  
+            <groupId>org.apache.maven.plugins</groupId>  
+            <artifactId>maven-war-plugin</artifactId>  
+            <version>2.3</version>  
+            <configuration>  
+                <failOnMissingWebXml>false</failOnMissingWebXml>  
+            </configuration>  
+      </plugin>  
+当web项目中不存在web.xml文件可以使用maven-war-plugin
+
+
+spring-mvc基于注解实现集成servlet
+https://blog.csdn.net/jinhaijing/article/details/84071922
+
+使用appium可以做截屏
+智能加载页面，等待页面加载完成存在元素后点击事件
+ WebDriverWait wait = new WebDriverWait(dr,10);   wait.until(ExpectedConditions.elementToBeClickable(by)); 显式
+dr.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);   //隐式
+
+adb connect 127.0.0.1:62001
+如果模拟器没有开启  则会出现
+adb connect 127.0.0.1:5037      使用adb devices  会出现offline 正常情况是device状态
+
+storm使用log4j2日志  可以在loggers标签内配置logger标签  指定特定包下  过滤哪个级别的日志
+
+storm在远程集群模式使用log4j2，打印出的日志会使用storm安装目录下的log4j2下的worker.xml配置
+
+storm本地模式引入storm-core不需要<scope>provided</scope>  发布到远程集群则需要<scope>provided</scope>
+
+@Autowired注解在抽象父类中使用，子类在spring容器注册，可以正常运行
+
+一个bean生成hashcode时不需要所有字段都使用，使用具有代表性的字段即可，创建时间和更新时间可不使用
+
+windows下taskkill /f /im "java.exe" 杀死相应进程，tasklist显示进程，任务计划程序可以开启定时任务
+
+git reset --hard commit_id  回退到指定提交历史
+
+rabbitmq 使用一个exchange和多个的区别exchange  ?
+
+MongoTemplate 操作数据库，字符串和整数型不同  1和"1"不一样
+
+
+maven使用maven-shade-plugin插件打jar包会出现   dependency-reduced-pom.xml
+将会导致pom文件的依赖减少,可以在maven-shade-plugin配置中添加<configuration>
+                    	<createDependencyReducedPom>false</createDependencyReducedPom>
+                </configuration>   默认是true
+
+反编译得到apk的java源代码:(当工程中的代码超过65536个方法,会使用multiDex技术,生成多个classes.dex文件)
+将apk文件后缀改成zip使用winrar打开，拷贝出classes.dex至dex2jar安装目录下,
+使用dex2jar   d2j-dex2jar.bat classes.dex 将classes.dex 文件转换成jar包，然后使用jd-gui把jar包打开
+
+linux安装netdata
+新建一个目录netdata  切换到该目录
+安装编译环境  yum install -y  zlib-devel libuuid-devel libmnl-dev gcc make git autoconf autoconf-archive autogen automake pkgconfig curl
+下载netdata   wget https://github.com/firehol/netdata/archive/master.zip
+解压压缩包  unzip master.zip
+切换到解压后的目录执行命令  ./netdata-installer.sh   安装完成在浏览器通过ip:19999访问
+
+logback 的AsyncAppender  配置appender后导致该文件中重复打印  <appender-ref ref="DEFAULT-APPENDER" />
+
+queue里面保存JSONObject  并发时  一个线程消费queue  当queue中有元素时，该元素不一定包含内容  JSONObject的put操作比queue慢
+json.put("","")   queue.add(json) 
+
+mysql ON DUPLICATE KEY UPDATE  主键字段存在相同的值则更新
+
+shell中`command -参数`=$(command -参数) , ``方式在所用linux环境都可以使用,$()不一定能够使用
+例如获取当前时间 time=`date "+%Y-%m-%d %H:%M:%S"`
+#获取当前时间        
+function getTime(){
+	date "+%Y-%m-%d %H:%M:%S" 
+}    time=`getTime`
+
+Random,Math多线程访问会出现问题，一直产生相同的数字 可以使用ThreadLocalRandom
+
+RabbitMQ 的四种Exchange
+fanout：所有bind到此exchange的queue都可以接收消息(纯广播的，所有消费者都能收到消息)
+direct：通过routingKey和exchange决定的那个唯一的queue可以接收消息
+topic：所有符合routingKey(此时可以是一个表达式)的routingKey所bind的queue可以接收消息
+headers：通过headers 来决定把消息发给哪些queue(这个很少用，一般情况下，我们用不到)
+
+mybatis分页插件PageHelper
+在mybatis-config.xml配置插件  将xml注入SqlSessionFactoryBean
+
+maven配置私有远程仓库  
+<releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+禁止下载快照版本,
+当版本号带有SNAPSHOT则只会发布到快照版本仓库不会发布到稳定版本仓库
+
+linux中使用>filename 2>&1 标准输出和标准错误输出共用一个管道，都输出到同一个文件中不会进行覆盖,>filename 2>filename则会进行覆盖
+
+在分析一个网站的请求时,当有一个开启新窗口的url时，可直接在页面复制出url再在新的窗口打开分析请求
+
+redis实现分布式锁:使用setnx(set if not exists) 不存在就赋值,返回1  存在就返回0
+尝试使用 redisson ?
+
+opencv在java中使用:在项目中新建opencv目录,将下载的opencv移动该目录下,再在启动参数添加： -Djava.library.path=$PROJECT_DIR$\opencv\x64
+
+spring-mvc.xml  多加了一个<mvc:annotation-driven/>导致返回的json变成xml
+  
+redis哨兵模式 缓存一个key 3600s  过了20多秒就消失了?   查看是否是redis缓存的数据达到最大分配内存  info memory可以查看信息
+
+LRU算法  最近最少使用  redis使用类似原理:将最近一段时间最少使用的数据删除 ,哈希链表实现。 LinkedHashMap实现LRU
+
+原型管理器  ：采用享元模式，将一个原型当做享元类,从享元工厂获取新的实例时,获取原型并且进行浅克隆,享元类存在引用属性可能存在线程安全问题
+享元模式 可能存在线程安全问题,当多个线程请求获取到同一个享元类,可能存在线程安全问题
+
+排查线上cpu资源占用过高技巧
+top  获取jvm的进程id
+top -Hp PID  查看jvm进程中各个线程的运行情况,记录cpu占用过高的线程，将他们转换成16进制并且保存下来
+jstack -l PID  >> xx.txt  将jvm的运行栈打印到文件，然后通过上述的16进制线程号去文件查找线程
+jstack -F当’jstack [-l] pid’没有相应的时候强制打印栈信息
+
+nohup command > mylog.log 2>&1  &
+在后台运行
+
+
+litemall安装部署总结:
+
+编译litemall-admin,进入litemall-admin修改config目录下的dep.env.js,将ip改成你自己的云服务器
+cd ./litemall-admin
+npm install
+npm run build:dep
+
+打包litemall-all
+mvc clean package 
+启动项目
+nohup java -jar litemall-all-0.1.0.jar >> /dev/null  2>&1 &
+
+
+vue中一个vue文件是一个组件  其他组件使用它时,先引入,再注册,再使用,  xmall-front中查看 src下的main.js  和src/router下的index.js
+
+servlet的反向代理  通过访问servlet来访问第三方网站
+修改返回内容时,响应的消息头Content-length不要返回,新加内容如果是原来的Content-length浏览器可能会少读取一部分内容
+
+修改host文件  + servlet反向代理
+
+fastjson将字符串转成实体类时,实体类需要添加无参构造方法和每个属性的set方法
+
+fastjson将字符串反序列化为实体类，再将实体类反序列化为字符串会增加反斜杠
+
+springboot集成ElasticSearch需要注意版本对应关系, https://blog.yoodb.com/yoodb/article/detail/1491  
+https://github.com/spring-projects/spring-data-elasticsearch
+
+headless chrome  + selenium  代替无头浏览器phantomjs 运行在无GUI环境
+
+chromedriver  源码中会带有特征值,一些反爬能够识别到出是selenium,所以要修改源码
+selenium 使用开发者模式  window.navigator.webdriver  可以不为true，使用中间人代理mitmproxy来修改响应,将selenium特征值替换掉
+
+apk加固后再apk中不存在dex文件,可尝试用xposed和fdex2插件进行脱壳,然后使用jadx-gui或者使用dex2-jar+jd-gui对apk进行反编译
+
+https://github.com/Fuzion24/JustTrustMe/releases/tag/v.2下载apk可以直接装在xposed模块中,点击选择后使用软重启
+
+logback配置文件可以自定义转换<conversionRule>
+
+springboot项目jar包在线上以service方式启动
+<build>
+       <plugins>
+           <plugin>
+               <groupId>org.springframework.boot</groupId>
+               <artifactId>spring-boot-maven-plugin</artifactId>
+               <configuration>
+                   <!-- 可以发不成linux服务包，直接用linux的servic命令启动 -->
+                   <executable>true</executable>
+               </configuration>
+           </plugin>
+       </plugins>
+   </build>
+
+ln -sb 原文件 /etc/init.d/服务名
+
+尝试使用fiddler和wireshark抓手机请求
+使用fiddler抓取手机请求,然后使用wireshark抓取本地网卡的请求
+
+使用wireshark+NPcap捕捉本地数据(本地回环数据)
+发往本机的数据包是通过回环地址的，即：数据包不会通过真实的网络接口发送
+
+wireshark比较卡的原因:加载本地sslkey文件,sslkey文件过大就会卡
+wiresahrk过滤规则:
+	tls and http.host contains baidu.com :显示https并且域名包含baidu.com
+
+跨域问题:当nginx设置跨域后代码可以不再设置,否则会出现The 'Access-Control-Allow-Origin' header contains multiple values '*, *', but only one is allowed
+
+图片文件用记事本打开
+gif文件是GIF89a开头的字符串
+
+中文采用GB2312编码,在chrome会出现unable to decode value
+
+爬虫解析response:
+1-正则
+2-json解析
+3-xpath
+4-jsoup css选择器
+
+static 修饰的成员变量在调用它所属的类时,才会进行初始化,这是类加载的最后一步(主动引用和被动引用)
+
+python开启虚拟环境,启动venv下的Scripts中的activate
+
+xpath语法
+tr[position()>1]:不包含第一个tr
+tr[contains(@class,'white')]:class包含white的tr
+
+mongo查询竞品分析订单详情
+db.getCollection('la_loan_order').find({"platformCode":"xindaiquan"}).sort({"createTime":-1}).limit(10)
+
+
+破解爬虫方法总结：
+使用Appium控制模拟器点击设置代理 + littleproxy可以抓取到http。mitmproxy可以抓到https
+selenium
+
+servlet反向代理,修改第三方网站返回的响应内容,待尝试修改host文件的方式,将第三方域名修改为我们的服务
+
+Xposed
+反编译apk
+opencv识别两张图片的滑块验证码
+redis管理分域名的cookie
+java直接运行js加密
+增加一个接口去访问页面,参数调用加密的js直接输出
+
+headless chrome  + selenium  代替无头浏览器phantomjs 运行在无GUI环境
+tess4j 识别图片中的文字
+webmagic 框架可以使用XPATH
+Jsoup类似于前端js获取元素的方式
+htmlunit webClient 可以运行js
+
+
+
+
+破解app加密工具
+Appium
+apktool
+jadx apk
+xpoxed hook
+ida 
+
+jd-gui:查看jar包中的类
+dex2jar:将的dex文件转换为jar
+
+高性能 分布式
+Disurptor akka
+
+java诊断工具
+arthas
+
+服务器监控工具
+netdata
+
+书籍
+《Effective Java》、《Java Performance》、《Design Pattern》、《Head First Statistics》
+
+storm trident redisson 
+
+爬虫技巧拓展：
+破解拼图滑块验证码
+servlet中间人代理
+mitmproxy代理
+联通安卓apk抓取
+
+开发:爬虫监控,运营商,征信,信用卡申请,
+维护:社保,竞品分析,信用卡查进度
+
+密码控件安全技术浅析及攻击实例 https://blog.csdn.net/otishiono/article/details/51524444
+JAVA不同层次模拟按键思路分享 https://blog.csdn.net/cb44606/article/details/50060087
+JAVA不同层次模拟按键详细说明分享?https://wenku.baidu.com/view/e2b3233683c4bb4cf7ecd126.html
+驱动级模拟键盘事件winio的Java调用代码 https://github.com/bobbyguo/winio
+使用JNA解决Selenium无法做密码输入操作的问题 http://blog.sina.com.cn/s/blog_4ba5666e0101c2ce.html
+浏览器对安全控件的支持 https://blog.csdn.net/shb19891/article/details/52821506
+深入浅出JNA—快速调用原生函数 https://blog.csdn.net/shendl/article/details/4362495
+JNA使用示例 https://github.com/btpka3/btpka3.github.com/tree/master/java/jna
+通用键盘鼠标模拟(包括USB和PS2)?https://blog.csdn.net/mergerly/article/details/4838655
+windows user32 api 详细介绍?https://wenku.baidu.com/view/6e93b75103d8ce2f0066236b.html
+win32 程序员参考手册 http://www.esk365.com/zxsc/prg/winapia/
+windows api 大全 http://www.yfvb.com/help/win32sdk/webhelpleft.htm
+https://blog.csdn.net/bone_ace/article/details/80765299
+
+https://blog.csdn.net/geanwan/article/details/80310041
+
+破解exe控件加密思路
+首先新建一个html,将控件相关信息拷贝到这个html中,部署在服务器中
+
+将要加密的信息发送到redis,c#开启定时器从redis获取,使用c#开启一个窗体程序,将html加载到窗体程序,
+使用winio向输入框输入,得到加密后的信息

@@ -1,0 +1,31 @@
+LockSupport
+unsafe
+
+volatile禁止指令重排序
+
+AQS -> LOCK  -> CAS&volatile
+
+2019年3月21日
+python基础培训
+
+D:\soft\python3.7\Lib\site-packages\   下载的第三方模块
+
+打包.pyc文件
+
+nginx + uwsgi  做web项目
+nginx + apache
+
+sqlalchemy 数据库连接
+
+scrapy
+
+cas轻量级锁   synchronized和lock是重量级锁
+
+
+select  .....    for update加上悲观锁
+
+mysql加上version字段,判断version是否发生改变
+
+ThreadLocal  子线程不可见里面的内容  Inher...ThreadLocal子线程可见里面的内容
+
+ThreadLocalRandom

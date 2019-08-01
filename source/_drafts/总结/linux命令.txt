@@ -1,0 +1,33 @@
+查看端口连接人数:
+netstat -na | grep ESTAB | grep 8080 | wc -l
+
+查看网络信息  每秒统计一次:
+sar -n TCP,ETCP 1
+
+载入sysctl配置文件:
+sysctl -p
+
+
+nginx搜索日志
+cat access.log |grep xnshebaoapi|grep 502
+
+安装mysql
+yum  install mysql -y
+
+free -h 通过人类读的方式展示内存使用情况
+
+
+daemontools 监控管理服务
+supervise 监控进程,如果死掉则重启
+
+jps -mlvV   jps -l:展示进程id和运行的任务
+grep -v "grep" 排除grep进程
+awk '{print $1}'
+awk '{commands}'：命令一般在单引号和双引号中
+
+ID=`jps -mlvV | grep -v "grep" | awk '{print $1}'`  搜索进程id
+
+
+
+
+	
