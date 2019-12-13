@@ -242,3 +242,9 @@ scrapy startproject project_name
 scrapy genspider spider_name mydomain.com
 - #### 运行一个spider
 scrapy crawl spider_name
+
+---
+
+# 九:Arthas
+- #### 方法内部调用路径,并输出方法路径上的每个节点上耗时
+trace com.xxx.ClassName methodName
