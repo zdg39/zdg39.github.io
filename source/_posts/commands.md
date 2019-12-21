@@ -11,6 +11,19 @@ mysql -h host -u username -p password
 - #### 设置字符集
 set names utf8
 <!-- more -->
+
+### show命令
+- #### 显示系统变量的名称和值
+show variables
+- #### 显示一些系统特定资源的信息
+show status
+- #### 显示系统中正在运行的所有进程
+show [full] processlist
+- #### 显示当前会话语句(需要使用SET profiling = 1开启prifile)
+show profiles
+- #### 显示语句工作情况和消耗时间情况
+show profile [cpu,block io,all,...] for query queryId
+
 ---
 
 ### Redis
