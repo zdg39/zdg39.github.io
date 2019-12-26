@@ -63,186 +63,26 @@ mysql> show processlist;
 |  43 | dbName | ip:55434   | dbName_new | Sleep   |  364 |              | NULL                                                                                                 |
 | 619 | dbName | ip:64008 | NULL              | Sleep   | 1345 |              | NULL                                                                                                 |
 | 620 | dbName | ip:64009 | dbName_new | Sleep   | 1320 |              | NULL                                                                                                 |
-| 627 | dbName | ip:64098 | dbName_new | Query   |    2 | Sending data | SELECT
-                        a.keywords
-                FROM
-                        (
-                        SELECT
-                                k.keywords,
-                                count(1) c
-                        FROM
-                                tb_search_keyw |
-| 632 | dbName | ip:64220 | dbName_new | Query   |    2 | Sending data | SELECT
-                        a.keywords
-                FROM
-                        (
-                        SELECT
-                                k.keywords,
-                                count(1) c
-                        FROM
-                                tb_search_keyw |
-| 633 | dbName | ip:64221 | dbName_new | Query   |    2 | Sending data | SELECT
-                        a.keywords
-                FROM
-                        (
-                        SELECT
-                                k.keywords,
-                                count(1) c
-                        FROM
-                                tb_search_keyw |
-| 634 | dbName | ip:64222 | dbName_new | Query   |    2 | Sending data | SELECT
-                        a.keywords
-                FROM
-                        (
-                        SELECT
-                                k.keywords,
-                                count(1) c
-                        FROM
-                                tb_search_keyw |
-| 635 | dbName | ip:64223 | dbName_new | Query   |    2 | Sending data | SELECT
-                        a.keywords
-                FROM
-                        (
-                        SELECT
-                                k.keywords,
-                                count(1) c
-                        FROM
-                                tb_search_keyw |
-| 636 | dbName | ip:64224 | dbName_new | Query   |    2 | Sending data | SELECT
-                        a.keywords
-                FROM
-                        (
-                        SELECT
-                                k.keywords,
-                                count(1) c
-                        FROM
-                                tb_search_keyw |
-| 637 | dbName | ip:64225 | dbName_new | Query   |    2 | Sending data | SELECT
-                        a.keywords
-                FROM
-                        (
-                        SELECT
-                                k.keywords,
-                                count(1) c
-                        FROM
-                                tb_search_keyw |
-| 638 | dbName | ip:64226 | dbName_new | Query   |    2 | Sending data | SELECT
-                        a.keywords
-                FROM
-                        (
-                        SELECT
-                                k.keywords,
-                                count(1) c
-                        FROM
-                                tb_search_keyw |
-| 639 | dbName | ip:64227 | dbName_new | Query   |    2 | Sending data | SELECT
-                        a.keywords
-                FROM
-                        (
-                        SELECT
-                                k.keywords,
-                                count(1) c
-                        FROM
-                                tb_search_keyw |
-| 640 | dbName | ip:64228 | dbName_new | Query   |    2 | Sending data | SELECT
-                        a.keywords
-                FROM
-                        (
-                        SELECT
-                                k.keywords,
-                                count(1) c
-                        FROM
-                                tb_search_keyw |
-| 641 | dbName | ip:64249 | dbName_new | Query   |    2 | Sending data | SELECT
-                        a.keywords
-                FROM
-                        (
-                        SELECT
-                                k.keywords,
-                                count(1) c
-                        FROM
-                                tb_search_keyw |
-| 642 | dbName | ip:64250 | dbName_new | Query   |    2 | Sending data | SELECT
-                        a.keywords
-                FROM
-                        (
-                        SELECT
-                                k.keywords,
-                                count(1) c
-                        FROM
-                                tb_search_keyw |
-| 643 | dbName | ip:64256 | dbName_new | Query   |    2 | Sending data | SELECT
-                        a.keywords
-                FROM
-                        (
-                        SELECT
-                                k.keywords,
-                                count(1) c
-                        FROM
-                                tb_search_keyw |
-| 644 | dbName | ip:64264 | dbName_new | Query   |    2 | Sending data | SELECT
-                        a.keywords
-                FROM
-                        (
-                        SELECT
-                                k.keywords,
-                                count(1) c
-                        FROM
-                                tb_search_keyw |
-| 645 | dbName | ip:64287 | dbName_new | Query   |    2 | Sending data | SELECT
-                        a.keywords
-                FROM
-                        (
-                        SELECT
-                                k.keywords,
-                                count(1) c
-                        FROM
-                                tb_search_keyw |
-| 646 | dbName | ip:64288 | dbName_new | Query   |    2 | Sending data | SELECT
-                        a.keywords
-                FROM
-                        (
-                        SELECT
-                                k.keywords,
-                                count(1) c
-                        FROM
-                                tb_search_keyw |
-| 647 | dbName | ip:64289 | dbName_new | Query   |    2 | Sending data | SELECT
-                        a.keywords
-                FROM
-                        (
-                        SELECT
-                                k.keywords,
-                                count(1) c
-                        FROM
-                                tb_search_keyw |
-| 648 | dbName | ip:64290 | dbName_new | Query   |    2 | Sending data | SELECT
-                        a.keywords
-                FROM
-                        (
-                        SELECT
-                                k.keywords,
-                                count(1) c
-                        FROM
-                                tb_search_keyw |
-| 649 | dbName | ip:64295 | dbName_new | Query   |    2 | Sending data | SELECT
-                        a.keywords
-                FROM
-                        (
-                        SELECT
-                                k.keywords,
-                                count(1) c
-                        FROM
-                                tb_search_keyw |
-| 650 | dbName | ip:64298 | dbName_new | Query   |    2 | Sending data | SELECT
-                        a.keywords
-                FROM
-                        (
-                        SELECT
-                                k.keywords,
-                                count(1) c
-                        FROM
-                                tb_search_keyw |
+| 627 | dbName | ip:64098 | dbName_new | Query   |    2 | Sending data | SELECT a.keywords FROM (SELECT k.keywords,count(1) c FROM tb_search_keyw |
+| 632 | dbName | ip:64220 | dbName_new | Query   |    2 | Sending data | SELECT a.keywords FROM (SELECT k.keywords,count(1) c FROM tb_search_keyw |
+| 633 | dbName | ip:64221 | dbName_new | Query   |    2 | Sending data | SELECT a.keywords FROM (SELECT k.keywords,count(1) c FROM tb_search_keyw |
+| 634 | dbName | ip:64222 | dbName_new | Query   |    2 | Sending data | SELECT a.keywords FROM (SELECT k.keywords,count(1) c FROM tb_search_keyw |
+| 635 | dbName | ip:64223 | dbName_new | Query   |    2 | Sending data | SELECT a.keywords FROM (SELECT k.keywords,count(1) c FROM tb_search_keyw |
+| 636 | dbName | ip:64224 | dbName_new | Query   |    2 | Sending data | SELECT a.keywords FROM (SELECT k.keywords,count(1) c FROM tb_search_keyw |
+| 637 | dbName | ip:64225 | dbName_new | Query   |    2 | Sending data | SELECT a.keywords FROM (SELECT k.keywords,count(1) c FROM tb_search_keyw |
+| 638 | dbName | ip:64226 | dbName_new | Query   |    2 | Sending data | SELECT a.keywords FROM (SELECT k.keywords,count(1) c FROM tb_search_keyw |
+| 639 | dbName | ip:64227 | dbName_new | Query   |    2 | Sending data | SELECT a.keywords FROM (SELECT k.keywords,count(1) c FROM tb_search_keyw |
+| 640 | dbName | ip:64228 | dbName_new | Query   |    2 | Sending data | SELECT a.keywords FROM (SELECT k.keywords,count(1) c FROM tb_search_keyw |
+| 641 | dbName | ip:64249 | dbName_new | Query   |    2 | Sending data | SELECT a.keywords FROM (SELECT k.keywords,count(1) c FROM tb_search_keyw |
+| 642 | dbName | ip:64250 | dbName_new | Query   |    2 | Sending data | SELECT a.keywords FROM (SELECT k.keywords,count(1) c FROM tb_search_keyw |
+| 643 | dbName | ip:64256 | dbName_new | Query   |    2 | Sending data | SELECT a.keywords FROM (SELECT k.keywords,count(1) c FROM tb_search_keyw |
+| 644 | dbName | ip:64264 | dbName_new | Query   |    2 | Sending data | SELECT a.keywords FROM (SELECT k.keywords,count(1) c FROM tb_search_keyw |
+| 645 | dbName | ip:64287 | dbName_new | Query   |    2 | Sending data | SELECT a.keywords FROM (SELECT k.keywords,count(1) c FROM tb_search_keyw |
+| 646 | dbName | ip:64288 | dbName_new | Query   |    2 | Sending data | SELECT a.keywords FROM (SELECT k.keywords,count(1) c FROM tb_search_keyw |
+| 647 | dbName | ip:64289 | dbName_new | Query   |    2 | Sending data | SELECT a.keywords FROM (SELECT k.keywords,count(1) c FROM tb_search_keyw |
+| 648 | dbName | ip:64290 | dbName_new | Query   |    2 | Sending data | SELECT a.keywords FROM (SELECT k.keywords,count(1) c FROM tb_search_keyw |
+| 649 | dbName | ip:64295 | dbName_new | Query   |    2 | Sending data | SELECT a.keywords FROM (SELECT k.keywords,count(1) c FROM tb_search_keyw |
+| 650 | dbName | ip:64298 | dbName_new | Query   |    2 | Sending data | SELECT a.keywords FROM (SELECT k.keywords,count(1) c FROM tb_search_keyw |
 | 657 | dbName | localhost             | dbName_new | Query   |    0 | starting     | show processlist                                                                                     |
 +-----+---------------+-----------------------+-------------------+---------+------+--------------+------------------------------------------------------------------------------------------------------+
 25 rows in set (0.00 sec)
@@ -350,5 +190,8 @@ Thread 2 (Thread 0x7fc5a702c700 (LWP 11259)):
 ![](/images/online-failure/MySQL-timestamp/mysqld-stack.png)
 
 ## 修复方案
-- 将time_zone参数设置为system外的值，如中国地区服务器设置为'+8:00'；
-- 使用datetime代替timestamp
+#### 一:将time_zone参数设置为system外的值，如中国地区服务器设置为'+8:00'；
+- 修改time_zone是最直接的方式,这样就不会访问linux的系统时区,不会存在锁
+- 修改time_zone在业务场景对时区有要求时不适用
+
+#### 二:使用datetime代替timestamp
