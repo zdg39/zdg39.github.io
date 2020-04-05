@@ -92,14 +92,14 @@
 
 <meta name="description" content="前言本文为搭建jira服务的教程,jira版本为jira8.3.0,如果需要搭建的jira服务版本与该文不符可能部分步骤需要调整。本文为原创分享,可能有误望谅解。 依赖环境 CentOS 64 Bit JDK1.8 MySQL5.7">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jira-build">
+<meta property="og:title" content="jira服务搭建">
 <meta property="og:url" content="http://yoursite.com/2020/04/05/jira-build/index.html">
 <meta property="og:site_name" content="Z-Blog">
 <meta property="og:description" content="前言本文为搭建jira服务的教程,jira版本为jira8.3.0,如果需要搭建的jira服务版本与该文不符可能部分步骤需要调整。本文为原创分享,可能有误望谅解。 依赖环境 CentOS 64 Bit JDK1.8 MySQL5.7">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-04-05T12:42:18.069Z">
+<meta property="og:updated_time" content="2020-04-05T12:57:59.876Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jira-build">
+<meta name="twitter:title" content="jira服务搭建">
 <meta name="twitter:description" content="前言本文为搭建jira服务的教程,jira版本为jira8.3.0,如果需要搭建的jira服务版本与该文不符可能部分步骤需要调整。本文为原创分享,可能有误望谅解。 依赖环境 CentOS 64 Bit JDK1.8 MySQL5.7">
 
 
@@ -136,7 +136,7 @@
 
 
 
-  <title>jira-build | Z-Blog</title>
+  <title>jira服务搭建 | Z-Blog</title>
   
 
 
@@ -322,7 +322,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">jira-build</h1>
+          <h1 class="post-title" itemprop="name headline">jira服务搭建</h1>
         
 
         <div class="post-meta">
@@ -350,7 +350,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-04-05T20:42:18+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2020-04-05T20:57:59+08:00">
                 2020-04-05
               </time>
             
@@ -445,7 +445,11 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp -a atlassian-extras-3.2.jar /opt/atlassian/jira/atlassian-jira/WEB-INF/lib/</span><br></pre></td></tr></table></figure>
 <p>替换atlassian-extras-3.2.jar后就可以启动jira,启动成功后就可以在浏览器输入<a href="http://ip:8082访问,web界面的配置可以参考https://blog.51cto.com/moerjinrong/2287899" target="_blank" rel="noopener">http://ip:8082访问,web界面的配置可以参考https://blog.51cto.com/moerjinrong/2287899</a></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 启动jira</span><br><span class="line">service jira start</span><br><span class="line"><span class="meta">#</span> 查看jira服务是否启动成功</span><br><span class="line">ss -tnl | grep 8082</span><br><span class="line"><span class="meta">#</span> jira日志</span><br><span class="line">/opt/atlassian/jira/logs/catalina.out</span><br><span class="line"><span class="meta">#</span> 关闭jira</span><br><span class="line">service jira stop</span><br></pre></td></tr></table></figure>
-<h2 id="问题解决-Q-amp-A"><a href="#问题解决-Q-amp-A" class="headerlink" title="问题解决(Q&amp;A)"></a>问题解决(Q&amp;A)</h2><h4 id="Q1-使用service-jira-start命令无法找到jira服务"><a href="#Q1-使用service-jira-start命令无法找到jira服务" class="headerlink" title="Q1:使用service jira start命令无法找到jira服务"></a>Q1:使用service jira start命令无法找到jira服务</h4><h4 id="A1-一般情况下不是ROOT用户安装的jira无法注册到service服务-使用-opt-atlassian-jira-bin-start-jira-sh启动"><a href="#A1-一般情况下不是ROOT用户安装的jira无法注册到service服务-使用-opt-atlassian-jira-bin-start-jira-sh启动" class="headerlink" title="A1:一般情况下不是ROOT用户安装的jira无法注册到service服务,使用/opt/atlassian/jira/bin/start-jira.sh启动"></a>A1:一般情况下不是ROOT用户安装的jira无法注册到service服务,使用/opt/atlassian/jira/bin/start-jira.sh启动</h4><h4 id="Q2-jira未破解成功"><a href="#Q2-jira未破解成功" class="headerlink" title="Q2:jira未破解成功"></a>Q2:jira未破解成功</h4><h4 id="A2-jira未破解成功可能是atlassian-extras-3-2-jar未替换成功-检查-opt-atlassian-jira-atlassian-jira-WEB-INF-lib-目录下的atlassian-extras-3-2-jar是否是替换的破解包"><a href="#A2-jira未破解成功可能是atlassian-extras-3-2-jar未替换成功-检查-opt-atlassian-jira-atlassian-jira-WEB-INF-lib-目录下的atlassian-extras-3-2-jar是否是替换的破解包" class="headerlink" title="A2:jira未破解成功可能是atlassian-extras-3.2.jar未替换成功.检查/opt/atlassian/jira/atlassian-jira/WEB-INF/lib/目录下的atlassian-extras-3.2.jar是否是替换的破解包"></a>A2:jira未破解成功可能是atlassian-extras-3.2.jar未替换成功.检查/opt/atlassian/jira/atlassian-jira/WEB-INF/lib/目录下的atlassian-extras-3.2.jar是否是替换的破解包</h4><h4 id="Q3-无法连接到MySQL数据库"><a href="#Q3-无法连接到MySQL数据库" class="headerlink" title="Q3:无法连接到MySQL数据库"></a>Q3:无法连接到MySQL数据库</h4><h4 id="A3-检查数据库连接信息是否正确-账号配置等是否有权限-阿里云RDS是否配置白名单等"><a href="#A3-检查数据库连接信息是否正确-账号配置等是否有权限-阿里云RDS是否配置白名单等" class="headerlink" title="A3:检查数据库连接信息是否正确,账号配置等是否有权限,阿里云RDS是否配置白名单等"></a>A3:检查数据库连接信息是否正确,账号配置等是否有权限,阿里云RDS是否配置白名单等</h4><h4 id="Q4-浏览器使用http-ip-8082无法访问"><a href="#Q4-浏览器使用http-ip-8082无法访问" class="headerlink" title="Q4:浏览器使用http://ip:8082无法访问"></a>Q4:浏览器使用<a href="http://ip:8082无法访问" target="_blank" rel="noopener">http://ip:8082无法访问</a></h4><h4 id="A4-检查阿里云ECS安全组是否开放8082端口"><a href="#A4-检查阿里云ECS安全组是否开放8082端口" class="headerlink" title="A4:检查阿里云ECS安全组是否开放8082端口"></a>A4:检查阿里云ECS安全组是否开放8082端口</h4>
+<h2 id="问题解决-Q-amp-A"><a href="#问题解决-Q-amp-A" class="headerlink" title="问题解决(Q&amp;A)"></a>问题解决(Q&amp;A)</h2><h4 id="Q1-使用service-jira-start命令无法找到jira服务"><a href="#Q1-使用service-jira-start命令无法找到jira服务" class="headerlink" title="Q1:使用service jira start命令无法找到jira服务"></a>Q1:使用service jira start命令无法找到jira服务</h4><p> A1:一般情况下不是ROOT用户安装的jira无法注册到service服务,使用/opt/atlassian/jira/bin/start-jira.sh启动</p>
+<h4 id="Q2-jira未破解成功"><a href="#Q2-jira未破解成功" class="headerlink" title="Q2:jira未破解成功"></a>Q2:jira未破解成功</h4><p>A2:jira未破解成功可能是atlassian-extras-3.2.jar未替换成功.检查/opt/atlassian/jira/atlassian-jira/WEB-INF/lib/目录下的atlassian-extras-3.2.jar是否是替换的破解包</p>
+<h4 id="Q3-无法连接到MySQL数据库"><a href="#Q3-无法连接到MySQL数据库" class="headerlink" title="Q3:无法连接到MySQL数据库"></a>Q3:无法连接到MySQL数据库</h4><p>A3:检查数据库连接信息是否正确,账号配置等是否有权限,阿里云RDS是否配置白名单等</p>
+<h4 id="Q4-浏览器使用http-ip-8082无法访问"><a href="#Q4-浏览器使用http-ip-8082无法访问" class="headerlink" title="Q4:浏览器使用http://ip:8082无法访问"></a>Q4:浏览器使用<a href="http://ip:8082无法访问" target="_blank" rel="noopener">http://ip:8082无法访问</a></h4><p>A4:检查阿里云ECS安全组是否开放8082端口</p>
+
       
     </div>
     
@@ -637,7 +641,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#依赖环境"><span class="nav-number">2.</span> <span class="nav-text">依赖环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装部署"><span class="nav-number">3.</span> <span class="nav-text">安装部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题解决-Q-amp-A"><span class="nav-number">4.</span> <span class="nav-text">问题解决(Q&amp;A)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Q1-使用service-jira-start命令无法找到jira服务"><span class="nav-number">4.0.1.</span> <span class="nav-text">Q1:使用service jira start命令无法找到jira服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#A1-一般情况下不是ROOT用户安装的jira无法注册到service服务-使用-opt-atlassian-jira-bin-start-jira-sh启动"><span class="nav-number">4.0.2.</span> <span class="nav-text">A1:一般情况下不是ROOT用户安装的jira无法注册到service服务,使用/opt/atlassian/jira/bin/start-jira.sh启动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Q2-jira未破解成功"><span class="nav-number">4.0.3.</span> <span class="nav-text">Q2:jira未破解成功</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#A2-jira未破解成功可能是atlassian-extras-3-2-jar未替换成功-检查-opt-atlassian-jira-atlassian-jira-WEB-INF-lib-目录下的atlassian-extras-3-2-jar是否是替换的破解包"><span class="nav-number">4.0.4.</span> <span class="nav-text">A2:jira未破解成功可能是atlassian-extras-3.2.jar未替换成功.检查/opt/atlassian/jira/atlassian-jira/WEB-INF/lib/目录下的atlassian-extras-3.2.jar是否是替换的破解包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Q3-无法连接到MySQL数据库"><span class="nav-number">4.0.5.</span> <span class="nav-text">Q3:无法连接到MySQL数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#A3-检查数据库连接信息是否正确-账号配置等是否有权限-阿里云RDS是否配置白名单等"><span class="nav-number">4.0.6.</span> <span class="nav-text">A3:检查数据库连接信息是否正确,账号配置等是否有权限,阿里云RDS是否配置白名单等</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Q4-浏览器使用http-ip-8082无法访问"><span class="nav-number">4.0.7.</span> <span class="nav-text">Q4:浏览器使用http://ip:8082无法访问</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#A4-检查阿里云ECS安全组是否开放8082端口"><span class="nav-number">4.0.8.</span> <span class="nav-text">A4:检查阿里云ECS安全组是否开放8082端口</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#依赖环境"><span class="nav-number">2.</span> <span class="nav-text">依赖环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装部署"><span class="nav-number">3.</span> <span class="nav-text">安装部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题解决-Q-amp-A"><span class="nav-number">4.</span> <span class="nav-text">问题解决(Q&amp;A)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Q1-使用service-jira-start命令无法找到jira服务"><span class="nav-number">4.0.1.</span> <span class="nav-text">Q1:使用service jira start命令无法找到jira服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Q2-jira未破解成功"><span class="nav-number">4.0.2.</span> <span class="nav-text">Q2:jira未破解成功</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Q3-无法连接到MySQL数据库"><span class="nav-number">4.0.3.</span> <span class="nav-text">Q3:无法连接到MySQL数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Q4-浏览器使用http-ip-8082无法访问"><span class="nav-number">4.0.4.</span> <span class="nav-text">Q4:浏览器使用http://ip:8082无法访问</span></a></li></ol></li></ol></div>
             
 
           </div>
