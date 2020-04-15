@@ -1,7 +1,7 @@
 ---
 title: Headleass Chrome使用教程
 date: 2020-04-11 14:28:10
-tags: 
+tags:
 ---
 
 ## 前言
@@ -66,10 +66,11 @@ headlessChromeDriver.get("https://www.baidu.com");
 
 当你使用--remote-debugging-port=9222运行Chrome他会启动一个支持[DevTool协议](https://chromedevtools.github.io/devtools-protocol)的实例该协议用于与Chrome进行通信，并且驱动 Headless Chrome浏览器实例。它也是一个类似Sublime、VS Code 和 Node 的工具，可用于应用程序的远程调试。#协同效应<br/>
 启动程序后可以使用localhost:9222访问headless chrome的运行情况
-![remote-debugging-1](https://raw.githubusercontent.com/zdg39/Z-Spider/master/headless-chrome/images/remote-debugging-1.png)
+
+![remote-debugging-1](/images/chrome/headless/remote-debugging-1.png)
 
 点击"百度一下,你就知道"则进入打开的百度窗口
-![remote-debugging-2](https://raw.githubusercontent.com/zdg39/Z-Spider/master/headless-chrome/images/remote-debugging-2.png)
+![remote-debugging-2](/images/chrome/headless/remote-debugging-2.png)
 
 >DevTool Api:https://chromedevtools.github.io/devtools-protocol
 
@@ -122,13 +123,13 @@ nohup java -Dwebdriver.chrome.driver=/usr/local/chromedriver -jar selenium-serve
 输入启动命令后查看selenium-server-standalone.log文件,看到以下输出则是启动成功。#启动比较慢,耐心等待即可
 ``
 
-![selenium-server-standalone-start](https://raw.githubusercontent.com/zdg39/Z-Spider/master/headless-chrome/images/selenium-server-standalone-start.png)
+![selenium-server-standalone-start](/images/chrome/headless/selenium-server-standalone-start.png)
 
 ``
 在浏览器地址栏输入http://yourip:4445/wd/hub即可看到以下输出,到这里服务端环境已经搭建成功。
 ``
 
-![selenium-hub](https://raw.githubusercontent.com/zdg39/Z-Spider/master/headless-chrome/images/selenium-hub.png)
+![selenium-hub](/images/chrome/headless/selenium-hub.png)
 
 
 ### 客户端测试
@@ -168,9 +169,9 @@ remoteHeadlessDriver.quit();
 运行客户端程序后,在浏览器地址栏输入http://yourip:4445/wd/hub即可查看chrome运行状态,点击Take Screenshot即可截屏远程headless chrome
 ``
 
-![remote-headless-chrome](https://raw.githubusercontent.com/zdg39/Z-Spider/master/headless-chrome/images/remote-headless-chrome.png)
+![remote-headless-chrome](/images/chrome/headless/remote-headless-chrome.png)
 
-![remote-headless-chrome-screenshot](https://raw.githubusercontent.com/zdg39/Z-Spider/master/headless-chrome/images/remote-headless-chrome-screenshot.png)
+![remote-headless-chrome-screenshot](/images/chrome/headless/remote-headless-chrome-screenshot.png)
 
 ## 后记
 关于headless chrome的使用教程介绍到这里差不多就结束了,本文只介绍如何运行headless chrome,关于API的使用可自行阅读官方文档等资料。
