@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="Redis,">
+  <meta name="keywords" content="分析报告,">
 
 
 
@@ -92,21 +92,18 @@
 
 
 
-<meta name="description" content="前言最近又遇见一个线上问题,就是Redis连接数达到最大值,导致服务无法获取连接,大量用户反馈APP无法登陆。经过一系列的排查最终定位到问题是使用Redis后没有关闭连接,导致无法获取连接。因为出现问题的服务并没有使用连接池,所以在每次使用后必须手动关闭连接,否则运行一段时间后服务连接必将被占满。本文为技术分享,可能有误望谅解。 问题现象">
-<meta name="keywords" content="Redis">
+<meta name="description" content="前言上周有天晚上笔者接到一个阿里菜鸟的面试官打来的电话问最近看不看机会，想让我做一个笔试，由于自己也一直有在复习，所以就打算再试试面试机会。笔试题是一道多线程相关的编程题，要求在白板上使用面向对象的方式解决；在白板上写编程题总感觉没法发挥正常水平，题目类似的解决思路之前也在工作中遇见过或是看过类似的博客文章，最后做完题才发现自己理解错题意，没有多加思考。为了吸取经验教训，乘着这次机会总结一次相关问">
+<meta name="keywords" content="分析报告">
 <meta property="og:type" content="article">
-<meta property="og:title" content="线上问题排查|Redis:连接未释放导致连接数超过最大值">
-<meta property="og:url" content="http://yoursite.com/2020/05/02/online-failure-Redis-max-clients/index.html">
+<meta property="og:title" content="分析报告|多线程并发扣减问题">
+<meta property="og:url" content="http://yoursite.com/2020/09/13/analysis-report-concurrent-reduce/index.html">
 <meta property="og:site_name" content="Z-Blog">
-<meta property="og:description" content="前言最近又遇见一个线上问题,就是Redis连接数达到最大值,导致服务无法获取连接,大量用户反馈APP无法登陆。经过一系列的排查最终定位到问题是使用Redis后没有关闭连接,导致无法获取连接。因为出现问题的服务并没有使用连接池,所以在每次使用后必须手动关闭连接,否则运行一段时间后服务连接必将被占满。本文为技术分享,可能有误望谅解。 问题现象">
+<meta property="og:description" content="前言上周有天晚上笔者接到一个阿里菜鸟的面试官打来的电话问最近看不看机会，想让我做一个笔试，由于自己也一直有在复习，所以就打算再试试面试机会。笔试题是一道多线程相关的编程题，要求在白板上使用面向对象的方式解决；在白板上写编程题总感觉没法发挥正常水平，题目类似的解决思路之前也在工作中遇见过或是看过类似的博客文章，最后做完题才发现自己理解错题意，没有多加思考。为了吸取经验教训，乘着这次机会总结一次相关问">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/images/online-failure/Redis/linux-command.jpg">
-<meta property="og:image" content="http://yoursite.com/images/online-failure/Redis/jedis-uml.png">
-<meta property="og:updated_time" content="2020-05-03T04:29:53.298Z">
+<meta property="og:updated_time" content="2020-09-13T14:58:48.217Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="线上问题排查|Redis:连接未释放导致连接数超过最大值">
-<meta name="twitter:description" content="前言最近又遇见一个线上问题,就是Redis连接数达到最大值,导致服务无法获取连接,大量用户反馈APP无法登陆。经过一系列的排查最终定位到问题是使用Redis后没有关闭连接,导致无法获取连接。因为出现问题的服务并没有使用连接池,所以在每次使用后必须手动关闭连接,否则运行一段时间后服务连接必将被占满。本文为技术分享,可能有误望谅解。 问题现象">
-<meta name="twitter:image" content="http://yoursite.com/images/online-failure/Redis/linux-command.jpg">
+<meta name="twitter:title" content="分析报告|多线程并发扣减问题">
+<meta name="twitter:description" content="前言上周有天晚上笔者接到一个阿里菜鸟的面试官打来的电话问最近看不看机会，想让我做一个笔试，由于自己也一直有在复习，所以就打算再试试面试机会。笔试题是一道多线程相关的编程题，要求在白板上使用面向对象的方式解决；在白板上写编程题总感觉没法发挥正常水平，题目类似的解决思路之前也在工作中遇见过或是看过类似的博客文章，最后做完题才发现自己理解错题意，没有多加思考。为了吸取经验教训，乘着这次机会总结一次相关问">
 
 
 
@@ -136,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/05/02/online-failure-Redis-max-clients/">
+  <link rel="canonical" href="http://yoursite.com/2020/09/13/analysis-report-concurrent-reduce/">
 
 
 
 
 
-  <title>线上问题排查|Redis:连接未释放导致连接数超过最大值 | Z-Blog</title>
+  <title>分析报告|多线程并发扣减问题 | Z-Blog</title>
   
 
 
@@ -311,7 +308,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/02/online-failure-Redis-max-clients/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/13/analysis-report-concurrent-reduce/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zdg">
@@ -328,7 +325,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">线上问题排查|Redis:连接未释放导致连接数超过最大值</h1>
+          <h1 class="post-title" itemprop="name headline">分析报告|多线程并发扣减问题</h1>
         
 
         <div class="post-meta">
@@ -340,8 +337,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-02T21:51:01+08:00">
-                2020-05-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-13T14:25:31+08:00">
+                2020-09-13
               </time>
             
 
@@ -356,8 +353,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-05-03T12:29:53+08:00">
-                2020-05-03
+              <time title="更新于" itemprop="dateModified" datetime="2020-09-13T22:58:48+08:00">
+                2020-09-13
               </time>
             
           </span>
@@ -389,7 +386,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,215 字
+                  1,449 字
                 </span>
               
 
@@ -405,7 +402,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5 分钟
+                  6 分钟
                 </span>
               
             </div>
@@ -426,36 +423,16 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近又遇见一个线上问题,就是Redis连接数达到最大值,导致服务无法获取连接,大量用户反馈APP无法登陆。经过一系列的排查最终定位到问题是使用Redis后没有关闭连接,导致无法获取连接。因为出现问题的服务并没有使用连接池,所以在每次使用后必须手动关闭连接,否则运行一段时间后服务连接必将被占满。本文为技术分享,可能有误望谅解。</p>
-<h2 id="问题现象"><a href="#问题现象" class="headerlink" title="问题现象"></a>问题现象</h2><a id="more"></a>
-<p>线上服务日志出现大量的异常:ERR max number of clients reached</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">redis.clients.jedis.exceptions.JedisDataException: ERR max number of clients reached</span><br><span class="line">        at redis.clients.jedis.Protocol.processError(Protocol.java:<span class="number">117</span>)</span><br><span class="line">        at redis.clients.jedis.Protocol.process(Protocol.java:<span class="number">151</span>)</span><br><span class="line">        at redis.clients.jedis.Protocol.read(Protocol.java:<span class="number">205</span>)</span><br><span class="line">        at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:<span class="number">297</span>)</span><br><span class="line">        at redis.clients.jedis.Connection.getStatusCodeReply(Connection.java:<span class="number">196</span>)</span><br><span class="line">        at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:<span class="number">83</span>)</span><br><span class="line">        at redis.clients.jedis.Connection.sendCommand(Connection.java:<span class="number">100</span>)</span><br><span class="line">        at redis.clients.jedis.Connection.sendCommand(Connection.java:<span class="number">91</span>)</span><br><span class="line">        at redis.clients.jedis.BinaryClient.auth(BinaryClient.java:<span class="number">551</span>)</span><br><span class="line">        at redis.clients.jedis.BinaryJedis.auth(BinaryJedis.java:<span class="number">2048</span>)</span><br></pre></td></tr></table></figure>
-<p>整个APP使用到Redis的接口也全都不可用,一看到ERR max number of clients reached就猜测是Redis使用后未关闭连接,因为并发请求量还达不到占满Redis连接数的地步,为了验证这一想法按照下面排查步骤一步一步执行。</p>
-<h2 id="排查步骤"><a href="#排查步骤" class="headerlink" title="排查步骤"></a>排查步骤</h2><h3 id="Linux排查命令"><a href="#Linux排查命令" class="headerlink" title="Linux排查命令"></a>Linux排查命令</h3><p>首先介绍关于Linux的一些监控命令,如下图所示</p>
-<p><img src="/images/online-failure/Redis/linux-command.jpg" alt></p>
-<p>如果想知道服务所在机器和Redis服务建立多少连接可以使用<a href="https://man.linuxde.net/ss" target="_blank" rel="noopener">ss</a>或<a href="https://man.linuxde.net/netstat" target="_blank" rel="noopener">netstat</a>命令来查看。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ss -tn | grep 6379</span><br><span class="line">或者</span><br><span class="line"><span class="meta">$</span> netstat -aln | grep 6379</span><br><span class="line"><span class="meta">#</span>搜索与Redis服务建立的socket连接,Redis默认端口是6379,如果是其他端口修改为对应的端口即可</span><br></pre></td></tr></table></figure>
-<p>同时也可以实时监控连接数的变化</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">watch -n 1 -d 'netstat -aln | grep 6379 | wc -l'</span><br></pre></td></tr></table></figure>
-<p>通过以上命令就可以在你的机器上获取Redis连接数。</p>
-<h3 id="排查"><a href="#排查" class="headerlink" title="排查"></a>排查</h3><p>在机器上使用watch命令搜索目前与Redis建立的连接数,发现连接数一直居高不下,而目前也没有特别多的用户访问,为了尽快恢复线上服务先重启再后续观察。目前的症状是服务运行一段时间后无法获取连接且访问量并不大,首先是去排查代码(如果有权限查看阿里云后台可以先使用Redis的client list命令查看目前客户端的连接信息)看是否有连接未正常关闭。在查看Redis的封装工具类后找到一处代码使用Redis后未关闭连接,如下所示</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Jedis jedis = getJedis();</span><br><span class="line"><span class="keyword">return</span> jedis.scard(key);</span><br></pre></td></tr></table></figure>
-<p>在获取一个jedis连接后,直接调用了一个scard()方法,该方法是获取Redis的Set元素的个数。找到可能出现的问题后,先将此处代码改写,使用try()语法释放jedis连接:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>(Jedis jedis = getJedis())&#123;</span><br><span class="line">    <span class="keyword">return</span> jedis.scard(key);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>try括号中的资源会在try语句执行完后自动释放,前提是这些可关闭的资源必须实现java.lang.AutoCloseable接口。查看Jedis的继承关系:</p>
-<p><img src="/images/online-failure/Redis/jedis-uml.png" alt></p>
-<p>在将jedis连接正常关闭后,继续使用watch命令查看机器连接数,恢复正常不再保持递增状态。</p>
-<h3 id="Redis相关命令排查"><a href="#Redis相关命令排查" class="headerlink" title="Redis相关命令排查"></a>Redis相关命令排查</h3><p>如果能够使用Redis的一些命令,可以更快地排查到是哪一行代码没有释放连接。</p>
-<ul>
-<li>info clients命令:查看Redis连接客户端的信息,可以查看目前有多少客户端连接</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ip:6379&gt;info clients</span><br><span class="line">"# Clients</span><br><span class="line">connected_clients:2</span><br><span class="line">client_recent_max_input_buffer:2</span><br><span class="line">client_recent_max_output_buffer:0</span><br><span class="line">blocked_clients:0</span><br><span class="line">"</span><br></pre></td></tr></table></figure>
-<ul>
-<li>client list命令:查看Redis连接客户端的具体信息</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ip:6379&gt;client list</span><br><span class="line">"id=230145929 addr=ip:48324 fd=3370 name= age=19907 idle=19907 flags=N db=0 sub=0 psub=0 multi=-1 qbuf=0 qbuf-free=0 obl=0 oll=0 omem=0 events=r traffic-control= cmd=scard type=user"</span><br><span class="line">"id=230145930 addr=ip:48327 fd=3371 name= age=19907 idle=19907 flags=N db=0 sub=0 psub=0 multi=-1 qbuf=0 qbuf-free=0 obl=0 oll=0 omem=0 events=r traffic-control= cmd=scard type=user"</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<p>在线上Redis服务使用client list命令后发现有大量的未释放连接,cmd=scard这里可以看到是scard命令未释放,idle=19907和age=19907可以看到该命令存活时间达到19907秒。</p>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>在写代码时一定要注意资源的释放,否则很容易出现线上事故引起用户投诉;在改造成本不大的时候可以使用池化技术来优化系统,例如http连接池,数据库连接池等,自动管理连接避免出现未手动释放的情况,当然如果改造成本比较大时还是注意在每次使用后都要手动关闭!</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上周有天晚上笔者接到一个阿里菜鸟的面试官打来的电话问最近看不看机会，想让我做一个笔试，由于自己也一直有在复习，所以就打算再试试面试机会。笔试题是一道多线程相关的编程题，要求在白板上使用面向对象的方式解决；在白板上写编程题总感觉没法发挥正常水平，题目类似的解决思路之前也在工作中遇见过或是看过类似的博客文章，最后做完题才发现自己理解错题意，没有多加思考。为了吸取经验教训，乘着这次机会总结一次相关问题。<strong>本文为问题总结,可能有误望谅解</strong>。</p>
+<h2 id="编程题"><a href="#编程题" class="headerlink" title="编程题"></a>编程题</h2><a id="more"></a>
+<p>编程题大致题意是：<strong>有一个数字9，然后线程A每次减2，线程B每次减3，这个数字不能减到小于0，如果数字不够线程减时则线程停止</strong>。<br>这道题需要注意的问题是不能将数字减到小于0，由此可以得到第一种解法，两个线程同步执行，线程A减完之后线程B再执行。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> count = <span class="number">9</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Solution solutoin = <span class="keyword">new</span> Solution();</span><br><span class="line">        <span class="keyword">new</span> Thread(<span class="keyword">new</span> Task(<span class="number">2</span>,solutoin)).start();</span><br><span class="line">        <span class="keyword">new</span> Thread(<span class="keyword">new</span> Task(<span class="number">3</span>,solutoin)).start();</span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">            ;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Task</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> num;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">final</span> Solution solutoin;</span><br><span class="line"></span><br><span class="line">        Task(<span class="keyword">int</span> num, Solution solutoin)&#123;</span><br><span class="line">            <span class="keyword">this</span>.num = num;</span><br><span class="line">            <span class="keyword">this</span>.solutoin = solutoin;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">while</span> (<span class="keyword">true</span>)&#123;</span><br><span class="line">                <span class="keyword">synchronized</span> (solutoin)&#123;</span><br><span class="line">                    System.out.println(Thread.currentThread().getName() + <span class="string">"减之前"</span> + solutoin.count);</span><br><span class="line">                    <span class="keyword">if</span>(solutoin.count &lt; num)&#123;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    solutoin.count -= num;</span><br><span class="line">                    System.out.println(Thread.currentThread().getName() + <span class="string">"减之后"</span> + solutoin.count);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用锁同步线程缺点也显而易见，多线程并发执行变成了多线程排队串行，性能差。第二种解法是使用原子类来解决<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> AtomicLong count = <span class="keyword">new</span> AtomicLong(<span class="number">9</span>);</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Solution solutoin = <span class="keyword">new</span> Solution();</span><br><span class="line">        <span class="keyword">new</span> Thread(<span class="keyword">new</span> Task(<span class="number">2</span>,solutoin)).start();</span><br><span class="line">        <span class="keyword">new</span> Thread(<span class="keyword">new</span> Task(<span class="number">3</span>,solutoin)).start();</span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">            ;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Task</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> num;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">final</span> Solution solutoin;</span><br><span class="line"></span><br><span class="line">        Task(<span class="keyword">int</span> num, Solution solutoin)&#123;</span><br><span class="line">            <span class="keyword">this</span>.num = num;</span><br><span class="line">            <span class="keyword">this</span>.solutoin = solutoin;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">while</span> (<span class="keyword">true</span>)&#123;</span><br><span class="line">                System.out.println(Thread.currentThread().getName() + <span class="string">"减之前"</span> + solutoin.count);</span><br><span class="line">                <span class="keyword">if</span>(solutoin.count.get() &lt; num)&#123;</span><br><span class="line">                    System.out.println(Thread.currentThread().getName() + <span class="string">"停止"</span> + solutoin.count);</span><br><span class="line">                    <span class="keyword">return</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                solutoin.count.addAndGet(-num);</span><br><span class="line">                System.out.println(Thread.currentThread().getName() + <span class="string">"减之后"</span> + solutoin.count);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用原子类AtomicLong来解决，然后这种方式还是存在问题，当两个线程都执行到if(solutoin.count.get() &lt; num)这行代码时，如果此时数字为3，两个线程分别执行 solutoin.count.addAndGet(-num)，此时数字减为-2，出现”库存超卖问题”。为了避免这个问题，再对代码做出修改，减之后判断结果是否小于0，如果小于0则回滚。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="keyword">true</span>)&#123;</span><br><span class="line">        System.out.println(Thread.currentThread().getName() + <span class="string">"减之前"</span> + solutoin.count);</span><br><span class="line">        <span class="comment">//修改,先减再判断，不足则回滚</span></span><br><span class="line">        <span class="keyword">if</span>(solutoin.count.addAndGet(-num) &lt; <span class="number">0</span>)&#123;</span><br><span class="line">            solutoin.count.addAndGet(num);</span><br><span class="line">            System.out.println(Thread.currentThread().getName() + <span class="string">"停止"</span> + solutoin.count);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(Thread.currentThread().getName() + <span class="string">"减之后"</span> + solutoin.count);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用这种方式可以避免”库存超卖问题”,但是又会带来新的问题，如果此时数字减为2，两个线程都执行到if(solutoin.count.addAndGet(-num) &lt; 0)，线程B将2减为-1，线程A将-1减为-3，线程B回滚数字为0并终止，线程A回滚数字为2并终止。此时数字为2，还是可以再让线程A执行一次，造成误差。</p>
+<p>为了解决”库存超卖问题”和避免误差，使用版本号的思路来解决<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//当前版本</span></span><br><span class="line">    <span class="keyword">long</span> currentCount;</span><br><span class="line">    <span class="keyword">while</span> ((currentCount = solutoin.count.get())&gt;=num)&#123;</span><br><span class="line">        System.out.println(Thread.currentThread().getName() + <span class="string">"减之前"</span> + solutoin.count);</span><br><span class="line">        <span class="keyword">if</span>(solutoin.count.compareAndSet(currentCount,currentCount - num))&#123;</span><br><span class="line">            System.out.println(Thread.currentThread().getName() + <span class="string">"减之后"</span> + solutoin.count);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>在每次更新数字时，比较当前的版本是否是上一个版本，如果版本相同则更新不同则继续判断执行。这种方式可以避免”库存超卖问题”和误差，但是缺点就是线程一直在不断执行循环开销比较大。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>按照目前的求职环境，如果想要去大厂，在白板写笔试题在所难免。笔者之所有有这次面试机会是因为在2019年10月份投递过阿里一个部门，当时经历过一轮电话简历面，几天后再加一轮在线笔试。当时的笔试是一道多线程相关的题目和一道算法题，要求在一个小时内完成；由于没有刷过算法题，最后只完成了多线程相关的题。这次面试过后也有几次阿里其他部门的面试官捞过我的简历让我去面试，并没有每次都参加了面试，只在今年3月份参加过一次，一面就被问到很多分布式相关技术，这方面的知识还是比较欠缺，有些应用过但没有熟悉其中的原理，结果也可想而知。上周的面试之所以答应参加是因为正好也想换一份工作，但立马就参加笔试确实不是明智之举。言归正传，多线程技术是每个程序员进阶都需要掌握的，学习多线程需要结合理论知识和加以实践才能掌握的很好，因为多线程的执行结果往往并不如你所想，需要考虑多很多细节问题。</p>
 
       
     </div>
@@ -473,7 +450,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Redis/" rel="tag"># Redis</a>
+            <a href="/tags/分析报告/" rel="tag"># 分析报告</a>
           
         </div>
       
@@ -486,8 +463,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/04/11/headless-chrome/" rel="next" title="Headleass Chrome使用教程">
-                <i class="fa fa-chevron-left"></i> Headleass Chrome使用教程
+              <a href="/2020/06/07/shield-spider/" rel="next" title="如何解决爬虫带来的困扰？">
+                <i class="fa fa-chevron-left"></i> 如何解决爬虫带来的困扰？
               </a>
             
           </div>
@@ -495,10 +472,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/06/07/shield-spider/" rel="prev" title="如何解决爬虫带来的困扰？">
-                如何解决爬虫带来的困扰？ <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -658,7 +631,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题现象"><span class="nav-number">2.</span> <span class="nav-text">问题现象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排查步骤"><span class="nav-number">3.</span> <span class="nav-text">排查步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux排查命令"><span class="nav-number">3.1.</span> <span class="nav-text">Linux排查命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排查"><span class="nav-number">3.2.</span> <span class="nav-text">排查</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis相关命令排查"><span class="nav-number">3.3.</span> <span class="nav-text">Redis相关命令排查</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">4.</span> <span class="nav-text">后记</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编程题"><span class="nav-number">2.</span> <span class="nav-text">编程题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">3.</span> <span class="nav-text">后记</span></a></li></ol></div>
             
 
           </div>
