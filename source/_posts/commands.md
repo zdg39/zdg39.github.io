@@ -113,6 +113,10 @@ git log dev ^master
 
 ---
 
+### rebase功能(合并本地仓库的多个commit,不要修改已经提交到远程仓库的commit)
+- #### 合并本地3个commit
+git rebase -i HEAD~3 
+
 # 三:NodeJs
 ### hexo
 - #### 新建一个页面
