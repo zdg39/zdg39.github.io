@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="设计模式,">
 
 
 
@@ -92,16 +92,18 @@
 
 
 
-<meta name="description" content="forever yong">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Z-Blog">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta name="description" content="创建单例 本文介绍使用Java创建单例的几种方式，后续会增加各种单例的优缺点分析。  一：饿汉式单例(静态成员变量初始化)">
+<meta name="keywords" content="设计模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="单例模式">
+<meta property="og:url" content="http://yoursite.com/2018/05/26/design-pattern-singleton/index.html">
 <meta property="og:site_name" content="Z-Blog">
-<meta property="og:description" content="forever yong">
+<meta property="og:description" content="创建单例 本文介绍使用Java创建单例的几种方式，后续会增加各种单例的优缺点分析。  一：饿汉式单例(静态成员变量初始化)">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-11-21T12:02:07.958Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Z-Blog">
-<meta name="twitter:description" content="forever yong">
+<meta name="twitter:title" content="单例模式">
+<meta name="twitter:description" content="创建单例 本文介绍使用Java创建单例的几种方式，后续会增加各种单例的优缺点分析。  一：饿汉式单例(静态成员变量初始化)">
 
 
 
@@ -131,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/page/2/">
+  <link rel="canonical" href="http://yoursite.com/2018/05/26/design-pattern-singleton/">
 
 
 
 
 
-  <title>Z-Blog</title>
+  <title>单例模式 | Z-Blog</title>
   
 
 
@@ -156,8 +158,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -292,515 +293,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/17/commands/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zdg">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/zdg.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Z-Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/17/commands/" itemprop="url">常用指令总结</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-17T19:38:15+08:00">
-                2018-12-17
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2020-11-27T10:54:54+08:00">
-                2020-11-27
-              </time>
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1,431 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  6 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="一-数据库"><a href="#一-数据库" class="headerlink" title="一:数据库"></a>一:数据库</h1><h3 id="MySql"><a href="#MySql" class="headerlink" title="MySql"></a>MySql</h3><ul>
-<li><h4 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h4>mysql -h host -u username -p password</li>
-<li><h4 id="设置字符集"><a href="#设置字符集" class="headerlink" title="设置字符集"></a>设置字符集</h4>set names utf8
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/12/17/commands/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </li></ul></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/08/Git1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zdg">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/zdg.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Z-Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/08/Git1/" itemprop="url">Git系列之解决合并分支冲突</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-08T21:05:24+08:00">
-                2018-06-08
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2019-11-21T20:02:07+08:00">
-                2019-11-21
-              </time>
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1,156 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>  在使用git时，通常会建立几个分支来管理不同环境的代码，通常会建立develop，test，master等几个分支来管理开发，测试，生产环境的代码。通常master分支固定一个版本，develop分支迭代开发新的功能，当开发完新的功能时将develop分支合并到test分支，将test分支的代码打包发布到测试服务器测试通过后再将test分支合并到master分支以更新正式生产环境新的版本。当然也可以建立管理其他分支，例如在测试服务器和正式服务器之间还需要灰度服务器来过渡，这时可以建立一个gray分支来管理灰度服务器的代码；也可以建立一个专门用来修复bug的分支，当生产环境出现bug时，开发人员从master分支新建一个temp分支，在temp分支上修复bug，当修复完成后再将temp分支合并回master分支。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/06/08/Git1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/02/Maven1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zdg">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/zdg.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Z-Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/02/Maven1/" itemprop="url">Maven系列之管理不同环境的配置文件</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-02T22:15:43+08:00">
-                2018-06-02
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2019-11-21T20:02:07+08:00">
-                2019-11-21
-              </time>
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  692 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="Maven系列之管理不同环境的配置文件"><a href="#Maven系列之管理不同环境的配置文件" class="headerlink" title="Maven系列之管理不同环境的配置文件"></a><center>Maven系列之管理不同环境的配置文件</center></h1><blockquote>
-<p>在一个项目的开发-测试-生产过程中，需要配置不同的环境配置文件，例如db属性配置，redis连接属性等的配置。如果每次从开发环境发布到测试服务器或者发布到生产服务器上都要去修改配置文件无疑会十分混乱，所以可以使用maven来管理不同环境的配置文件提高效率。</p>
-</blockquote>
-<h2 id="一，环境"><a href="#一，环境" class="headerlink" title="一，环境"></a>一，环境</h2>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/06/02/Maven1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -830,9 +325,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/26/design-pattern-singleton/" itemprop="url">单例模式</a></h1>
+          <h1 class="post-title" itemprop="name headline">单例模式</h1>
         
 
         <div class="post-meta">
@@ -875,6 +368,11 @@
           
           
 
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
           
 
           
@@ -925,19 +423,21 @@
       
 
       
-        
-          <h1 id="创建单例"><a href="#创建单例" class="headerlink" title="创建单例"></a>创建单例</h1><blockquote>
+        <h1 id="创建单例"><a href="#创建单例" class="headerlink" title="创建单例"></a>创建单例</h1><blockquote>
 <p>本文介绍使用Java创建单例的几种方式，后续会增加各种单例的优缺点分析。</p>
 </blockquote>
-<h2 id="一：饿汉式单例-静态成员变量初始化"><a href="#一：饿汉式单例-静态成员变量初始化" class="headerlink" title="一：饿汉式单例(静态成员变量初始化)"></a>一：饿汉式单例(静态成员变量初始化)</h2>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/26/design-pattern-singleton/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+<h2 id="一：饿汉式单例-静态成员变量初始化"><a href="#一：饿汉式单例-静态成员变量初始化" class="headerlink" title="一：饿汉式单例(静态成员变量初始化)"></a>一：饿汉式单例(静态成员变量初始化)</h2><a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class Singleton&#123;</span><br><span class="line">  private static final Singleton singleton = new Singleton();</span><br><span class="line"></span><br><span class="line">  private Singleton()&#123;&#125;</span><br><span class="line"></span><br><span class="line">  public static Singleton getInstance()&#123;</span><br><span class="line">    return singleton;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="二：饿汉式单例-静态代码块"><a href="#二：饿汉式单例-静态代码块" class="headerlink" title="二：饿汉式单例(静态代码块)"></a>二：饿汉式单例(静态代码块)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class Singleton&#123;</span><br><span class="line">  private static Singleton singleton;</span><br><span class="line"></span><br><span class="line">  static&#123;</span><br><span class="line">    singleton = new Singleton();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  private Singleton()&#123;&#125;</span><br><span class="line"></span><br><span class="line">  public static Singleton getInstance()&#123;</span><br><span class="line">    return singleton;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="三：懒汉式单例-多线程不可用"><a href="#三：懒汉式单例-多线程不可用" class="headerlink" title="三：懒汉式单例(多线程不可用)"></a>三：懒汉式单例(多线程不可用)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class Singleton&#123;</span><br><span class="line"></span><br><span class="line">  private static Singleton singleton;</span><br><span class="line"></span><br><span class="line">  private Singleton()&#123;&#125;</span><br><span class="line"></span><br><span class="line">  public static Singleton getInstance()&#123;</span><br><span class="line">    if (null == singleton) &#123;</span><br><span class="line">      singleton = new Singleton();</span><br><span class="line">    &#125;</span><br><span class="line">    return singleton;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="四：懒汉式单例-同步方法"><a href="#四：懒汉式单例-同步方法" class="headerlink" title="四：懒汉式单例(同步方法)"></a>四：懒汉式单例(同步方法)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class Singleton&#123;</span><br><span class="line"></span><br><span class="line">  private static Singleton singleton;</span><br><span class="line"></span><br><span class="line">  private Singleton()&#123;&#125;</span><br><span class="line"></span><br><span class="line">  public static synchronized Singleton getInstance()&#123;</span><br><span class="line">    if (null == singleton) &#123;</span><br><span class="line">      singleton = new Singleton();</span><br><span class="line">    &#125;</span><br><span class="line">    return singleton;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="五：懒汉式单例-同步代码块"><a href="#五：懒汉式单例-同步代码块" class="headerlink" title="五：懒汉式单例(同步代码块)"></a>五：懒汉式单例(同步代码块)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class Singleton&#123;</span><br><span class="line"></span><br><span class="line">  private static Singleton singleton;</span><br><span class="line"></span><br><span class="line">  private Singleton()&#123;&#125;</span><br><span class="line"></span><br><span class="line">  public static Singleton getInstance()&#123;</span><br><span class="line">    if (null == singleton) &#123;</span><br><span class="line">      synchronized(Singleton.class)&#123;</span><br><span class="line">        singleton = new Singleton();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return singleton;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="六：懒汉式单例-双重检查判断"><a href="#六：懒汉式单例-双重检查判断" class="headerlink" title="六：懒汉式单例(双重检查判断)"></a>六：懒汉式单例(双重检查判断)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public class Singleton&#123;</span><br><span class="line">  /*需要volatile关键字保证顺序性*/</span><br><span class="line">  private static volatile Singleton singleton;</span><br><span class="line"></span><br><span class="line">  private Singleton()&#123;&#125;</span><br><span class="line"></span><br><span class="line">  public static Singleton getInstance()&#123;</span><br><span class="line">    if (null == singleton) &#123;</span><br><span class="line">      synchronized(Singleton.class)&#123;</span><br><span class="line">        if(null == singleton)&#123;</span><br><span class="line">          singleton = new Singleton();</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return singleton;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="七：枚举单例"><a href="#七：枚举单例" class="headerlink" title="七：枚举单例"></a>七：枚举单例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public enum Singleton &#123;</span><br><span class="line">  SINGLETON;</span><br><span class="line">  private Singleton()&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="八：静态内部类单例-IODH"><a href="#八：静态内部类单例-IODH" class="headerlink" title="八：静态内部类单例(IODH)"></a>八：静态内部类单例(IODH)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class Singleton &#123;</span><br><span class="line">  private Singleton() &#123;&#125;;</span><br><span class="line"></span><br><span class="line">  public static Singleton getInstance() &#123;</span><br><span class="line">    return InnerClass.singleton;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  private static class InnerClass &#123;</span><br><span class="line">    private static final Singleton singleton = new Singleton();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="九-CAS原理实现单例"><a href="#九-CAS原理实现单例" class="headerlink" title="九:CAS原理实现单例"></a>九:CAS原理实现单例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">import java.util.concurrent.CyclicBarrier;</span><br><span class="line">import java.util.concurrent.atomic.AtomicReference;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * @author zhudg39@gmail.com</span><br><span class="line"> * @description CAS原理实现的单例:非阻塞,保证获取到实例是同一个,但是不能保证实例被多次实例化</span><br><span class="line"> * @date 2019/5/6 19:29</span><br><span class="line"> */</span><br><span class="line">public class CASSingleton &#123;</span><br><span class="line">    /**</span><br><span class="line">     * 原子应用类,线程安全</span><br><span class="line">     */</span><br><span class="line">    private static final AtomicReference&lt;CASSingleton&gt; INSTANCE =  new AtomicReference&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 私有化构造方法</span><br><span class="line">     */</span><br><span class="line">    private CASSingleton()&#123;&#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 获取单例类实例</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    public static CASSingleton getInstance()&#123;</span><br><span class="line">        for(;;)&#123;</span><br><span class="line">            CASSingleton singleton = INSTANCE.get();</span><br><span class="line">            if(null != singleton)&#123;</span><br><span class="line">                return singleton;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            singleton = new CASSingleton();</span><br><span class="line">            if(INSTANCE.compareAndSet(null,singleton))&#123;</span><br><span class="line">                return singleton;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        //模拟多线程并发</span><br><span class="line">        int size = 10;</span><br><span class="line">        CyclicBarrier cyclicBarrier = new CyclicBarrier(size);</span><br><span class="line">        for (int i=0;i&lt;size;i++)&#123;</span><br><span class="line">            new Thread(() -&gt; &#123;</span><br><span class="line">                try &#123;</span><br><span class="line">                    System.out.println(Thread.currentThread().getName() + &quot;到达循环栅栏前&quot;);</span><br><span class="line">                    cyclicBarrier.await();</span><br><span class="line">                    System.out.println(&quot;所有线程已经跨越循环栅栏,&quot; + Thread.currentThread().getName() + &quot;开始获取单例类实例:&quot; + getInstance());</span><br><span class="line">                &#125;catch (Exception e)&#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;).start();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p><center> 更新中。。。</center></p>
+
       
     </div>
     
@@ -952,182 +452,40 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/14/Hexo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zdg">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/zdg.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Z-Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/14/Hexo/" itemprop="url">Hexo</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-14T16:11:13+08:00">
-                2018-04-14
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2019-11-21T20:02:07+08:00">
-                2019-11-21
-              </time>
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  487 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><h2 id="一-Linux环境-Ubuntu"><a href="#一-Linux环境-Ubuntu" class="headerlink" title="一 :Linux环境(Ubuntu)"></a>一 :Linux环境(Ubuntu)</h2><p>安装hexo博客框架之前首先在机器中安装好nodejs，使用node -v命令可以查看nodejs版本,npm -v命令可以查看npm版本。</p>
-<h3 id="1-安装Hexo"><a href="#1-安装Hexo" class="headerlink" title="1:安装Hexo"></a>1:安装Hexo</h3>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/14/Hexo/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/14/Hexo/" rel="next" title="Hexo">
+                <i class="fa fa-chevron-left"></i> Hexo
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/02/Maven1/" rel="prev" title="Maven系列之管理不同环境的配置文件">
+                Maven系列之管理不同环境的配置文件 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -1137,14 +495,11 @@
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </nav>
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -1152,6 +507,13 @@
 
 
           
+
+  
+    <div id="gitalk-container"></div>
+
+  
+
+
 
         </div>
         
@@ -1172,8 +534,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1258,6 +629,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#创建单例"><span class="nav-number">1.</span> <span class="nav-text">创建单例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一：饿汉式单例-静态成员变量初始化"><span class="nav-number">1.1.</span> <span class="nav-text">一：饿汉式单例(静态成员变量初始化)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二：饿汉式单例-静态代码块"><span class="nav-number">1.2.</span> <span class="nav-text">二：饿汉式单例(静态代码块)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三：懒汉式单例-多线程不可用"><span class="nav-number">1.2.1.</span> <span class="nav-text">三：懒汉式单例(多线程不可用)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四：懒汉式单例-同步方法"><span class="nav-number">1.2.2.</span> <span class="nav-text">四：懒汉式单例(同步方法)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五：懒汉式单例-同步代码块"><span class="nav-number">1.2.3.</span> <span class="nav-text">五：懒汉式单例(同步代码块)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六：懒汉式单例-双重检查判断"><span class="nav-number">1.2.4.</span> <span class="nav-text">六：懒汉式单例(双重检查判断)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七：枚举单例"><span class="nav-number">1.3.</span> <span class="nav-text">七：枚举单例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#八：静态内部类单例-IODH"><span class="nav-number">1.3.1.</span> <span class="nav-text">八：静态内部类单例(IODH)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#九-CAS原理实现单例"><span class="nav-number">1.3.2.</span> <span class="nav-text">九:CAS原理实现单例</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1428,6 +815,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -1468,6 +859,21 @@
 
 
 
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '0700f039a1c0281ca949',
+          clientSecret: '230d67e4bae115fe966011594ece2ae418aea12c',
+          repo: 'zdg39.github.io',
+          owner: 'zdg39',
+          admin: ['zdg39'],
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')
+       </script>
 
 
 
