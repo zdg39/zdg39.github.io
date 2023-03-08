@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<meta name="google-site-verification" content="zSl0_oNmwxQDoDh-bVxcIbH8GxDdwd72ZIcV5zQ8Mas">
+<meta name="baidu-site-verification" content="AptwlA5feO">
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "225f3678"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/snowflake-32x32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/snowflake-16x16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="工具,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Z-Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="一:数据库MySql 连接数据库mysql -h host -u username -p password 设置字符集set names utf8">
+<meta name="keywords" content="工具">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常用指令总结">
+<meta property="og:url" content="http://yoursite.com/2018/12/17/commands/index.html">
+<meta property="og:site_name" content="Z-Blog">
+<meta property="og:description" content="一:数据库MySql 连接数据库mysql -h host -u username -p password 设置字符集set names utf8">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-11-27T02:54:54.452Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="常用指令总结">
+<meta name="twitter:description" content="一:数据库MySql 连接数据库mysql -h host -u username -p password 设置字符集set names utf8">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/17/commands/">
+
+
+
+
+
+  <title>常用指令总结 | Z-Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Z-Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/17/commands/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zdg">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/zdg.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Z-Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">常用指令总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-17T19:38:15+08:00">
+                2018-12-17
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-11-27T10:54:54+08:00">
+                2020-11-27
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,431 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一-数据库"><a href="#一-数据库" class="headerlink" title="一:数据库"></a>一:数据库</h1><h3 id="MySql"><a href="#MySql" class="headerlink" title="MySql"></a>MySql</h3><ul>
+<li><h4 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h4>mysql -h host -u username -p password</li>
+<li><h4 id="设置字符集"><a href="#设置字符集" class="headerlink" title="设置字符集"></a>设置字符集</h4>set names utf8<a id="more"></a>
+</li>
+</ul>
+<h3 id="show命令"><a href="#show命令" class="headerlink" title="show命令"></a>show命令</h3><ul>
+<li><h4 id="显示系统变量的名称和值"><a href="#显示系统变量的名称和值" class="headerlink" title="显示系统变量的名称和值"></a>显示系统变量的名称和值</h4>show variables</li>
+<li><h4 id="显示一些系统特定资源的信息"><a href="#显示一些系统特定资源的信息" class="headerlink" title="显示一些系统特定资源的信息"></a>显示一些系统特定资源的信息</h4>show status</li>
+<li><h4 id="显示系统中正在运行的所有进程"><a href="#显示系统中正在运行的所有进程" class="headerlink" title="显示系统中正在运行的所有进程"></a>显示系统中正在运行的所有进程</h4>show [full] processlist</li>
+<li><h4 id="显示当前会话语句-需要使用SET-profiling-1开启prifile"><a href="#显示当前会话语句-需要使用SET-profiling-1开启prifile" class="headerlink" title="显示当前会话语句(需要使用SET profiling = 1开启prifile)"></a>显示当前会话语句(需要使用SET profiling = 1开启prifile)</h4>show profiles</li>
+<li><h4 id="显示语句工作情况和消耗时间情况"><a href="#显示语句工作情况和消耗时间情况" class="headerlink" title="显示语句工作情况和消耗时间情况"></a>显示语句工作情况和消耗时间情况</h4>show profile [cpu,block io,all,…] for query queryId</li>
+</ul>
+<hr>
+<h3 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h3><ul>
+<li><h4 id="连接数据库-1"><a href="#连接数据库-1" class="headerlink" title="连接数据库"></a>连接数据库</h4>redis-cli -h host -p port -a “password”</li>
+<li><h4 id="查询所有可用的key"><a href="#查询所有可用的key" class="headerlink" title="查询所有可用的key"></a>查询所有可用的key</h4>key *</li>
+<li><h4 id="选择数据库"><a href="#选择数据库" class="headerlink" title="选择数据库"></a>选择数据库</h4>select db</li>
+<li><h4 id="内存分析-info命令"><a href="#内存分析-info命令" class="headerlink" title="内存分析(info命令)"></a>内存分析(info命令)</h4>info memory</li>
+</ul>
+<hr>
+<ul>
+<li><h4 id="向有序集合添加元素"><a href="#向有序集合添加元素" class="headerlink" title="向有序集合添加元素"></a>向有序集合添加元素</h4>zadd sorted_set_name score id</li>
+<li><h4 id="查看有序集合某个元素的分数"><a href="#查看有序集合某个元素的分数" class="headerlink" title="查看有序集合某个元素的分数"></a>查看有序集合某个元素的分数</h4>zscore sorted_set_name id</li>
+<li><h4 id="由高到低查看有序集合的id-0-1代表元素下标"><a href="#由高到低查看有序集合的id-0-1代表元素下标" class="headerlink" title="由高到低查看有序集合的id(0,-1代表元素下标)"></a>由高到低查看有序集合的id(0,-1代表元素下标)</h4>zrevrange sorted_set_name 0 -1</li>
+<li><h4 id="由高到低查看有序集合的id并且带上分数-0-1代表元素下标"><a href="#由高到低查看有序集合的id并且带上分数-0-1代表元素下标" class="headerlink" title="由高到低查看有序集合的id并且带上分数(0,-1代表元素下标)"></a>由高到低查看有序集合的id并且带上分数(0,-1代表元素下标)</h4>zrevrange sorted_set_name 0 -1 withscores</li>
+<li><h4 id="由低到高查看有序集合的id-0-1代表元素下标"><a href="#由低到高查看有序集合的id-0-1代表元素下标" class="headerlink" title="由低到高查看有序集合的id(0,-1代表元素下标)"></a>由低到高查看有序集合的id(0,-1代表元素下标)</h4>zrange sorted_set_name 0 -1</li>
+<li><h4 id="由低到高查看有序集合的id并且带上分数-0-1代表元素下标"><a href="#由低到高查看有序集合的id并且带上分数-0-1代表元素下标" class="headerlink" title="由低到高查看有序集合的id并且带上分数(0,-1代表元素下标)"></a>由低到高查看有序集合的id并且带上分数(0,-1代表元素下标)</h4>zrange sorted_set_name 0 -1 withscores</li>
+<li><h4 id="获取某个元素的排行"><a href="#获取某个元素的排行" class="headerlink" title="获取某个元素的排行"></a>获取某个元素的排行</h4>zrevrank sorted_set_name id</li>
+<li><h4 id="增加某个元素的分数-元素不存在默认初始值为0"><a href="#增加某个元素的分数-元素不存在默认初始值为0" class="headerlink" title="增加某个元素的分数,元素不存在默认初始值为0"></a>增加某个元素的分数,元素不存在默认初始值为0</h4>zincrby sorted_set_name score id</li>
+<li><h4 id="删除某个元素"><a href="#删除某个元素" class="headerlink" title="删除某个元素"></a>删除某个元素</h4>zrem sorted_set_name id</li>
+<li><h4 id="删除有序集合"><a href="#删除有序集合" class="headerlink" title="删除有序集合"></a>删除有序集合</h4>del sorted_set_name</li>
+</ul>
+<hr>
+<h3 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h3><ul>
+<li><h4 id="使用默认端口连接MongoDB"><a href="#使用默认端口连接MongoDB" class="headerlink" title="使用默认端口连接MongoDB"></a>使用默认端口连接MongoDB</h4>mongo host</li>
+<li><h4 id="连接MongoDB并指定端口"><a href="#连接MongoDB并指定端口" class="headerlink" title="连接MongoDB并指定端口"></a>连接MongoDB并指定端口</h4>mongo host port</li>
+<li><h4 id="连接到指定的MongoDB数据库"><a href="#连接到指定的MongoDB数据库" class="headerlink" title="连接到指定的MongoDB数据库"></a>连接到指定的MongoDB数据库</h4>mongo host port/dbName</li>
+<li><h4 id="指定用户名和密码连接到指定的MongoDB数据库"><a href="#指定用户名和密码连接到指定的MongoDB数据库" class="headerlink" title="指定用户名和密码连接到指定的MongoDB数据库"></a>指定用户名和密码连接到指定的MongoDB数据库</h4>mongo host port/dbName -u username -p password</li>
+</ul>
+<hr>
+<ul>
+<li><h4 id="导出数据-–type后接json或cvs文件，-f后接字段双引号内用逗号隔开"><a href="#导出数据-–type后接json或cvs文件，-f后接字段双引号内用逗号隔开" class="headerlink" title="导出数据(–type后接json或cvs文件，-f后接字段双引号内用逗号隔开)"></a>导出数据(–type后接json或cvs文件，-f后接字段双引号内用逗号隔开)</h4>mongoexport -h host -u username -p password -d dbname -c collectionname -o file –type json/csv -f field</li>
+<li><h4 id="导入数据-–headerline-如果导入的格式是csv，则可以使用第一行的标题作为导入的字段，其他同导出数据"><a href="#导入数据-–headerline-如果导入的格式是csv，则可以使用第一行的标题作为导入的字段，其他同导出数据" class="headerlink" title="导入数据(–headerline 如果导入的格式是csv，则可以使用第一行的标题作为导入的字段，其他同导出数据)"></a>导入数据(–headerline 如果导入的格式是csv，则可以使用第一行的标题作为导入的字段，其他同导出数据)</h4>mongoimport -h host -u username -p password -d dbname -c collectionname –file filename –headerline –type json/csv -f field</li>
+</ul>
+<h1 id="二-Git"><a href="#二-Git" class="headerlink" title="二:Git"></a>二:Git</h1><h3 id="stash功能"><a href="#stash功能" class="headerlink" title="stash功能"></a>stash功能</h3><ul>
+<li><h4 id="暂存-保存在git整个栈中"><a href="#暂存-保存在git整个栈中" class="headerlink" title="暂存(保存在git整个栈中)"></a>暂存(保存在git整个栈中)</h4>git stash</li>
+<li><h4 id="设置保存名"><a href="#设置保存名" class="headerlink" title="设置保存名"></a>设置保存名</h4>git stash save “stashName”</li>
+<li><h4 id="查看暂存列表"><a href="#查看暂存列表" class="headerlink" title="查看暂存列表"></a>查看暂存列表</h4>git stash list</li>
+<li><h4 id="恢复最近一次暂存，从暂存列表中删除"><a href="#恢复最近一次暂存，从暂存列表中删除" class="headerlink" title="恢复最近一次暂存，从暂存列表中删除"></a>恢复最近一次暂存，从暂存列表中删除</h4>git stash pop</li>
+<li><h4 id="应用某一次暂存，暂存列表中不删除"><a href="#应用某一次暂存，暂存列表中不删除" class="headerlink" title="应用某一次暂存，暂存列表中不删除"></a>应用某一次暂存，暂存列表中不删除</h4>git stash aplly “stashName”</li>
+</ul>
+<hr>
+<h3 id="回退功能"><a href="#回退功能" class="headerlink" title="回退功能"></a>回退功能</h3><ul>
+<li><h4 id="回退到指定版本"><a href="#回退到指定版本" class="headerlink" title="回退到指定版本"></a>回退到指定版本</h4>git reset –hard “commit id”</li>
+</ul>
+<hr>
+<h3 id="分支对比"><a href="#分支对比" class="headerlink" title="分支对比"></a>分支对比</h3><ul>
+<li><h4 id="对比两个分支不同"><a href="#对比两个分支不同" class="headerlink" title="对比两个分支不同"></a>对比两个分支不同</h4>git log dev…master</li>
+<li><h4 id="对比两个分支提交的不同"><a href="#对比两个分支提交的不同" class="headerlink" title="对比两个分支提交的不同"></a>对比两个分支提交的不同</h4>git log –left-right dev…master</li>
+<li><h4 id="一个分支比另一个分支多"><a href="#一个分支比另一个分支多" class="headerlink" title="一个分支比另一个分支多"></a>一个分支比另一个分支多</h4>git log dev..master</li>
+<li><h4 id="一个分支有另一个分支没有"><a href="#一个分支有另一个分支没有" class="headerlink" title="一个分支有另一个分支没有"></a>一个分支有另一个分支没有</h4>git log dev ^master</li>
+</ul>
+<hr>
+<h3 id="rebase功能-合并本地仓库的多个commit-不要修改已经提交到远程仓库的commit"><a href="#rebase功能-合并本地仓库的多个commit-不要修改已经提交到远程仓库的commit" class="headerlink" title="rebase功能(合并本地仓库的多个commit,不要修改已经提交到远程仓库的commit)"></a>rebase功能(合并本地仓库的多个commit,不要修改已经提交到远程仓库的commit)</h3><ul>
+<li><h4 id="合并本地3个commit"><a href="#合并本地3个commit" class="headerlink" title="合并本地3个commit"></a>合并本地3个commit</h4>git rebase -i HEAD~3 </li>
+</ul>
+<h1 id="三-NodeJs"><a href="#三-NodeJs" class="headerlink" title="三:NodeJs"></a>三:NodeJs</h1><h3 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h3><ul>
+<li><h4 id="新建一个页面"><a href="#新建一个页面" class="headerlink" title="新建一个页面"></a>新建一个页面</h4>hexo new “pageName”</li>
+<li><h4 id="新建一个草稿"><a href="#新建一个草稿" class="headerlink" title="新建一个草稿"></a>新建一个草稿</h4>hexo new draft “draftName”</li>
+<li><h4 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h4>hexo generate/hexo g</li>
+<li><h4 id="启动hexo服务"><a href="#启动hexo服务" class="headerlink" title="启动hexo服务"></a>启动hexo服务</h4>hexo server/hexo s</li>
+<li><h5 id="部署发布"><a href="#部署发布" class="headerlink" title="部署发布"></a>部署发布</h5>hexo deploy/hexo d</li>
+</ul>
+<hr>
+<h1 id="四-Java"><a href="#四-Java" class="headerlink" title="四:Java"></a>四:Java</h1><ul>
+<li><h4 id="查看进程状态"><a href="#查看进程状态" class="headerlink" title="查看进程状态"></a>查看进程状态</h4>jstack pid</li>
+<li><h4 id="查看当前堆中的各个对象的数量和大小-增加live只打印活跃的对象"><a href="#查看当前堆中的各个对象的数量和大小-增加live只打印活跃的对象" class="headerlink" title="查看当前堆中的各个对象的数量和大小(增加live只打印活跃的对象)"></a>查看当前堆中的各个对象的数量和大小(增加live只打印活跃的对象)</h4>jmap -histo[:live] <pid></pid></li>
+<li><h4 id="查看java堆的配置情况和使用的GC算法"><a href="#查看java堆的配置情况和使用的GC算法" class="headerlink" title="查看java堆的配置情况和使用的GC算法"></a>查看java堆的配置情况和使用的GC算法</h4>jmap -heap <pid></pid></li>
+<li><h4 id="查看等待执行finalize方法的对象"><a href="#查看等待执行finalize方法的对象" class="headerlink" title="查看等待执行finalize方法的对象"></a>查看等待执行finalize方法的对象</h4>jmap -finalizerinfo <pid></pid></li>
+<li><h4 id="dump当前堆的对象-增加live只打印活跃的对象"><a href="#dump当前堆的对象-增加live只打印活跃的对象" class="headerlink" title="dump当前堆的对象(增加live只打印活跃的对象)"></a>dump当前堆的对象(增加live只打印活跃的对象)</h4>jmap -dump:[live,]format=b,file=<filename> <pid></pid></filename></li>
+</ul>
+<hr>
+<h3 id="jar命令"><a href="#jar命令" class="headerlink" title="jar命令"></a>jar命令</h3><ul>
+<li><h4 id="更新jar包中的类"><a href="#更新jar包中的类" class="headerlink" title="更新jar包中的类"></a>更新jar包中的类</h4>jar -uvf jarName dirName/className.class</li>
+</ul>
+<hr>
+<h1 id="五-Linux"><a href="#五-Linux" class="headerlink" title="五:Linux"></a>五:Linux</h1><h3 id="文件安装"><a href="#文件安装" class="headerlink" title="文件安装"></a>文件安装</h3><ul>
+<li><h4 id="安装deb文件"><a href="#安装deb文件" class="headerlink" title="安装deb文件"></a>安装deb文件</h4>dpkg -i &lt;package.deb&gt;</li>
+<li><h4 id="移除一个已安装的包裹"><a href="#移除一个已安装的包裹" class="headerlink" title="移除一个已安装的包裹"></a>移除一个已安装的包裹</h4>dpkg -r <package></package></li>
+<li><h4 id="安装rz"><a href="#安装rz" class="headerlink" title="安装rz"></a>安装rz</h4>yum install lrzsz  -y</li>
+</ul>
+<hr>
+<h3 id="性能分析"><a href="#性能分析" class="headerlink" title="性能分析"></a>性能分析</h3><ul>
+<li><h4 id="查看进程cpu，内存使用率"><a href="#查看进程cpu，内存使用率" class="headerlink" title="查看进程cpu，内存使用率"></a>查看进程cpu，内存使用率</h4>top</li>
+<li><h4 id="查看进程下各个线程的cpu使用情况"><a href="#查看进程下各个线程的cpu使用情况" class="headerlink" title="查看进程下各个线程的cpu使用情况"></a>查看进程下各个线程的cpu使用情况</h4>top -Hp pid</li>
+<li><h4 id="查看端口连接人数"><a href="#查看端口连接人数" class="headerlink" title="查看端口连接人数:"></a>查看端口连接人数:</h4>netstat -na | grep ESTAB | grep 8080 | wc -l</li>
+<li><h4 id="查看网络信息-每秒统计一次"><a href="#查看网络信息-每秒统计一次" class="headerlink" title="查看网络信息  每秒统计一次:"></a>查看网络信息  每秒统计一次:</h4>sar -n TCP,ETCP 1</li>
+</ul>
+<hr>
+<h3 id="远程登录"><a href="#远程登录" class="headerlink" title="远程登录"></a>远程登录</h3><ul>
+<li><h4 id="管理远程主机，可做mysql，redis服务器的连接测试"><a href="#管理远程主机，可做mysql，redis服务器的连接测试" class="headerlink" title="管理远程主机，可做mysql，redis服务器的连接测试"></a>管理远程主机，可做mysql，redis服务器的连接测试</h4>telent ip port</li>
+<li><h4 id="远程登录，免密码登录"><a href="#远程登录，免密码登录" class="headerlink" title="远程登录，免密码登录"></a>远程登录，免密码登录</h4>ssh user@ip</li>
+<li><h4 id="向远程主机发布命令"><a href="#向远程主机发布命令" class="headerlink" title="向远程主机发布命令"></a>向远程主机发布命令</h4>ssh user@ip “command”</li>
+<li><h4 id="向远程服务器发布文件"><a href="#向远程服务器发布文件" class="headerlink" title="向远程服务器发布文件"></a>向远程服务器发布文件</h4>scp localfile user@ip:folder</li>
+<li><h4 id="向远程服务器发布目录"><a href="#向远程服务器发布目录" class="headerlink" title="向远程服务器发布目录"></a>向远程服务器发布目录</h4>scp -r localfolder user@ip:folder</li>
+</ul>
+<hr>
+<h3 id="定时任务"><a href="#定时任务" class="headerlink" title="定时任务"></a>定时任务</h3><ul>
+<li><h4 id="添加定时任务"><a href="#添加定时任务" class="headerlink" title="添加定时任务"></a>添加定时任务</h4>crontab -e</li>
+<li><h4 id="展示所有定时任务"><a href="#展示所有定时任务" class="headerlink" title="展示所有定时任务"></a>展示所有定时任务</h4>crontab -l</li>
+<li><h4 id="删除定时任务"><a href="#删除定时任务" class="headerlink" title="删除定时任务"></a>删除定时任务</h4>crontab -r</li>
+</ul>
+<hr>
+<h1 id="六-Storm"><a href="#六-Storm" class="headerlink" title="六:Storm"></a>六:Storm</h1><ul>
+<li><h4 id="启动ui界面-在nimbus节点上使用"><a href="#启动ui界面-在nimbus节点上使用" class="headerlink" title="启动ui界面,在nimbus节点上使用"></a>启动ui界面,在nimbus节点上使用</h4>storm ui</li>
+<li><h4 id="启动nimbus-在nimbus节点上使用"><a href="#启动nimbus-在nimbus节点上使用" class="headerlink" title="启动nimbus,在nimbus节点上使用"></a>启动nimbus,在nimbus节点上使用</h4>storm nimbus</li>
+<li><h4 id="启动supervisor-在supervisor节点使用"><a href="#启动supervisor-在supervisor节点使用" class="headerlink" title="启动supervisor,在supervisor节点使用"></a>启动supervisor,在supervisor节点使用</h4>storm supervisor</li>
+<li><h4 id="向集群提交拓扑"><a href="#向集群提交拓扑" class="headerlink" title="向集群提交拓扑"></a>向集群提交拓扑</h4>storm jar [ topology_jar ]  [ topology_class ] [ topology_name]</li>
+<li><h4 id="关闭已经部署的-Topology"><a href="#关闭已经部署的-Topology" class="headerlink" title="关闭已经部署的 Topology"></a>关闭已经部署的 Topology</h4>storm kill [ topology_name [- w wait_time]</li>
+<li><h4 id="停止特定的Topology的Spout发射Tuple"><a href="#停止特定的Topology的Spout发射Tuple" class="headerlink" title="停止特定的Topology的Spout发射Tuple"></a>停止特定的Topology的Spout发射Tuple</h4>storm deactivate [topology_name]</li>
+<li><h4 id="重新恢复特定Topology的Spout发射Tuple"><a href="#重新恢复特定Topology的Spout发射Tuple" class="headerlink" title="重新恢复特定Topology的Spout发射Tuple"></a>重新恢复特定Topology的Spout发射Tuple</h4>storm activate [topology_name]</li>
+<li><h4 id="指示Storm在集群的Worker之间重新平均分派任务不需要关闭或者重新提交现有的Topology-一个新的Supervisor节点添加到一个集群中-就需要执行这个命令"><a href="#指示Storm在集群的Worker之间重新平均分派任务不需要关闭或者重新提交现有的Topology-一个新的Supervisor节点添加到一个集群中-就需要执行这个命令" class="headerlink" title="指示Storm在集群的Worker之间重新平均分派任务不需要关闭或者重新提交现有的Topology,一个新的Supervisor节点添加到一个集群中,就需要执行这个命令"></a>指示Storm在集群的Worker之间重新平均分派任务不需要关闭或者重新提交现有的Topology,一个新的Supervisor节点添加到一个集群中,就需要执行这个命令</h4>storm rebalance [topology_name] [-w wait_time] [-n worker_count] [-e component_name=executer_count]</li>
+</ul>
+<hr>
+<h1 id="七-adb命令-Android调试工具"><a href="#七-adb命令-Android调试工具" class="headerlink" title="七:adb命令(Android调试工具)"></a>七:adb命令(Android调试工具)</h1><ul>
+<li><h4 id="查看当前连接的设备"><a href="#查看当前连接的设备" class="headerlink" title="查看当前连接的设备"></a>查看当前连接的设备</h4>adb devices</li>
+<li><h4 id="连接设备"><a href="#连接设备" class="headerlink" title="连接设备"></a>连接设备</h4>adb connect ip:port</li>
+</ul>
+<hr>
+<h1 id="八-Python"><a href="#八-Python" class="headerlink" title="八:Python"></a>八:Python</h1><h3 id="包管理工具-pip"><a href="#包管理工具-pip" class="headerlink" title="包管理工具(pip)"></a>包管理工具(pip)</h3><ul>
+<li><h4 id="下载最新版本的包"><a href="#下载最新版本的包" class="headerlink" title="下载最新版本的包"></a>下载最新版本的包</h4>pip install packageName</li>
+<li><h4 id="下载指定版本的包"><a href="#下载指定版本的包" class="headerlink" title="下载指定版本的包"></a>下载指定版本的包</h4>pip install packageName=version</li>
+<li><h4 id="下载最小版本"><a href="#下载最小版本" class="headerlink" title="下载最小版本"></a>下载最小版本</h4>pip install ‘packageName&gt;=version’</li>
+<li><h4 id="升级包"><a href="#升级包" class="headerlink" title="升级包"></a>升级包</h4>pip install –upgrade packageName</li>
+<li><h4 id="卸载包"><a href="#卸载包" class="headerlink" title="卸载包"></a>卸载包</h4>pip uninstall packageName</li>
+<li><h4 id="搜索包"><a href="#搜索包" class="headerlink" title="搜索包"></a>搜索包</h4>pip search packageName</li>
+<li><h4 id="列出已安装的包"><a href="#列出已安装的包" class="headerlink" title="列出已安装的包"></a>列出已安装的包</h4>pip list</li>
+<li><h4 id="查看可升级的包"><a href="#查看可升级的包" class="headerlink" title="查看可升级的包"></a>查看可升级的包</h4>pip list -o</li>
+<li><h4 id="显示安装包信息"><a href="#显示安装包信息" class="headerlink" title="显示安装包信息"></a>显示安装包信息</h4>pip show</li>
+<li><h4 id="查看指定包的详细信息"><a href="#查看指定包的详细信息" class="headerlink" title="查看指定包的详细信息"></a>查看指定包的详细信息</h4>pip show -f packageName</li>
+</ul>
+<h3 id="scrapy"><a href="#scrapy" class="headerlink" title="scrapy"></a>scrapy</h3><ul>
+<li><h4 id="查看命令的详细信息"><a href="#查看命令的详细信息" class="headerlink" title="查看命令的详细信息"></a>查看命令的详细信息</h4>scrapy command -h</li>
+<li><h4 id="创建一个scrapy项目"><a href="#创建一个scrapy项目" class="headerlink" title="创建一个scrapy项目"></a>创建一个scrapy项目</h4>scrapy startproject project_name</li>
+<li><h4 id="创建一个spider"><a href="#创建一个spider" class="headerlink" title="创建一个spider"></a>创建一个spider</h4>scrapy genspider spider_name mydomain.com</li>
+<li><h4 id="运行一个spider"><a href="#运行一个spider" class="headerlink" title="运行一个spider"></a>运行一个spider</h4>scrapy crawl spider_name</li>
+</ul>
+<hr>
+<h1 id="九-Arthas"><a href="#九-Arthas" class="headerlink" title="九:Arthas"></a>九:Arthas</h1><ul>
+<li><h4 id="方法内部调用路径-并输出方法路径上的每个节点上耗时"><a href="#方法内部调用路径-并输出方法路径上的每个节点上耗时" class="headerlink" title="方法内部调用路径,并输出方法路径上的每个节点上耗时"></a>方法内部调用路径,并输出方法路径上的每个节点上耗时</h4>trace com.xxx.ClassName methodName</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/工具/" rel="tag"># 工具</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/08/Git1/" rel="next" title="Git系列之解决合并分支冲突">
+                <i class="fa fa-chevron-left"></i> Git系列之解决合并分支冲突
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/27/Maven2/" rel="prev" title="Maven系列之替换jar包中的类">
+                Maven系列之替换jar包中的类 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div id="gitalk-container"></div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/zdg.jpg" alt="zdg">
+            
+              <p class="site-author-name" itemprop="name">zdg</p>
+              <p class="site-description motion-element" itemprop="description">forever yong</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zdg39" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:zhudg39@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-数据库"><span class="nav-number">1.</span> <span class="nav-text">一:数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MySql"><span class="nav-number">1.0.1.</span> <span class="nav-text">MySql</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#连接数据库"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">连接数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置字符集"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">设置字符集</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#show命令"><span class="nav-number">1.0.2.</span> <span class="nav-text">show命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#显示系统变量的名称和值"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">显示系统变量的名称和值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显示一些系统特定资源的信息"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">显示一些系统特定资源的信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显示系统中正在运行的所有进程"><span class="nav-number">1.0.2.3.</span> <span class="nav-text">显示系统中正在运行的所有进程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显示当前会话语句-需要使用SET-profiling-1开启prifile"><span class="nav-number">1.0.2.4.</span> <span class="nav-text">显示当前会话语句(需要使用SET profiling = 1开启prifile)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显示语句工作情况和消耗时间情况"><span class="nav-number">1.0.2.5.</span> <span class="nav-text">显示语句工作情况和消耗时间情况</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis"><span class="nav-number">1.0.3.</span> <span class="nav-text">Redis</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#连接数据库-1"><span class="nav-number">1.0.3.1.</span> <span class="nav-text">连接数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查询所有可用的key"><span class="nav-number">1.0.3.2.</span> <span class="nav-text">查询所有可用的key</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选择数据库"><span class="nav-number">1.0.3.3.</span> <span class="nav-text">选择数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内存分析-info命令"><span class="nav-number">1.0.3.4.</span> <span class="nav-text">内存分析(info命令)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#向有序集合添加元素"><span class="nav-number">1.0.3.5.</span> <span class="nav-text">向有序集合添加元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看有序集合某个元素的分数"><span class="nav-number">1.0.3.6.</span> <span class="nav-text">查看有序集合某个元素的分数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#由高到低查看有序集合的id-0-1代表元素下标"><span class="nav-number">1.0.3.7.</span> <span class="nav-text">由高到低查看有序集合的id(0,-1代表元素下标)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#由高到低查看有序集合的id并且带上分数-0-1代表元素下标"><span class="nav-number">1.0.3.8.</span> <span class="nav-text">由高到低查看有序集合的id并且带上分数(0,-1代表元素下标)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#由低到高查看有序集合的id-0-1代表元素下标"><span class="nav-number">1.0.3.9.</span> <span class="nav-text">由低到高查看有序集合的id(0,-1代表元素下标)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#由低到高查看有序集合的id并且带上分数-0-1代表元素下标"><span class="nav-number">1.0.3.10.</span> <span class="nav-text">由低到高查看有序集合的id并且带上分数(0,-1代表元素下标)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取某个元素的排行"><span class="nav-number">1.0.3.11.</span> <span class="nav-text">获取某个元素的排行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#增加某个元素的分数-元素不存在默认初始值为0"><span class="nav-number">1.0.3.12.</span> <span class="nav-text">增加某个元素的分数,元素不存在默认初始值为0</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除某个元素"><span class="nav-number">1.0.3.13.</span> <span class="nav-text">删除某个元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除有序集合"><span class="nav-number">1.0.3.14.</span> <span class="nav-text">删除有序集合</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MongoDB"><span class="nav-number">1.0.4.</span> <span class="nav-text">MongoDB</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用默认端口连接MongoDB"><span class="nav-number">1.0.4.1.</span> <span class="nav-text">使用默认端口连接MongoDB</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#连接MongoDB并指定端口"><span class="nav-number">1.0.4.2.</span> <span class="nav-text">连接MongoDB并指定端口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#连接到指定的MongoDB数据库"><span class="nav-number">1.0.4.3.</span> <span class="nav-text">连接到指定的MongoDB数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#指定用户名和密码连接到指定的MongoDB数据库"><span class="nav-number">1.0.4.4.</span> <span class="nav-text">指定用户名和密码连接到指定的MongoDB数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#导出数据-–type后接json或cvs文件，-f后接字段双引号内用逗号隔开"><span class="nav-number">1.0.4.5.</span> <span class="nav-text">导出数据(–type后接json或cvs文件，-f后接字段双引号内用逗号隔开)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#导入数据-–headerline-如果导入的格式是csv，则可以使用第一行的标题作为导入的字段，其他同导出数据"><span class="nav-number">1.0.4.6.</span> <span class="nav-text">导入数据(–headerline 如果导入的格式是csv，则可以使用第一行的标题作为导入的字段，其他同导出数据)</span></a></li></ol></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#二-Git"><span class="nav-number">2.</span> <span class="nav-text">二:Git</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#stash功能"><span class="nav-number">2.0.1.</span> <span class="nav-text">stash功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#暂存-保存在git整个栈中"><span class="nav-number">2.0.1.1.</span> <span class="nav-text">暂存(保存在git整个栈中)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置保存名"><span class="nav-number">2.0.1.2.</span> <span class="nav-text">设置保存名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看暂存列表"><span class="nav-number">2.0.1.3.</span> <span class="nav-text">查看暂存列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#恢复最近一次暂存，从暂存列表中删除"><span class="nav-number">2.0.1.4.</span> <span class="nav-text">恢复最近一次暂存，从暂存列表中删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#应用某一次暂存，暂存列表中不删除"><span class="nav-number">2.0.1.5.</span> <span class="nav-text">应用某一次暂存，暂存列表中不删除</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回退功能"><span class="nav-number">2.0.2.</span> <span class="nav-text">回退功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#回退到指定版本"><span class="nav-number">2.0.2.1.</span> <span class="nav-text">回退到指定版本</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分支对比"><span class="nav-number">2.0.3.</span> <span class="nav-text">分支对比</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#对比两个分支不同"><span class="nav-number">2.0.3.1.</span> <span class="nav-text">对比两个分支不同</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对比两个分支提交的不同"><span class="nav-number">2.0.3.2.</span> <span class="nav-text">对比两个分支提交的不同</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一个分支比另一个分支多"><span class="nav-number">2.0.3.3.</span> <span class="nav-text">一个分支比另一个分支多</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一个分支有另一个分支没有"><span class="nav-number">2.0.3.4.</span> <span class="nav-text">一个分支有另一个分支没有</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rebase功能-合并本地仓库的多个commit-不要修改已经提交到远程仓库的commit"><span class="nav-number">2.0.4.</span> <span class="nav-text">rebase功能(合并本地仓库的多个commit,不要修改已经提交到远程仓库的commit)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#合并本地3个commit"><span class="nav-number">2.0.4.1.</span> <span class="nav-text">合并本地3个commit</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-NodeJs"><span class="nav-number">3.</span> <span class="nav-text">三:NodeJs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo"><span class="nav-number">3.0.1.</span> <span class="nav-text">hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新建一个页面"><span class="nav-number">3.0.1.1.</span> <span class="nav-text">新建一个页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新建一个草稿"><span class="nav-number">3.0.1.2.</span> <span class="nav-text">新建一个草稿</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成静态文件"><span class="nav-number">3.0.1.3.</span> <span class="nav-text">生成静态文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启动hexo服务"><span class="nav-number">3.0.1.4.</span> <span class="nav-text">启动hexo服务</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#部署发布"><span class="nav-number">3.0.1.4.1.</span> <span class="nav-text">部署发布</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四-Java"><span class="nav-number">4.</span> <span class="nav-text">四:Java</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看进程状态"><span class="nav-number">4.0.0.1.</span> <span class="nav-text">查看进程状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看当前堆中的各个对象的数量和大小-增加live只打印活跃的对象"><span class="nav-number">4.0.0.2.</span> <span class="nav-text">查看当前堆中的各个对象的数量和大小(增加live只打印活跃的对象)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看java堆的配置情况和使用的GC算法"><span class="nav-number">4.0.0.3.</span> <span class="nav-text">查看java堆的配置情况和使用的GC算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看等待执行finalize方法的对象"><span class="nav-number">4.0.0.4.</span> <span class="nav-text">查看等待执行finalize方法的对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dump当前堆的对象-增加live只打印活跃的对象"><span class="nav-number">4.0.0.5.</span> <span class="nav-text">dump当前堆的对象(增加live只打印活跃的对象)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jar命令"><span class="nav-number">4.0.1.</span> <span class="nav-text">jar命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#更新jar包中的类"><span class="nav-number">4.0.1.1.</span> <span class="nav-text">更新jar包中的类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五-Linux"><span class="nav-number">5.</span> <span class="nav-text">五:Linux</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件安装"><span class="nav-number">5.0.1.</span> <span class="nav-text">文件安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装deb文件"><span class="nav-number">5.0.1.1.</span> <span class="nav-text">安装deb文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移除一个已安装的包裹"><span class="nav-number">5.0.1.2.</span> <span class="nav-text">移除一个已安装的包裹</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装rz"><span class="nav-number">5.0.1.3.</span> <span class="nav-text">安装rz</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#性能分析"><span class="nav-number">5.0.2.</span> <span class="nav-text">性能分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看进程cpu，内存使用率"><span class="nav-number">5.0.2.1.</span> <span class="nav-text">查看进程cpu，内存使用率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看进程下各个线程的cpu使用情况"><span class="nav-number">5.0.2.2.</span> <span class="nav-text">查看进程下各个线程的cpu使用情况</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看端口连接人数"><span class="nav-number">5.0.2.3.</span> <span class="nav-text">查看端口连接人数:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看网络信息-每秒统计一次"><span class="nav-number">5.0.2.4.</span> <span class="nav-text">查看网络信息  每秒统计一次:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#远程登录"><span class="nav-number">5.0.3.</span> <span class="nav-text">远程登录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#管理远程主机，可做mysql，redis服务器的连接测试"><span class="nav-number">5.0.3.1.</span> <span class="nav-text">管理远程主机，可做mysql，redis服务器的连接测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#远程登录，免密码登录"><span class="nav-number">5.0.3.2.</span> <span class="nav-text">远程登录，免密码登录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#向远程主机发布命令"><span class="nav-number">5.0.3.3.</span> <span class="nav-text">向远程主机发布命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#向远程服务器发布文件"><span class="nav-number">5.0.3.4.</span> <span class="nav-text">向远程服务器发布文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#向远程服务器发布目录"><span class="nav-number">5.0.3.5.</span> <span class="nav-text">向远程服务器发布目录</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定时任务"><span class="nav-number">5.0.4.</span> <span class="nav-text">定时任务</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#添加定时任务"><span class="nav-number">5.0.4.1.</span> <span class="nav-text">添加定时任务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#展示所有定时任务"><span class="nav-number">5.0.4.2.</span> <span class="nav-text">展示所有定时任务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除定时任务"><span class="nav-number">5.0.4.3.</span> <span class="nav-text">删除定时任务</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六-Storm"><span class="nav-number">6.</span> <span class="nav-text">六:Storm</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#启动ui界面-在nimbus节点上使用"><span class="nav-number">6.0.0.1.</span> <span class="nav-text">启动ui界面,在nimbus节点上使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启动nimbus-在nimbus节点上使用"><span class="nav-number">6.0.0.2.</span> <span class="nav-text">启动nimbus,在nimbus节点上使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启动supervisor-在supervisor节点使用"><span class="nav-number">6.0.0.3.</span> <span class="nav-text">启动supervisor,在supervisor节点使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#向集群提交拓扑"><span class="nav-number">6.0.0.4.</span> <span class="nav-text">向集群提交拓扑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关闭已经部署的-Topology"><span class="nav-number">6.0.0.5.</span> <span class="nav-text">关闭已经部署的 Topology</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#停止特定的Topology的Spout发射Tuple"><span class="nav-number">6.0.0.6.</span> <span class="nav-text">停止特定的Topology的Spout发射Tuple</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重新恢复特定Topology的Spout发射Tuple"><span class="nav-number">6.0.0.7.</span> <span class="nav-text">重新恢复特定Topology的Spout发射Tuple</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#指示Storm在集群的Worker之间重新平均分派任务不需要关闭或者重新提交现有的Topology-一个新的Supervisor节点添加到一个集群中-就需要执行这个命令"><span class="nav-number">6.0.0.8.</span> <span class="nav-text">指示Storm在集群的Worker之间重新平均分派任务不需要关闭或者重新提交现有的Topology,一个新的Supervisor节点添加到一个集群中,就需要执行这个命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七-adb命令-Android调试工具"><span class="nav-number">7.</span> <span class="nav-text">七:adb命令(Android调试工具)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看当前连接的设备"><span class="nav-number">7.0.0.1.</span> <span class="nav-text">查看当前连接的设备</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#连接设备"><span class="nav-number">7.0.0.2.</span> <span class="nav-text">连接设备</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#八-Python"><span class="nav-number">8.</span> <span class="nav-text">八:Python</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#包管理工具-pip"><span class="nav-number">8.0.1.</span> <span class="nav-text">包管理工具(pip)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#下载最新版本的包"><span class="nav-number">8.0.1.1.</span> <span class="nav-text">下载最新版本的包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下载指定版本的包"><span class="nav-number">8.0.1.2.</span> <span class="nav-text">下载指定版本的包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下载最小版本"><span class="nav-number">8.0.1.3.</span> <span class="nav-text">下载最小版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#升级包"><span class="nav-number">8.0.1.4.</span> <span class="nav-text">升级包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#卸载包"><span class="nav-number">8.0.1.5.</span> <span class="nav-text">卸载包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#搜索包"><span class="nav-number">8.0.1.6.</span> <span class="nav-text">搜索包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#列出已安装的包"><span class="nav-number">8.0.1.7.</span> <span class="nav-text">列出已安装的包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看可升级的包"><span class="nav-number">8.0.1.8.</span> <span class="nav-text">查看可升级的包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显示安装包信息"><span class="nav-number">8.0.1.9.</span> <span class="nav-text">显示安装包信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看指定包的详细信息"><span class="nav-number">8.0.1.10.</span> <span class="nav-text">查看指定包的详细信息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scrapy"><span class="nav-number">8.0.2.</span> <span class="nav-text">scrapy</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看命令的详细信息"><span class="nav-number">8.0.2.1.</span> <span class="nav-text">查看命令的详细信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建一个scrapy项目"><span class="nav-number">8.0.2.2.</span> <span class="nav-text">创建一个scrapy项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建一个spider"><span class="nav-number">8.0.2.3.</span> <span class="nav-text">创建一个spider</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运行一个spider"><span class="nav-number">8.0.2.4.</span> <span class="nav-text">运行一个spider</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#九-Arthas"><span class="nav-number">9.</span> <span class="nav-text">九:Arthas</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法内部调用路径-并输出方法路径上的每个节点上耗时"><span class="nav-number">9.0.0.1.</span> <span class="nav-text">方法内部调用路径,并输出方法路径上的每个节点上耗时</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zdg</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数&#58;</span>
+    
+    <span title="站点总字数">19.7k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '0700f039a1c0281ca949',
+          clientSecret: '230d67e4bae115fe966011594ece2ae418aea12c',
+          repo: 'zdg39.github.io',
+          owner: 'zdg39',
+          admin: ['zdg39'],
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')
+       </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

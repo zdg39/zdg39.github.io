@@ -1,0 +1,17 @@
+打开两个模拟器   cmd键入：adb.exe connect 127.0.0.1:62001
+adb.exe devices
+appim -p 4723 -U 127.0.0.1:62001
+
+打开另外一个cmd
+键入 appium -p 4725 -U emulator-5554
+
+
+启动代码
+需要两两个账号
+
+
+appbasespider项目:
+
+测试环境:   -> http请求到线上环境
+
+ 客户端/接口/定时任务 -> 测试spider-service  -> MQ -> spider-core  -> 夜神模拟器(配置代理ip为spider-proxy服务器的ip)   -> spider-proxy(抓取模拟器的请求)   -> http请求到线上spider-service -> MQ -> spider-parser  -> mongodb
