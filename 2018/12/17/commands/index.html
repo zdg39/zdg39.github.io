@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<meta name="google-site-verification" content="zSl0_oNmwxQDoDh-bVxcIbH8GxDdwd72ZIcV5zQ8Mas" />
+<meta name="baidu-site-verification" content="AptwlA5feO" />
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "225f3678"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/snowflake-32x32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/snowflake-16x16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="工具," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Z-Blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="一:数据库MySql 连接数据库  mysql -h host -u username -p password  设置字符集  set names utf8">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常用指令总结">
+<meta property="og:url" content="http://yoursite.com/2018/12/17/commands/index.html">
+<meta property="og:site_name" content="Z-Blog">
+<meta property="og:description" content="一:数据库MySql 连接数据库  mysql -h host -u username -p password  设置字符集  set names utf8">
+<meta property="og:locale">
+<meta property="article:published_time" content="2018-12-17T11:38:15.000Z">
+<meta property="article:modified_time" content="2023-03-08T05:03:14.872Z">
+<meta property="article:author" content="zdg">
+<meta property="article:tag" content="工具">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/17/commands/"/>
+
+
+
+
+
+  <title>常用指令总结 | Z-Blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Z-Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/17/commands/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/zdg.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Z-Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">常用指令总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-17T19:38:15+08:00">
+                2018-12-17
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2023-03-08T13:03:14+08:00">
+                2023-03-08
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.4k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一-数据库"><a href="#一-数据库" class="headerlink" title="一:数据库"></a>一:数据库</h1><h3 id="MySql"><a href="#MySql" class="headerlink" title="MySql"></a>MySql</h3><ul>
+<li><h4 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h4></li>
+</ul>
+<p>mysql -h host -u username -p password</p>
+<ul>
+<li><h4 id="设置字符集"><a href="#设置字符集" class="headerlink" title="设置字符集"></a>设置字符集</h4></li>
+</ul>
+<p>set names utf8</p>
+<span id="more"></span>
+
+<h3 id="show命令"><a href="#show命令" class="headerlink" title="show命令"></a>show命令</h3><ul>
+<li><h4 id="显示系统变量的名称和值"><a href="#显示系统变量的名称和值" class="headerlink" title="显示系统变量的名称和值"></a>显示系统变量的名称和值</h4></li>
+</ul>
+<p>show variables</p>
+<ul>
+<li><h4 id="显示一些系统特定资源的信息"><a href="#显示一些系统特定资源的信息" class="headerlink" title="显示一些系统特定资源的信息"></a>显示一些系统特定资源的信息</h4></li>
+</ul>
+<p>show status</p>
+<ul>
+<li><h4 id="显示系统中正在运行的所有进程"><a href="#显示系统中正在运行的所有进程" class="headerlink" title="显示系统中正在运行的所有进程"></a>显示系统中正在运行的所有进程</h4></li>
+</ul>
+<p>show [full] processlist</p>
+<ul>
+<li><h4 id="显示当前会话语句-需要使用SET-profiling-x3D-1开启prifile"><a href="#显示当前会话语句-需要使用SET-profiling-x3D-1开启prifile" class="headerlink" title="显示当前会话语句(需要使用SET profiling &#x3D; 1开启prifile)"></a>显示当前会话语句(需要使用SET profiling &#x3D; 1开启prifile)</h4></li>
+</ul>
+<p>show profiles</p>
+<ul>
+<li><h4 id="显示语句工作情况和消耗时间情况"><a href="#显示语句工作情况和消耗时间情况" class="headerlink" title="显示语句工作情况和消耗时间情况"></a>显示语句工作情况和消耗时间情况</h4></li>
+</ul>
+<p>show profile [cpu,block io,all,…] for query queryId</p>
+<hr>
+<h3 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h3><ul>
+<li><h4 id="连接数据库-1"><a href="#连接数据库-1" class="headerlink" title="连接数据库"></a>连接数据库</h4></li>
+</ul>
+<p>redis-cli -h host -p port -a “password”</p>
+<ul>
+<li><h4 id="查询所有可用的key"><a href="#查询所有可用的key" class="headerlink" title="查询所有可用的key"></a>查询所有可用的key</h4></li>
+</ul>
+<p>key *</p>
+<ul>
+<li><h4 id="选择数据库"><a href="#选择数据库" class="headerlink" title="选择数据库"></a>选择数据库</h4></li>
+</ul>
+<p>select db</p>
+<ul>
+<li><h4 id="内存分析-info命令"><a href="#内存分析-info命令" class="headerlink" title="内存分析(info命令)"></a>内存分析(info命令)</h4></li>
+</ul>
+<p>info memory</p>
+<hr>
+<ul>
+<li><h4 id="向有序集合添加元素"><a href="#向有序集合添加元素" class="headerlink" title="向有序集合添加元素"></a>向有序集合添加元素</h4></li>
+</ul>
+<p>zadd sorted_set_name score id</p>
+<ul>
+<li><h4 id="查看有序集合某个元素的分数"><a href="#查看有序集合某个元素的分数" class="headerlink" title="查看有序集合某个元素的分数"></a>查看有序集合某个元素的分数</h4></li>
+</ul>
+<p>zscore sorted_set_name id</p>
+<ul>
+<li><h4 id="由高到低查看有序集合的id-0-1代表元素下标"><a href="#由高到低查看有序集合的id-0-1代表元素下标" class="headerlink" title="由高到低查看有序集合的id(0,-1代表元素下标)"></a>由高到低查看有序集合的id(0,-1代表元素下标)</h4></li>
+</ul>
+<p>zrevrange sorted_set_name 0 -1</p>
+<ul>
+<li><h4 id="由高到低查看有序集合的id并且带上分数-0-1代表元素下标"><a href="#由高到低查看有序集合的id并且带上分数-0-1代表元素下标" class="headerlink" title="由高到低查看有序集合的id并且带上分数(0,-1代表元素下标)"></a>由高到低查看有序集合的id并且带上分数(0,-1代表元素下标)</h4></li>
+</ul>
+<p>zrevrange sorted_set_name 0 -1 withscores</p>
+<ul>
+<li><h4 id="由低到高查看有序集合的id-0-1代表元素下标"><a href="#由低到高查看有序集合的id-0-1代表元素下标" class="headerlink" title="由低到高查看有序集合的id(0,-1代表元素下标)"></a>由低到高查看有序集合的id(0,-1代表元素下标)</h4></li>
+</ul>
+<p>zrange sorted_set_name 0 -1</p>
+<ul>
+<li><h4 id="由低到高查看有序集合的id并且带上分数-0-1代表元素下标"><a href="#由低到高查看有序集合的id并且带上分数-0-1代表元素下标" class="headerlink" title="由低到高查看有序集合的id并且带上分数(0,-1代表元素下标)"></a>由低到高查看有序集合的id并且带上分数(0,-1代表元素下标)</h4></li>
+</ul>
+<p>zrange sorted_set_name 0 -1 withscores</p>
+<ul>
+<li><h4 id="获取某个元素的排行"><a href="#获取某个元素的排行" class="headerlink" title="获取某个元素的排行"></a>获取某个元素的排行</h4></li>
+</ul>
+<p>zrevrank sorted_set_name id</p>
+<ul>
+<li><h4 id="增加某个元素的分数-元素不存在默认初始值为0"><a href="#增加某个元素的分数-元素不存在默认初始值为0" class="headerlink" title="增加某个元素的分数,元素不存在默认初始值为0"></a>增加某个元素的分数,元素不存在默认初始值为0</h4></li>
+</ul>
+<p>zincrby sorted_set_name score id</p>
+<ul>
+<li><h4 id="删除某个元素"><a href="#删除某个元素" class="headerlink" title="删除某个元素"></a>删除某个元素</h4></li>
+</ul>
+<p>zrem sorted_set_name id</p>
+<ul>
+<li><h4 id="删除有序集合"><a href="#删除有序集合" class="headerlink" title="删除有序集合"></a>删除有序集合</h4></li>
+</ul>
+<p>del sorted_set_name</p>
+<hr>
+<h3 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h3><ul>
+<li><h4 id="使用默认端口连接MongoDB"><a href="#使用默认端口连接MongoDB" class="headerlink" title="使用默认端口连接MongoDB"></a>使用默认端口连接MongoDB</h4></li>
+</ul>
+<p>mongo host</p>
+<ul>
+<li><h4 id="连接MongoDB并指定端口"><a href="#连接MongoDB并指定端口" class="headerlink" title="连接MongoDB并指定端口"></a>连接MongoDB并指定端口</h4></li>
+</ul>
+<p>mongo host port</p>
+<ul>
+<li><h4 id="连接到指定的MongoDB数据库"><a href="#连接到指定的MongoDB数据库" class="headerlink" title="连接到指定的MongoDB数据库"></a>连接到指定的MongoDB数据库</h4></li>
+</ul>
+<p>mongo host port&#x2F;dbName</p>
+<ul>
+<li><h4 id="指定用户名和密码连接到指定的MongoDB数据库"><a href="#指定用户名和密码连接到指定的MongoDB数据库" class="headerlink" title="指定用户名和密码连接到指定的MongoDB数据库"></a>指定用户名和密码连接到指定的MongoDB数据库</h4></li>
+</ul>
+<p>mongo host port&#x2F;dbName -u username -p password</p>
+<hr>
+<ul>
+<li><h4 id="导出数据-–type后接json或cvs文件，-f后接字段双引号内用逗号隔开"><a href="#导出数据-–type后接json或cvs文件，-f后接字段双引号内用逗号隔开" class="headerlink" title="导出数据(–type后接json或cvs文件，-f后接字段双引号内用逗号隔开)"></a>导出数据(–type后接json或cvs文件，-f后接字段双引号内用逗号隔开)</h4></li>
+</ul>
+<p>mongoexport -h host -u username -p password -d dbname -c collectionname -o file –type json&#x2F;csv -f field</p>
+<ul>
+<li><h4 id="导入数据-–headerline-如果导入的格式是csv，则可以使用第一行的标题作为导入的字段，其他同导出数据"><a href="#导入数据-–headerline-如果导入的格式是csv，则可以使用第一行的标题作为导入的字段，其他同导出数据" class="headerlink" title="导入数据(–headerline 如果导入的格式是csv，则可以使用第一行的标题作为导入的字段，其他同导出数据)"></a>导入数据(–headerline 如果导入的格式是csv，则可以使用第一行的标题作为导入的字段，其他同导出数据)</h4></li>
+</ul>
+<p>mongoimport -h host -u username -p password -d dbname -c collectionname –file filename –headerline –type json&#x2F;csv -f field</p>
+<h1 id="二-Git"><a href="#二-Git" class="headerlink" title="二:Git"></a>二:Git</h1><h3 id="stash功能"><a href="#stash功能" class="headerlink" title="stash功能"></a>stash功能</h3><ul>
+<li><h4 id="暂存-保存在git整个栈中"><a href="#暂存-保存在git整个栈中" class="headerlink" title="暂存(保存在git整个栈中)"></a>暂存(保存在git整个栈中)</h4></li>
+</ul>
+<p>git stash</p>
+<ul>
+<li><h4 id="设置保存名"><a href="#设置保存名" class="headerlink" title="设置保存名"></a>设置保存名</h4></li>
+</ul>
+<p>git stash save “stashName”</p>
+<ul>
+<li><h4 id="查看暂存列表"><a href="#查看暂存列表" class="headerlink" title="查看暂存列表"></a>查看暂存列表</h4></li>
+</ul>
+<p>git stash list</p>
+<ul>
+<li><h4 id="恢复最近一次暂存，从暂存列表中删除"><a href="#恢复最近一次暂存，从暂存列表中删除" class="headerlink" title="恢复最近一次暂存，从暂存列表中删除"></a>恢复最近一次暂存，从暂存列表中删除</h4></li>
+</ul>
+<p>git stash pop</p>
+<ul>
+<li><h4 id="应用某一次暂存，暂存列表中不删除"><a href="#应用某一次暂存，暂存列表中不删除" class="headerlink" title="应用某一次暂存，暂存列表中不删除"></a>应用某一次暂存，暂存列表中不删除</h4></li>
+</ul>
+<p>git stash aplly “stashName”</p>
+<hr>
+<h3 id="回退功能"><a href="#回退功能" class="headerlink" title="回退功能"></a>回退功能</h3><ul>
+<li><h4 id="回退到指定版本"><a href="#回退到指定版本" class="headerlink" title="回退到指定版本"></a>回退到指定版本</h4></li>
+</ul>
+<p>git reset –hard “commit id”</p>
+<hr>
+<h3 id="分支对比"><a href="#分支对比" class="headerlink" title="分支对比"></a>分支对比</h3><ul>
+<li><h4 id="对比两个分支不同"><a href="#对比两个分支不同" class="headerlink" title="对比两个分支不同"></a>对比两个分支不同</h4></li>
+</ul>
+<p>git log dev…master</p>
+<ul>
+<li><h4 id="对比两个分支提交的不同"><a href="#对比两个分支提交的不同" class="headerlink" title="对比两个分支提交的不同"></a>对比两个分支提交的不同</h4></li>
+</ul>
+<p>git log –left-right dev…master</p>
+<ul>
+<li><h4 id="一个分支比另一个分支多"><a href="#一个分支比另一个分支多" class="headerlink" title="一个分支比另一个分支多"></a>一个分支比另一个分支多</h4></li>
+</ul>
+<p>git log dev..master</p>
+<ul>
+<li><h4 id="一个分支有另一个分支没有"><a href="#一个分支有另一个分支没有" class="headerlink" title="一个分支有另一个分支没有"></a>一个分支有另一个分支没有</h4></li>
+</ul>
+<p>git log dev ^master</p>
+<hr>
+<h3 id="rebase功能-合并本地仓库的多个commit-不要修改已经提交到远程仓库的commit"><a href="#rebase功能-合并本地仓库的多个commit-不要修改已经提交到远程仓库的commit" class="headerlink" title="rebase功能(合并本地仓库的多个commit,不要修改已经提交到远程仓库的commit)"></a>rebase功能(合并本地仓库的多个commit,不要修改已经提交到远程仓库的commit)</h3><ul>
+<li><h4 id="合并本地3个commit"><a href="#合并本地3个commit" class="headerlink" title="合并本地3个commit"></a>合并本地3个commit</h4></li>
+</ul>
+<p>git rebase -i HEAD~3 </p>
+<h1 id="三-NodeJs"><a href="#三-NodeJs" class="headerlink" title="三:NodeJs"></a>三:NodeJs</h1><h3 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h3><ul>
+<li><h4 id="新建一个页面"><a href="#新建一个页面" class="headerlink" title="新建一个页面"></a>新建一个页面</h4></li>
+</ul>
+<p>hexo new “pageName”</p>
+<ul>
+<li><h4 id="新建一个草稿"><a href="#新建一个草稿" class="headerlink" title="新建一个草稿"></a>新建一个草稿</h4></li>
+</ul>
+<p>hexo new draft “draftName”</p>
+<ul>
+<li><h4 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h4></li>
+</ul>
+<p>hexo generate&#x2F;hexo g</p>
+<ul>
+<li><h4 id="启动hexo服务"><a href="#启动hexo服务" class="headerlink" title="启动hexo服务"></a>启动hexo服务</h4></li>
+</ul>
+<p>hexo server&#x2F;hexo s</p>
+<ul>
+<li><h5 id="部署发布"><a href="#部署发布" class="headerlink" title="部署发布"></a>部署发布</h5></li>
+</ul>
+<p>hexo deploy&#x2F;hexo d</p>
+<hr>
+<h1 id="四-Java"><a href="#四-Java" class="headerlink" title="四:Java"></a>四:Java</h1><ul>
+<li><h4 id="查看进程状态"><a href="#查看进程状态" class="headerlink" title="查看进程状态"></a>查看进程状态</h4></li>
+</ul>
+<p>jstack pid</p>
+<ul>
+<li><h4 id="查看当前堆中的各个对象的数量和大小-增加live只打印活跃的对象"><a href="#查看当前堆中的各个对象的数量和大小-增加live只打印活跃的对象" class="headerlink" title="查看当前堆中的各个对象的数量和大小(增加live只打印活跃的对象)"></a>查看当前堆中的各个对象的数量和大小(增加live只打印活跃的对象)</h4></li>
+</ul>
+<p>jmap -histo[:live] <pid></p>
+<ul>
+<li><h4 id="查看java堆的配置情况和使用的GC算法"><a href="#查看java堆的配置情况和使用的GC算法" class="headerlink" title="查看java堆的配置情况和使用的GC算法"></a>查看java堆的配置情况和使用的GC算法</h4></li>
+</ul>
+<p>jmap -heap <pid></p>
+<ul>
+<li><h4 id="查看等待执行finalize方法的对象"><a href="#查看等待执行finalize方法的对象" class="headerlink" title="查看等待执行finalize方法的对象"></a>查看等待执行finalize方法的对象</h4></li>
+</ul>
+<p>jmap -finalizerinfo <pid></p>
+<ul>
+<li><h4 id="dump当前堆的对象-增加live只打印活跃的对象"><a href="#dump当前堆的对象-增加live只打印活跃的对象" class="headerlink" title="dump当前堆的对象(增加live只打印活跃的对象)"></a>dump当前堆的对象(增加live只打印活跃的对象)</h4></li>
+</ul>
+<p>jmap -dump:[live,]format&#x3D;b,file&#x3D;<filename> <pid></p>
+<hr>
+<h3 id="jar命令"><a href="#jar命令" class="headerlink" title="jar命令"></a>jar命令</h3><ul>
+<li><h4 id="更新jar包中的类"><a href="#更新jar包中的类" class="headerlink" title="更新jar包中的类"></a>更新jar包中的类</h4></li>
+</ul>
+<p>jar -uvf jarName dirName&#x2F;className.class</p>
+<hr>
+<h1 id="五-Linux"><a href="#五-Linux" class="headerlink" title="五:Linux"></a>五:Linux</h1><h3 id="文件安装"><a href="#文件安装" class="headerlink" title="文件安装"></a>文件安装</h3><ul>
+<li><h4 id="安装deb文件"><a href="#安装deb文件" class="headerlink" title="安装deb文件"></a>安装deb文件</h4></li>
+</ul>
+<p>dpkg -i &lt;package.deb&gt;</p>
+<ul>
+<li><h4 id="移除一个已安装的包裹"><a href="#移除一个已安装的包裹" class="headerlink" title="移除一个已安装的包裹"></a>移除一个已安装的包裹</h4></li>
+</ul>
+<p>dpkg -r <package></p>
+<ul>
+<li><h4 id="安装rz"><a href="#安装rz" class="headerlink" title="安装rz"></a>安装rz</h4></li>
+</ul>
+<p>yum install lrzsz  -y</p>
+<hr>
+<h3 id="性能分析"><a href="#性能分析" class="headerlink" title="性能分析"></a>性能分析</h3><ul>
+<li><h4 id="查看进程cpu，内存使用率"><a href="#查看进程cpu，内存使用率" class="headerlink" title="查看进程cpu，内存使用率"></a>查看进程cpu，内存使用率</h4></li>
+</ul>
+<p>top</p>
+<ul>
+<li><h4 id="查看进程下各个线程的cpu使用情况"><a href="#查看进程下各个线程的cpu使用情况" class="headerlink" title="查看进程下各个线程的cpu使用情况"></a>查看进程下各个线程的cpu使用情况</h4></li>
+</ul>
+<p>top -Hp pid</p>
+<ul>
+<li><h4 id="查看端口连接人数"><a href="#查看端口连接人数" class="headerlink" title="查看端口连接人数:"></a>查看端口连接人数:</h4></li>
+</ul>
+<p>netstat -na | grep ESTAB | grep 8080 | wc -l</p>
+<ul>
+<li><h4 id="查看网络信息-每秒统计一次"><a href="#查看网络信息-每秒统计一次" class="headerlink" title="查看网络信息  每秒统计一次:"></a>查看网络信息  每秒统计一次:</h4></li>
+</ul>
+<p>sar -n TCP,ETCP 1</p>
+<hr>
+<h3 id="远程登录"><a href="#远程登录" class="headerlink" title="远程登录"></a>远程登录</h3><ul>
+<li><h4 id="管理远程主机，可做mysql，redis服务器的连接测试"><a href="#管理远程主机，可做mysql，redis服务器的连接测试" class="headerlink" title="管理远程主机，可做mysql，redis服务器的连接测试"></a>管理远程主机，可做mysql，redis服务器的连接测试</h4></li>
+</ul>
+<p>telent ip port</p>
+<ul>
+<li><h4 id="远程登录，免密码登录"><a href="#远程登录，免密码登录" class="headerlink" title="远程登录，免密码登录"></a>远程登录，免密码登录</h4></li>
+</ul>
+<p>ssh user@ip</p>
+<ul>
+<li><h4 id="向远程主机发布命令"><a href="#向远程主机发布命令" class="headerlink" title="向远程主机发布命令"></a>向远程主机发布命令</h4></li>
+</ul>
+<p>ssh user@ip “command”</p>
+<ul>
+<li><h4 id="向远程服务器发布文件"><a href="#向远程服务器发布文件" class="headerlink" title="向远程服务器发布文件"></a>向远程服务器发布文件</h4></li>
+</ul>
+<p>scp localfile user@ip:folder</p>
+<ul>
+<li><h4 id="向远程服务器发布目录"><a href="#向远程服务器发布目录" class="headerlink" title="向远程服务器发布目录"></a>向远程服务器发布目录</h4></li>
+</ul>
+<p>scp -r localfolder user@ip:folder</p>
+<hr>
+<h3 id="定时任务"><a href="#定时任务" class="headerlink" title="定时任务"></a>定时任务</h3><ul>
+<li><h4 id="添加定时任务"><a href="#添加定时任务" class="headerlink" title="添加定时任务"></a>添加定时任务</h4></li>
+</ul>
+<p>crontab -e</p>
+<ul>
+<li><h4 id="展示所有定时任务"><a href="#展示所有定时任务" class="headerlink" title="展示所有定时任务"></a>展示所有定时任务</h4></li>
+</ul>
+<p>crontab -l</p>
+<ul>
+<li><h4 id="删除定时任务"><a href="#删除定时任务" class="headerlink" title="删除定时任务"></a>删除定时任务</h4></li>
+</ul>
+<p>crontab -r</p>
+<hr>
+<h1 id="六-Storm"><a href="#六-Storm" class="headerlink" title="六:Storm"></a>六:Storm</h1><ul>
+<li><h4 id="启动ui界面-在nimbus节点上使用"><a href="#启动ui界面-在nimbus节点上使用" class="headerlink" title="启动ui界面,在nimbus节点上使用"></a>启动ui界面,在nimbus节点上使用</h4></li>
+</ul>
+<p>storm ui</p>
+<ul>
+<li><h4 id="启动nimbus-在nimbus节点上使用"><a href="#启动nimbus-在nimbus节点上使用" class="headerlink" title="启动nimbus,在nimbus节点上使用"></a>启动nimbus,在nimbus节点上使用</h4></li>
+</ul>
+<p>storm nimbus</p>
+<ul>
+<li><h4 id="启动supervisor-在supervisor节点使用"><a href="#启动supervisor-在supervisor节点使用" class="headerlink" title="启动supervisor,在supervisor节点使用"></a>启动supervisor,在supervisor节点使用</h4></li>
+</ul>
+<p>storm supervisor</p>
+<ul>
+<li><h4 id="向集群提交拓扑"><a href="#向集群提交拓扑" class="headerlink" title="向集群提交拓扑"></a>向集群提交拓扑</h4></li>
+</ul>
+<p>storm jar [ topology_jar ]  [ topology_class ] [ topology_name]</p>
+<ul>
+<li><h4 id="关闭已经部署的-Topology"><a href="#关闭已经部署的-Topology" class="headerlink" title="关闭已经部署的 Topology"></a>关闭已经部署的 Topology</h4></li>
+</ul>
+<p>storm kill [ topology_name [- w wait_time]</p>
+<ul>
+<li><h4 id="停止特定的Topology的Spout发射Tuple"><a href="#停止特定的Topology的Spout发射Tuple" class="headerlink" title="停止特定的Topology的Spout发射Tuple"></a>停止特定的Topology的Spout发射Tuple</h4></li>
+</ul>
+<p>storm deactivate [topology_name]</p>
+<ul>
+<li><h4 id="重新恢复特定Topology的Spout发射Tuple"><a href="#重新恢复特定Topology的Spout发射Tuple" class="headerlink" title="重新恢复特定Topology的Spout发射Tuple"></a>重新恢复特定Topology的Spout发射Tuple</h4></li>
+</ul>
+<p>storm activate [topology_name]</p>
+<ul>
+<li><h4 id="指示Storm在集群的Worker之间重新平均分派任务不需要关闭或者重新提交现有的Topology-一个新的Supervisor节点添加到一个集群中-就需要执行这个命令"><a href="#指示Storm在集群的Worker之间重新平均分派任务不需要关闭或者重新提交现有的Topology-一个新的Supervisor节点添加到一个集群中-就需要执行这个命令" class="headerlink" title="指示Storm在集群的Worker之间重新平均分派任务不需要关闭或者重新提交现有的Topology,一个新的Supervisor节点添加到一个集群中,就需要执行这个命令"></a>指示Storm在集群的Worker之间重新平均分派任务不需要关闭或者重新提交现有的Topology,一个新的Supervisor节点添加到一个集群中,就需要执行这个命令</h4></li>
+</ul>
+<p>storm rebalance [topology_name] [-w wait_time] [-n worker_count] [-e component_name&#x3D;executer_count]</p>
+<hr>
+<h1 id="七-adb命令-Android调试工具"><a href="#七-adb命令-Android调试工具" class="headerlink" title="七:adb命令(Android调试工具)"></a>七:adb命令(Android调试工具)</h1><ul>
+<li><h4 id="查看当前连接的设备"><a href="#查看当前连接的设备" class="headerlink" title="查看当前连接的设备"></a>查看当前连接的设备</h4></li>
+</ul>
+<p>adb devices</p>
+<ul>
+<li><h4 id="连接设备"><a href="#连接设备" class="headerlink" title="连接设备"></a>连接设备</h4></li>
+</ul>
+<p>adb connect ip:port</p>
+<hr>
+<h1 id="八-Python"><a href="#八-Python" class="headerlink" title="八:Python"></a>八:Python</h1><h3 id="包管理工具-pip"><a href="#包管理工具-pip" class="headerlink" title="包管理工具(pip)"></a>包管理工具(pip)</h3><ul>
+<li><h4 id="下载最新版本的包"><a href="#下载最新版本的包" class="headerlink" title="下载最新版本的包"></a>下载最新版本的包</h4></li>
+</ul>
+<p>pip install packageName</p>
+<ul>
+<li><h4 id="下载指定版本的包"><a href="#下载指定版本的包" class="headerlink" title="下载指定版本的包"></a>下载指定版本的包</h4></li>
+</ul>
+<p>pip install packageName&#x3D;version</p>
+<ul>
+<li><h4 id="下载最小版本"><a href="#下载最小版本" class="headerlink" title="下载最小版本"></a>下载最小版本</h4></li>
+</ul>
+<p>pip install ‘packageName&gt;&#x3D;version’</p>
+<ul>
+<li><h4 id="升级包"><a href="#升级包" class="headerlink" title="升级包"></a>升级包</h4></li>
+</ul>
+<p>pip install –upgrade packageName</p>
+<ul>
+<li><h4 id="卸载包"><a href="#卸载包" class="headerlink" title="卸载包"></a>卸载包</h4></li>
+</ul>
+<p>pip uninstall packageName</p>
+<ul>
+<li><h4 id="搜索包"><a href="#搜索包" class="headerlink" title="搜索包"></a>搜索包</h4></li>
+</ul>
+<p>pip search packageName</p>
+<ul>
+<li><h4 id="列出已安装的包"><a href="#列出已安装的包" class="headerlink" title="列出已安装的包"></a>列出已安装的包</h4></li>
+</ul>
+<p>pip list</p>
+<ul>
+<li><h4 id="查看可升级的包"><a href="#查看可升级的包" class="headerlink" title="查看可升级的包"></a>查看可升级的包</h4></li>
+</ul>
+<p>pip list -o</p>
+<ul>
+<li><h4 id="显示安装包信息"><a href="#显示安装包信息" class="headerlink" title="显示安装包信息"></a>显示安装包信息</h4></li>
+</ul>
+<p>pip show</p>
+<ul>
+<li><h4 id="查看指定包的详细信息"><a href="#查看指定包的详细信息" class="headerlink" title="查看指定包的详细信息"></a>查看指定包的详细信息</h4></li>
+</ul>
+<p>pip show -f packageName</p>
+<h3 id="scrapy"><a href="#scrapy" class="headerlink" title="scrapy"></a>scrapy</h3><ul>
+<li><h4 id="查看命令的详细信息"><a href="#查看命令的详细信息" class="headerlink" title="查看命令的详细信息"></a>查看命令的详细信息</h4></li>
+</ul>
+<p>scrapy command -h</p>
+<ul>
+<li><h4 id="创建一个scrapy项目"><a href="#创建一个scrapy项目" class="headerlink" title="创建一个scrapy项目"></a>创建一个scrapy项目</h4></li>
+</ul>
+<p>scrapy startproject project_name</p>
+<ul>
+<li><h4 id="创建一个spider"><a href="#创建一个spider" class="headerlink" title="创建一个spider"></a>创建一个spider</h4></li>
+</ul>
+<p>scrapy genspider spider_name mydomain.com</p>
+<ul>
+<li><h4 id="运行一个spider"><a href="#运行一个spider" class="headerlink" title="运行一个spider"></a>运行一个spider</h4></li>
+</ul>
+<p>scrapy crawl spider_name</p>
+<hr>
+<h1 id="九-Arthas"><a href="#九-Arthas" class="headerlink" title="九:Arthas"></a>九:Arthas</h1><ul>
+<li><h4 id="方法内部调用路径-并输出方法路径上的每个节点上耗时"><a href="#方法内部调用路径-并输出方法路径上的每个节点上耗时" class="headerlink" title="方法内部调用路径,并输出方法路径上的每个节点上耗时"></a>方法内部调用路径,并输出方法路径上的每个节点上耗时</h4></li>
+</ul>
+<p>trace com.xxx.ClassName methodName</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag"># 工具</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/08/Git1/" rel="next" title="Git系列之解决合并分支冲突">
+                <i class="fa fa-chevron-left"></i> Git系列之解决合并分支冲突
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/27/Maven2/" rel="prev" title="Maven系列之替换jar包中的类">
+                Maven系列之替换jar包中的类 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div id="gitalk-container"></div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/zdg.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zdg39" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:zhudg39@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80-%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.</span> <span class="nav-text">一:数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MySql"><span class="nav-number">1.0.1.</span> <span class="nav-text">MySql</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">连接数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E5%AD%97%E7%AC%A6%E9%9B%86"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">设置字符集</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#show%E5%91%BD%E4%BB%A4"><span class="nav-number">1.0.2.</span> <span class="nav-text">show命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E7%B3%BB%E7%BB%9F%E5%8F%98%E9%87%8F%E7%9A%84%E5%90%8D%E7%A7%B0%E5%92%8C%E5%80%BC"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">显示系统变量的名称和值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E4%B8%80%E4%BA%9B%E7%B3%BB%E7%BB%9F%E7%89%B9%E5%AE%9A%E8%B5%84%E6%BA%90%E7%9A%84%E4%BF%A1%E6%81%AF"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">显示一些系统特定资源的信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E7%B3%BB%E7%BB%9F%E4%B8%AD%E6%AD%A3%E5%9C%A8%E8%BF%90%E8%A1%8C%E7%9A%84%E6%89%80%E6%9C%89%E8%BF%9B%E7%A8%8B"><span class="nav-number">1.0.2.3.</span> <span class="nav-text">显示系统中正在运行的所有进程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E5%BD%93%E5%89%8D%E4%BC%9A%E8%AF%9D%E8%AF%AD%E5%8F%A5-%E9%9C%80%E8%A6%81%E4%BD%BF%E7%94%A8SET-profiling-x3D-1%E5%BC%80%E5%90%AFprifile"><span class="nav-number">1.0.2.4.</span> <span class="nav-text">显示当前会话语句(需要使用SET profiling &#x3D; 1开启prifile)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E8%AF%AD%E5%8F%A5%E5%B7%A5%E4%BD%9C%E6%83%85%E5%86%B5%E5%92%8C%E6%B6%88%E8%80%97%E6%97%B6%E9%97%B4%E6%83%85%E5%86%B5"><span class="nav-number">1.0.2.5.</span> <span class="nav-text">显示语句工作情况和消耗时间情况</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis"><span class="nav-number">1.0.3.</span> <span class="nav-text">Redis</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93-1"><span class="nav-number">1.0.3.1.</span> <span class="nav-text">连接数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%89%80%E6%9C%89%E5%8F%AF%E7%94%A8%E7%9A%84key"><span class="nav-number">1.0.3.2.</span> <span class="nav-text">查询所有可用的key</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.0.3.3.</span> <span class="nav-text">选择数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90-info%E5%91%BD%E4%BB%A4"><span class="nav-number">1.0.3.4.</span> <span class="nav-text">内存分析(info命令)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%91%E6%9C%89%E5%BA%8F%E9%9B%86%E5%90%88%E6%B7%BB%E5%8A%A0%E5%85%83%E7%B4%A0"><span class="nav-number">1.0.3.5.</span> <span class="nav-text">向有序集合添加元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%9C%89%E5%BA%8F%E9%9B%86%E5%90%88%E6%9F%90%E4%B8%AA%E5%85%83%E7%B4%A0%E7%9A%84%E5%88%86%E6%95%B0"><span class="nav-number">1.0.3.6.</span> <span class="nav-text">查看有序集合某个元素的分数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%B1%E9%AB%98%E5%88%B0%E4%BD%8E%E6%9F%A5%E7%9C%8B%E6%9C%89%E5%BA%8F%E9%9B%86%E5%90%88%E7%9A%84id-0-1%E4%BB%A3%E8%A1%A8%E5%85%83%E7%B4%A0%E4%B8%8B%E6%A0%87"><span class="nav-number">1.0.3.7.</span> <span class="nav-text">由高到低查看有序集合的id(0,-1代表元素下标)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%B1%E9%AB%98%E5%88%B0%E4%BD%8E%E6%9F%A5%E7%9C%8B%E6%9C%89%E5%BA%8F%E9%9B%86%E5%90%88%E7%9A%84id%E5%B9%B6%E4%B8%94%E5%B8%A6%E4%B8%8A%E5%88%86%E6%95%B0-0-1%E4%BB%A3%E8%A1%A8%E5%85%83%E7%B4%A0%E4%B8%8B%E6%A0%87"><span class="nav-number">1.0.3.8.</span> <span class="nav-text">由高到低查看有序集合的id并且带上分数(0,-1代表元素下标)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%B1%E4%BD%8E%E5%88%B0%E9%AB%98%E6%9F%A5%E7%9C%8B%E6%9C%89%E5%BA%8F%E9%9B%86%E5%90%88%E7%9A%84id-0-1%E4%BB%A3%E8%A1%A8%E5%85%83%E7%B4%A0%E4%B8%8B%E6%A0%87"><span class="nav-number">1.0.3.9.</span> <span class="nav-text">由低到高查看有序集合的id(0,-1代表元素下标)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%B1%E4%BD%8E%E5%88%B0%E9%AB%98%E6%9F%A5%E7%9C%8B%E6%9C%89%E5%BA%8F%E9%9B%86%E5%90%88%E7%9A%84id%E5%B9%B6%E4%B8%94%E5%B8%A6%E4%B8%8A%E5%88%86%E6%95%B0-0-1%E4%BB%A3%E8%A1%A8%E5%85%83%E7%B4%A0%E4%B8%8B%E6%A0%87"><span class="nav-number">1.0.3.10.</span> <span class="nav-text">由低到高查看有序集合的id并且带上分数(0,-1代表元素下标)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E6%9F%90%E4%B8%AA%E5%85%83%E7%B4%A0%E7%9A%84%E6%8E%92%E8%A1%8C"><span class="nav-number">1.0.3.11.</span> <span class="nav-text">获取某个元素的排行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0%E6%9F%90%E4%B8%AA%E5%85%83%E7%B4%A0%E7%9A%84%E5%88%86%E6%95%B0-%E5%85%83%E7%B4%A0%E4%B8%8D%E5%AD%98%E5%9C%A8%E9%BB%98%E8%AE%A4%E5%88%9D%E5%A7%8B%E5%80%BC%E4%B8%BA0"><span class="nav-number">1.0.3.12.</span> <span class="nav-text">增加某个元素的分数,元素不存在默认初始值为0</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%9F%90%E4%B8%AA%E5%85%83%E7%B4%A0"><span class="nav-number">1.0.3.13.</span> <span class="nav-text">删除某个元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%9C%89%E5%BA%8F%E9%9B%86%E5%90%88"><span class="nav-number">1.0.3.14.</span> <span class="nav-text">删除有序集合</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MongoDB"><span class="nav-number">1.0.4.</span> <span class="nav-text">MongoDB</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E9%BB%98%E8%AE%A4%E7%AB%AF%E5%8F%A3%E8%BF%9E%E6%8E%A5MongoDB"><span class="nav-number">1.0.4.1.</span> <span class="nav-text">使用默认端口连接MongoDB</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5MongoDB%E5%B9%B6%E6%8C%87%E5%AE%9A%E7%AB%AF%E5%8F%A3"><span class="nav-number">1.0.4.2.</span> <span class="nav-text">连接MongoDB并指定端口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9A%84MongoDB%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.0.4.3.</span> <span class="nav-text">连接到指定的MongoDB数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%87%E5%AE%9A%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E5%AF%86%E7%A0%81%E8%BF%9E%E6%8E%A5%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9A%84MongoDB%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.0.4.4.</span> <span class="nav-text">指定用户名和密码连接到指定的MongoDB数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%BC%E5%87%BA%E6%95%B0%E6%8D%AE-%E2%80%93type%E5%90%8E%E6%8E%A5json%E6%88%96cvs%E6%96%87%E4%BB%B6%EF%BC%8C-f%E5%90%8E%E6%8E%A5%E5%AD%97%E6%AE%B5%E5%8F%8C%E5%BC%95%E5%8F%B7%E5%86%85%E7%94%A8%E9%80%97%E5%8F%B7%E9%9A%94%E5%BC%80"><span class="nav-number">1.0.4.5.</span> <span class="nav-text">导出数据(–type后接json或cvs文件，-f后接字段双引号内用逗号隔开)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE-%E2%80%93headerline-%E5%A6%82%E6%9E%9C%E5%AF%BC%E5%85%A5%E7%9A%84%E6%A0%BC%E5%BC%8F%E6%98%AFcsv%EF%BC%8C%E5%88%99%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8%E7%AC%AC%E4%B8%80%E8%A1%8C%E7%9A%84%E6%A0%87%E9%A2%98%E4%BD%9C%E4%B8%BA%E5%AF%BC%E5%85%A5%E7%9A%84%E5%AD%97%E6%AE%B5%EF%BC%8C%E5%85%B6%E4%BB%96%E5%90%8C%E5%AF%BC%E5%87%BA%E6%95%B0%E6%8D%AE"><span class="nav-number">1.0.4.6.</span> <span class="nav-text">导入数据(–headerline 如果导入的格式是csv，则可以使用第一行的标题作为导入的字段，其他同导出数据)</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C-Git"><span class="nav-number">2.</span> <span class="nav-text">二:Git</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#stash%E5%8A%9F%E8%83%BD"><span class="nav-number">2.0.1.</span> <span class="nav-text">stash功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9A%82%E5%AD%98-%E4%BF%9D%E5%AD%98%E5%9C%A8git%E6%95%B4%E4%B8%AA%E6%A0%88%E4%B8%AD"><span class="nav-number">2.0.1.1.</span> <span class="nav-text">暂存(保存在git整个栈中)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%BF%9D%E5%AD%98%E5%90%8D"><span class="nav-number">2.0.1.2.</span> <span class="nav-text">设置保存名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%9A%82%E5%AD%98%E5%88%97%E8%A1%A8"><span class="nav-number">2.0.1.3.</span> <span class="nav-text">查看暂存列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%81%A2%E5%A4%8D%E6%9C%80%E8%BF%91%E4%B8%80%E6%AC%A1%E6%9A%82%E5%AD%98%EF%BC%8C%E4%BB%8E%E6%9A%82%E5%AD%98%E5%88%97%E8%A1%A8%E4%B8%AD%E5%88%A0%E9%99%A4"><span class="nav-number">2.0.1.4.</span> <span class="nav-text">恢复最近一次暂存，从暂存列表中删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E6%9F%90%E4%B8%80%E6%AC%A1%E6%9A%82%E5%AD%98%EF%BC%8C%E6%9A%82%E5%AD%98%E5%88%97%E8%A1%A8%E4%B8%AD%E4%B8%8D%E5%88%A0%E9%99%A4"><span class="nav-number">2.0.1.5.</span> <span class="nav-text">应用某一次暂存，暂存列表中不删除</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E9%80%80%E5%8A%9F%E8%83%BD"><span class="nav-number">2.0.2.</span> <span class="nav-text">回退功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%9E%E9%80%80%E5%88%B0%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC"><span class="nav-number">2.0.2.1.</span> <span class="nav-text">回退到指定版本</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E5%AF%B9%E6%AF%94"><span class="nav-number">2.0.3.</span> <span class="nav-text">分支对比</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%B9%E6%AF%94%E4%B8%A4%E4%B8%AA%E5%88%86%E6%94%AF%E4%B8%8D%E5%90%8C"><span class="nav-number">2.0.3.1.</span> <span class="nav-text">对比两个分支不同</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%B9%E6%AF%94%E4%B8%A4%E4%B8%AA%E5%88%86%E6%94%AF%E6%8F%90%E4%BA%A4%E7%9A%84%E4%B8%8D%E5%90%8C"><span class="nav-number">2.0.3.2.</span> <span class="nav-text">对比两个分支提交的不同</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E5%88%86%E6%94%AF%E6%AF%94%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%88%86%E6%94%AF%E5%A4%9A"><span class="nav-number">2.0.3.3.</span> <span class="nav-text">一个分支比另一个分支多</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E5%88%86%E6%94%AF%E6%9C%89%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%88%86%E6%94%AF%E6%B2%A1%E6%9C%89"><span class="nav-number">2.0.3.4.</span> <span class="nav-text">一个分支有另一个分支没有</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rebase%E5%8A%9F%E8%83%BD-%E5%90%88%E5%B9%B6%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E7%9A%84%E5%A4%9A%E4%B8%AAcommit-%E4%B8%8D%E8%A6%81%E4%BF%AE%E6%94%B9%E5%B7%B2%E7%BB%8F%E6%8F%90%E4%BA%A4%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84commit"><span class="nav-number">2.0.4.</span> <span class="nav-text">rebase功能(合并本地仓库的多个commit,不要修改已经提交到远程仓库的commit)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%88%E5%B9%B6%E6%9C%AC%E5%9C%B03%E4%B8%AAcommit"><span class="nav-number">2.0.4.1.</span> <span class="nav-text">合并本地3个commit</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89-NodeJs"><span class="nav-number">3.</span> <span class="nav-text">三:NodeJs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo"><span class="nav-number">3.0.1.</span> <span class="nav-text">hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2"><span class="nav-number">3.0.1.1.</span> <span class="nav-text">新建一个页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%8D%89%E7%A8%BF"><span class="nav-number">3.0.1.2.</span> <span class="nav-text">新建一个草稿</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6"><span class="nav-number">3.0.1.3.</span> <span class="nav-text">生成静态文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8hexo%E6%9C%8D%E5%8A%A1"><span class="nav-number">3.0.1.4.</span> <span class="nav-text">启动hexo服务</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%8F%91%E5%B8%83"><span class="nav-number">3.0.1.4.1.</span> <span class="nav-text">部署发布</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B-Java"><span class="nav-number">4.</span> <span class="nav-text">四:Java</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B%E7%8A%B6%E6%80%81"><span class="nav-number">4.0.0.1.</span> <span class="nav-text">查看进程状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E5%A0%86%E4%B8%AD%E7%9A%84%E5%90%84%E4%B8%AA%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%95%B0%E9%87%8F%E5%92%8C%E5%A4%A7%E5%B0%8F-%E5%A2%9E%E5%8A%A0live%E5%8F%AA%E6%89%93%E5%8D%B0%E6%B4%BB%E8%B7%83%E7%9A%84%E5%AF%B9%E8%B1%A1"><span class="nav-number">4.0.0.2.</span> <span class="nav-text">查看当前堆中的各个对象的数量和大小(增加live只打印活跃的对象)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8Bjava%E5%A0%86%E7%9A%84%E9%85%8D%E7%BD%AE%E6%83%85%E5%86%B5%E5%92%8C%E4%BD%BF%E7%94%A8%E7%9A%84GC%E7%AE%97%E6%B3%95"><span class="nav-number">4.0.0.3.</span> <span class="nav-text">查看java堆的配置情况和使用的GC算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E7%AD%89%E5%BE%85%E6%89%A7%E8%A1%8Cfinalize%E6%96%B9%E6%B3%95%E7%9A%84%E5%AF%B9%E8%B1%A1"><span class="nav-number">4.0.0.4.</span> <span class="nav-text">查看等待执行finalize方法的对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dump%E5%BD%93%E5%89%8D%E5%A0%86%E7%9A%84%E5%AF%B9%E8%B1%A1-%E5%A2%9E%E5%8A%A0live%E5%8F%AA%E6%89%93%E5%8D%B0%E6%B4%BB%E8%B7%83%E7%9A%84%E5%AF%B9%E8%B1%A1"><span class="nav-number">4.0.0.5.</span> <span class="nav-text">dump当前堆的对象(增加live只打印活跃的对象)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jar%E5%91%BD%E4%BB%A4"><span class="nav-number">4.0.1.</span> <span class="nav-text">jar命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0jar%E5%8C%85%E4%B8%AD%E7%9A%84%E7%B1%BB"><span class="nav-number">4.0.1.1.</span> <span class="nav-text">更新jar包中的类</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%94-Linux"><span class="nav-number">5.</span> <span class="nav-text">五:Linux</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="nav-number">5.0.1.</span> <span class="nav-text">文件安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85deb%E6%96%87%E4%BB%B6"><span class="nav-number">5.0.1.1.</span> <span class="nav-text">安装deb文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A7%BB%E9%99%A4%E4%B8%80%E4%B8%AA%E5%B7%B2%E5%AE%89%E8%A3%85%E7%9A%84%E5%8C%85%E8%A3%B9"><span class="nav-number">5.0.1.2.</span> <span class="nav-text">移除一个已安装的包裹</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85rz"><span class="nav-number">5.0.1.3.</span> <span class="nav-text">安装rz</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90"><span class="nav-number">5.0.2.</span> <span class="nav-text">性能分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8Bcpu%EF%BC%8C%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8%E7%8E%87"><span class="nav-number">5.0.2.1.</span> <span class="nav-text">查看进程cpu，内存使用率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B%E4%B8%8B%E5%90%84%E4%B8%AA%E7%BA%BF%E7%A8%8B%E7%9A%84cpu%E4%BD%BF%E7%94%A8%E6%83%85%E5%86%B5"><span class="nav-number">5.0.2.2.</span> <span class="nav-text">查看进程下各个线程的cpu使用情况</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E7%AB%AF%E5%8F%A3%E8%BF%9E%E6%8E%A5%E4%BA%BA%E6%95%B0"><span class="nav-number">5.0.2.3.</span> <span class="nav-text">查看端口连接人数:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E7%BD%91%E7%BB%9C%E4%BF%A1%E6%81%AF-%E6%AF%8F%E7%A7%92%E7%BB%9F%E8%AE%A1%E4%B8%80%E6%AC%A1"><span class="nav-number">5.0.2.4.</span> <span class="nav-text">查看网络信息  每秒统计一次:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95"><span class="nav-number">5.0.3.</span> <span class="nav-text">远程登录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%A1%E7%90%86%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%EF%BC%8C%E5%8F%AF%E5%81%9Amysql%EF%BC%8Credis%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E8%BF%9E%E6%8E%A5%E6%B5%8B%E8%AF%95"><span class="nav-number">5.0.3.1.</span> <span class="nav-text">管理远程主机，可做mysql，redis服务器的连接测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%EF%BC%8C%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95"><span class="nav-number">5.0.3.2.</span> <span class="nav-text">远程登录，免密码登录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%91%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E5%8F%91%E5%B8%83%E5%91%BD%E4%BB%A4"><span class="nav-number">5.0.3.3.</span> <span class="nav-text">向远程主机发布命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%91%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%8F%91%E5%B8%83%E6%96%87%E4%BB%B6"><span class="nav-number">5.0.3.4.</span> <span class="nav-text">向远程服务器发布文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%91%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%8F%91%E5%B8%83%E7%9B%AE%E5%BD%95"><span class="nav-number">5.0.3.5.</span> <span class="nav-text">向远程服务器发布目录</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1"><span class="nav-number">5.0.4.</span> <span class="nav-text">定时任务</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1"><span class="nav-number">5.0.4.1.</span> <span class="nav-text">添加定时任务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B1%95%E7%A4%BA%E6%89%80%E6%9C%89%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1"><span class="nav-number">5.0.4.2.</span> <span class="nav-text">展示所有定时任务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1"><span class="nav-number">5.0.4.3.</span> <span class="nav-text">删除定时任务</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AD-Storm"><span class="nav-number">6.</span> <span class="nav-text">六:Storm</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8ui%E7%95%8C%E9%9D%A2-%E5%9C%A8nimbus%E8%8A%82%E7%82%B9%E4%B8%8A%E4%BD%BF%E7%94%A8"><span class="nav-number">6.0.0.1.</span> <span class="nav-text">启动ui界面,在nimbus节点上使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8nimbus-%E5%9C%A8nimbus%E8%8A%82%E7%82%B9%E4%B8%8A%E4%BD%BF%E7%94%A8"><span class="nav-number">6.0.0.2.</span> <span class="nav-text">启动nimbus,在nimbus节点上使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8supervisor-%E5%9C%A8supervisor%E8%8A%82%E7%82%B9%E4%BD%BF%E7%94%A8"><span class="nav-number">6.0.0.3.</span> <span class="nav-text">启动supervisor,在supervisor节点使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%91%E9%9B%86%E7%BE%A4%E6%8F%90%E4%BA%A4%E6%8B%93%E6%89%91"><span class="nav-number">6.0.0.4.</span> <span class="nav-text">向集群提交拓扑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E9%97%AD%E5%B7%B2%E7%BB%8F%E9%83%A8%E7%BD%B2%E7%9A%84-Topology"><span class="nav-number">6.0.0.5.</span> <span class="nav-text">关闭已经部署的 Topology</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%81%9C%E6%AD%A2%E7%89%B9%E5%AE%9A%E7%9A%84Topology%E7%9A%84Spout%E5%8F%91%E5%B0%84Tuple"><span class="nav-number">6.0.0.6.</span> <span class="nav-text">停止特定的Topology的Spout发射Tuple</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%87%8D%E6%96%B0%E6%81%A2%E5%A4%8D%E7%89%B9%E5%AE%9ATopology%E7%9A%84Spout%E5%8F%91%E5%B0%84Tuple"><span class="nav-number">6.0.0.7.</span> <span class="nav-text">重新恢复特定Topology的Spout发射Tuple</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%87%E7%A4%BAStorm%E5%9C%A8%E9%9B%86%E7%BE%A4%E7%9A%84Worker%E4%B9%8B%E9%97%B4%E9%87%8D%E6%96%B0%E5%B9%B3%E5%9D%87%E5%88%86%E6%B4%BE%E4%BB%BB%E5%8A%A1%E4%B8%8D%E9%9C%80%E8%A6%81%E5%85%B3%E9%97%AD%E6%88%96%E8%80%85%E9%87%8D%E6%96%B0%E6%8F%90%E4%BA%A4%E7%8E%B0%E6%9C%89%E7%9A%84Topology-%E4%B8%80%E4%B8%AA%E6%96%B0%E7%9A%84Supervisor%E8%8A%82%E7%82%B9%E6%B7%BB%E5%8A%A0%E5%88%B0%E4%B8%80%E4%B8%AA%E9%9B%86%E7%BE%A4%E4%B8%AD-%E5%B0%B1%E9%9C%80%E8%A6%81%E6%89%A7%E8%A1%8C%E8%BF%99%E4%B8%AA%E5%91%BD%E4%BB%A4"><span class="nav-number">6.0.0.8.</span> <span class="nav-text">指示Storm在集群的Worker之间重新平均分派任务不需要关闭或者重新提交现有的Topology,一个新的Supervisor节点添加到一个集群中,就需要执行这个命令</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%83-adb%E5%91%BD%E4%BB%A4-Android%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7"><span class="nav-number">7.</span> <span class="nav-text">七:adb命令(Android调试工具)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E8%BF%9E%E6%8E%A5%E7%9A%84%E8%AE%BE%E5%A4%87"><span class="nav-number">7.0.0.1.</span> <span class="nav-text">查看当前连接的设备</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E8%AE%BE%E5%A4%87"><span class="nav-number">7.0.0.2.</span> <span class="nav-text">连接设备</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AB-Python"><span class="nav-number">8.</span> <span class="nav-text">八:Python</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7-pip"><span class="nav-number">8.0.1.</span> <span class="nav-text">包管理工具(pip)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC%E7%9A%84%E5%8C%85"><span class="nav-number">8.0.1.1.</span> <span class="nav-text">下载最新版本的包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC%E7%9A%84%E5%8C%85"><span class="nav-number">8.0.1.2.</span> <span class="nav-text">下载指定版本的包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E6%9C%80%E5%B0%8F%E7%89%88%E6%9C%AC"><span class="nav-number">8.0.1.3.</span> <span class="nav-text">下载最小版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7%E5%8C%85"><span class="nav-number">8.0.1.4.</span> <span class="nav-text">升级包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%B8%E8%BD%BD%E5%8C%85"><span class="nav-number">8.0.1.5.</span> <span class="nav-text">卸载包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2%E5%8C%85"><span class="nav-number">8.0.1.6.</span> <span class="nav-text">搜索包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%97%E5%87%BA%E5%B7%B2%E5%AE%89%E8%A3%85%E7%9A%84%E5%8C%85"><span class="nav-number">8.0.1.7.</span> <span class="nav-text">列出已安装的包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%8F%AF%E5%8D%87%E7%BA%A7%E7%9A%84%E5%8C%85"><span class="nav-number">8.0.1.8.</span> <span class="nav-text">查看可升级的包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E5%AE%89%E8%A3%85%E5%8C%85%E4%BF%A1%E6%81%AF"><span class="nav-number">8.0.1.9.</span> <span class="nav-text">显示安装包信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%8C%87%E5%AE%9A%E5%8C%85%E7%9A%84%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF"><span class="nav-number">8.0.1.10.</span> <span class="nav-text">查看指定包的详细信息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scrapy"><span class="nav-number">8.0.2.</span> <span class="nav-text">scrapy</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%91%BD%E4%BB%A4%E7%9A%84%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF"><span class="nav-number">8.0.2.1.</span> <span class="nav-text">查看命令的详细信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAscrapy%E9%A1%B9%E7%9B%AE"><span class="nav-number">8.0.2.2.</span> <span class="nav-text">创建一个scrapy项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAspider"><span class="nav-number">8.0.2.3.</span> <span class="nav-text">创建一个spider</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AAspider"><span class="nav-number">8.0.2.4.</span> <span class="nav-text">运行一个spider</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B9%9D-Arthas"><span class="nav-number">9.</span> <span class="nav-text">九:Arthas</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E5%86%85%E9%83%A8%E8%B0%83%E7%94%A8%E8%B7%AF%E5%BE%84-%E5%B9%B6%E8%BE%93%E5%87%BA%E6%96%B9%E6%B3%95%E8%B7%AF%E5%BE%84%E4%B8%8A%E7%9A%84%E6%AF%8F%E4%B8%AA%E8%8A%82%E7%82%B9%E4%B8%8A%E8%80%97%E6%97%B6"><span class="nav-number">9.0.0.1.</span> <span class="nav-text">方法内部调用路径,并输出方法路径上的每个节点上耗时</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zdg</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数&#58;</span>
+    
+    <span title="站点总字数">19.7k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '0700f039a1c0281ca949',
+          clientSecret: '230d67e4bae115fe966011594ece2ae418aea12c',
+          repo: 'zdg39.github.io',
+          owner: 'zdg39',
+          admin: ['zdg39'],
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')
+       </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
