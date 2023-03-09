@@ -15,18 +15,18 @@
 
 ### 🏠 [Homepage](https://github.com/zdg39/zdg39.github.io)
 
-## 分支Hexo和Master
+## 分支 Hexo 和 Master
 
-Hexo分支作为整个博客站点仓库 主目录下public目录为Master分支存储博客文章
+Hexo 分支作为整个博客站点仓库 主目录下 public 目录为 Master 分支存储博客文章
 
 ## 分布式存储
 
-首先克隆仓库hexo分支，安装nodejs和hexo，在仓库主目录下运行npm install命令，然后就可以使用hexo命令生成博客文章。
-切换到public目录下，和master分支建立连接，使用public目录作为仓库master分支
+首先克隆仓库 hexo 分支，安装 nodejs 和 hexo，在仓库主目录下运行 npm install 命令，然后就可以使用 hexo 命令生成博客文章。
+切换到 public 目录下，和 master 分支建立连接，使用 public 目录作为仓库 master 分支
 
 ## 问题总结
 
-### 1,next主题不能上传至git仓库中是因为在git中引用了子git仓库，可以使用以下命令。
+### 1,next 主题不能上传至 git 仓库中是因为在 git 中引用了子 git 仓库，可以使用以下命令。
 
 ```sh
 git ls-files --stage | grep 160000
@@ -35,13 +35,17 @@ git rm --cached themes/next
 
 ### 2,博文名称不能使用中文命名
 
-集成gittalk评论博文名称不能太长最好使用英文,中文转码后会变长很多则会出现Error: Validation Failed
+集成 gittalk 评论博文名称不能太长最好使用英文,中文转码后会变长很多则会出现 Error: Validation Failed
+
+### 3,关闭 jekyll 自动化发布
+
+GitHub Actions 发布后，我们在启用了 pages 后可以在 actions 界面中看到一条默认的 pages-build-deployment workflow，里面默认会使用 jekyll 来 build 页面，上传制品，然后进行 deploy 发布页面。如果需要关闭可以在 pages 根目录下创建 .nojekyll 文件。
 
 ## Author
 
 👤 **zdg &lt;zhudg39@gmail.com&gt;**
 
-* Github: [@zdg39](https://github.com/zdg39)
+- Github: [@zdg39](https://github.com/zdg39)
 
 ## 🤝 Contributing
 
@@ -56,5 +60,6 @@ Give a ⭐️ if this project helped you!
 Copyright © 2019 [zhudg39@gmail.com](https://github.com/zdg39).<br />
 This project is [MIT](https://github.com/zdg39/zdg39.github.io/blob/hexo/LICENSE) licensed.
 
-***
+---
+
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
