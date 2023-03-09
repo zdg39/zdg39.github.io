@@ -5,14 +5,14 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
-<meta name="google-site-verification" content="zSl0_oNmwxQDoDh-bVxcIbH8GxDdwd72ZIcV5zQ8Mas">
-<meta name="baidu-site-verification" content="AptwlA5feO">
+<meta name="google-site-verification" content="zSl0_oNmwxQDoDh-bVxcIbH8GxDdwd72ZIcV5zQ8Mas" />
+<meta name="baidu-site-verification" content="AptwlA5feO" />
 
 
   <script>
@@ -31,8 +31,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -51,7 +51,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -59,9 +59,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -79,13 +79,13 @@
 
 
 
-  <meta name="keywords" content="设计报告,">
+  <meta name="keywords" content="设计报告," />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Z-Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="Z-Blog" type="application/atom+xml" />
 
 
 
@@ -93,18 +93,18 @@
 
 
 <meta name="description" content="前言发布系统公告是app的常见功能，运营人员在后台管理系统发布一篇公告，用户在使用app时会有红点或数字提示有未读消息，点击进入公告消息列表页后再返回红点或数字消失。本文将介绍一些关于全量用户通知未读数系统的技术设计方案，以及他们各自的优缺点，如果有更多的想法欢迎补充讨论。本文为个人技术分享，可能有误望谅解 需求背景">
-<meta name="keywords" content="设计报告">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计报告|全量用户通知未读数系统设计">
 <meta property="og:url" content="http://yoursite.com/2020/12/05/design-report-system-notify-unread/index.html">
 <meta property="og:site_name" content="Z-Blog">
 <meta property="og:description" content="前言发布系统公告是app的常见功能，运营人员在后台管理系统发布一篇公告，用户在使用app时会有红点或数字提示有未读消息，点击进入公告消息列表页后再返回红点或数字消失。本文将介绍一些关于全量用户通知未读数系统的技术设计方案，以及他们各自的优缺点，如果有更多的想法欢迎补充讨论。本文为个人技术分享，可能有误望谅解 需求背景">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale">
 <meta property="og:image" content="http://yoursite.com/images/design-report/system-notify.jpg">
-<meta property="og:updated_time" content="2020-12-05T16:17:13.420Z">
+<meta property="article:published_time" content="2020-12-05T08:46:30.000Z">
+<meta property="article:modified_time" content="2023-03-08T05:03:14.872Z">
+<meta property="article:author" content="zdg">
+<meta property="article:tag" content="设计报告">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="设计报告|全量用户通知未读数系统设计">
-<meta name="twitter:description" content="前言发布系统公告是app的常见功能，运营人员在后台管理系统发布一篇公告，用户在使用app时会有红点或数字提示有未读消息，点击进入公告消息列表页后再返回红点或数字消失。本文将介绍一些关于全量用户通知未读数系统的技术设计方案，以及他们各自的优缺点，如果有更多的想法欢迎补充讨论。本文为个人技术分享，可能有误望谅解 需求背景">
 <meta name="twitter:image" content="http://yoursite.com/images/design-report/system-notify.jpg">
 
 
@@ -112,10 +112,10 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
+    root: '',
+    scheme: 'Gemini',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -135,7 +135,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/12/05/design-report-system-notify-unread/">
+  <link rel="canonical" href="http://yoursite.com/2020/12/05/design-report-system-notify-unread/"/>
 
 
 
@@ -151,7 +151,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -169,7 +169,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Z-Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -197,9 +197,9 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -207,9 +207,9 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
@@ -217,9 +217,9 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
@@ -227,9 +227,9 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -237,9 +237,9 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
@@ -252,7 +252,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             搜索
           </a>
@@ -273,7 +273,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -313,8 +315,8 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/12/05/design-report-system-notify-unread/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zdg">
-      <meta itemprop="description" content>
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/zdg.jpg">
     </span>
 
@@ -355,8 +357,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-12-06T00:17:13+08:00">
-                2020-12-06
+              <time title="更新于" itemprop="dateModified" datetime="2023-03-08T13:03:14+08:00">
+                2023-03-08
               </time>
             
           </span>
@@ -373,7 +375,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv">本文总阅读量
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
             </span>
           
 
@@ -388,7 +390,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,548 字
+                  1.5k 字
                 </span>
               
 
@@ -426,7 +428,8 @@
 
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>发布系统公告是app的常见功能，运营人员在后台管理系统发布一篇公告，用户在使用app时会有红点或数字提示有未读消息，点击进入公告消息列表页后再返回红点或数字消失。本文将介绍一些关于<strong>全量用户通知未读数系统</strong>的技术设计方案，以及他们各自的优缺点，如果有更多的想法欢迎补充讨论。<strong>本文为个人技术分享，可能有误望谅解</strong></p>
-<h2 id="需求背景"><a href="#需求背景" class="headerlink" title="需求背景"></a>需求背景</h2><a id="more"></a>
+<h2 id="需求背景"><a href="#需求背景" class="headerlink" title="需求背景"></a>需求背景</h2><span id="more"></span>
+
 <p>现要求为一款app增加查看系统发布公告历史记录功能，每个用户都可以进入历史记录列表页，未读的公告显示红点，已读的公告不显示红点，点击返回按钮再次进入列表页红点全部消失。</p>
 <h2 id="技术方案"><a href="#技术方案" class="headerlink" title="技术方案"></a>技术方案</h2><p>首先根据需求分析，功能特点是全量用户共享数据，读取的是同一份数据，但需要知道一条公告消息哪些用户是已读，哪些是未读。要实现这样的一个功能，大致是需要三个接口</p>
 <ul>
@@ -458,7 +461,7 @@
 <li>用户访问通知页面需要设置未读数为0，更新最近看过的通知为最新的一条消息id</li>
 <li>如果用户最新看过的消息id为空，可根据业务需求判断是否全为已读</li>
 </ul>
-<p><img src="/images/design-report/system-notify.jpg" alt></p>
+<p><img src="/images/design-report/system-notify.jpg"></p>
 <h4 id="优点-2"><a href="#优点-2" class="headerlink" title="优点"></a>优点</h4><ul>
 <li>数据存储量很小</li>
 <li>清空未读消息性能较高，只需要更新用户最新读取的消息id即可</li>
@@ -487,7 +490,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/设计报告/" rel="tag"># 设计报告</a>
+            <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%8A%A5%E5%91%8A/" rel="tag"># 设计报告</a>
           
         </div>
       
@@ -581,10 +584,12 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/images/zdg.jpg" alt="zdg">
+              <img class="site-author-image" itemprop="image"
+                src="/images/zdg.jpg"
+                alt="" />
             
-              <p class="site-author-name" itemprop="name">zdg</p>
-              <p class="site-description motion-element" itemprop="description">forever yong</p>
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
           <nav class="site-state motion-element">
@@ -592,7 +597,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
@@ -601,22 +606,13 @@
             
 
             
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
 
             
               
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -672,7 +668,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#需求背景"><span class="nav-number">2.</span> <span class="nav-text">需求背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#技术方案"><span class="nav-number">3.</span> <span class="nav-text">技术方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方案一：存储全量用户公告消息"><span class="nav-number">3.1.</span> <span class="nav-text">方案一：存储全量用户公告消息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#优点"><span class="nav-number">3.1.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺点"><span class="nav-number">3.1.2.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方案二：存储全量用户已读公告消息"><span class="nav-number">3.2.</span> <span class="nav-text">方案二：存储全量用户已读公告消息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#优点-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺点-1"><span class="nav-number">3.2.2.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方案三：存储全量用户最新读取公告消息-通用方案"><span class="nav-number">3.3.</span> <span class="nav-text">方案三：存储全量用户最新读取公告消息(通用方案)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#优点-2"><span class="nav-number">3.3.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺点-2"><span class="nav-number">3.3.2.</span> <span class="nav-text">缺点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">4.</span> <span class="nav-text">后记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9C%80%E6%B1%82%E8%83%8C%E6%99%AF"><span class="nav-number">2.</span> <span class="nav-text">需求背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E6%96%B9%E6%A1%88"><span class="nav-number">3.</span> <span class="nav-text">技术方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%A1%88%E4%B8%80%EF%BC%9A%E5%AD%98%E5%82%A8%E5%85%A8%E9%87%8F%E7%94%A8%E6%88%B7%E5%85%AC%E5%91%8A%E6%B6%88%E6%81%AF"><span class="nav-number">3.1.</span> <span class="nav-text">方案一：存储全量用户公告消息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9"><span class="nav-number">3.1.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9"><span class="nav-number">3.1.2.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%A1%88%E4%BA%8C%EF%BC%9A%E5%AD%98%E5%82%A8%E5%85%A8%E9%87%8F%E7%94%A8%E6%88%B7%E5%B7%B2%E8%AF%BB%E5%85%AC%E5%91%8A%E6%B6%88%E6%81%AF"><span class="nav-number">3.2.</span> <span class="nav-text">方案二：存储全量用户已读公告消息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-1"><span class="nav-number">3.2.2.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%A1%88%E4%B8%89%EF%BC%9A%E5%AD%98%E5%82%A8%E5%85%A8%E9%87%8F%E7%94%A8%E6%88%B7%E6%9C%80%E6%96%B0%E8%AF%BB%E5%8F%96%E5%85%AC%E5%91%8A%E6%B6%88%E6%81%AF-%E9%80%9A%E7%94%A8%E6%96%B9%E6%A1%88"><span class="nav-number">3.3.</span> <span class="nav-text">方案三：存储全量用户最新读取公告消息(通用方案)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-2"><span class="nav-number">3.3.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-2"><span class="nav-number">3.3.2.</span> <span class="nav-text">缺点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="nav-number">4.</span> <span class="nav-text">后记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>
@@ -692,7 +688,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -755,6 +751,8 @@
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
         
+          <span id="scrollpercent"><span>0</span>%</span>
+        
       </div>
     
 
@@ -789,6 +787,9 @@
 
 
 
+
+  
+  
 
 
 
@@ -834,6 +835,11 @@
     <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
   
 
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+  
+
 
   
 
@@ -846,6 +852,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

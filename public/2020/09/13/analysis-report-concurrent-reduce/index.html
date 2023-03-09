@@ -5,14 +5,14 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
-<meta name="google-site-verification" content="zSl0_oNmwxQDoDh-bVxcIbH8GxDdwd72ZIcV5zQ8Mas">
-<meta name="baidu-site-verification" content="AptwlA5feO">
+<meta name="google-site-verification" content="zSl0_oNmwxQDoDh-bVxcIbH8GxDdwd72ZIcV5zQ8Mas" />
+<meta name="baidu-site-verification" content="AptwlA5feO" />
 
 
   <script>
@@ -31,8 +31,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -51,7 +51,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -59,9 +59,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -79,13 +79,13 @@
 
 
 
-  <meta name="keywords" content="分析报告,">
+  <meta name="keywords" content="分析报告," />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Z-Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="Z-Blog" type="application/atom+xml" />
 
 
 
@@ -93,27 +93,27 @@
 
 
 <meta name="description" content="前言上周有天晚上笔者接到一个某知名互联网大厂的面试官打来的电话问最近看不看机会，想让我做一个笔试，由于自己也一直有在复习，所以就打算再试试面试机会。笔试题是一道多线程相关的编程题，要求在白板上使用面向对象的方式解决；在白板上写编程题总感觉没法发挥正常水平，题目类似的解决思路之前也在工作中遇见过或是看过类似的博客文章，最后做完题才发现自己理解错题意，没有多加思考。为了吸取经验教训，乘着这次机会总结一">
-<meta name="keywords" content="分析报告">
 <meta property="og:type" content="article">
 <meta property="og:title" content="分析报告|多线程并发扣减问题">
 <meta property="og:url" content="http://yoursite.com/2020/09/13/analysis-report-concurrent-reduce/index.html">
 <meta property="og:site_name" content="Z-Blog">
 <meta property="og:description" content="前言上周有天晚上笔者接到一个某知名互联网大厂的面试官打来的电话问最近看不看机会，想让我做一个笔试，由于自己也一直有在复习，所以就打算再试试面试机会。笔试题是一道多线程相关的编程题，要求在白板上使用面向对象的方式解决；在白板上写编程题总感觉没法发挥正常水平，题目类似的解决思路之前也在工作中遇见过或是看过类似的博客文章，最后做完题才发现自己理解错题意，没有多加思考。为了吸取经验教训，乘着这次机会总结一">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-11-02T06:39:45.987Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2020-09-13T06:25:31.000Z">
+<meta property="article:modified_time" content="2023-03-08T05:03:14.872Z">
+<meta property="article:author" content="zdg">
+<meta property="article:tag" content="分析报告">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分析报告|多线程并发扣减问题">
-<meta name="twitter:description" content="前言上周有天晚上笔者接到一个某知名互联网大厂的面试官打来的电话问最近看不看机会，想让我做一个笔试，由于自己也一直有在复习，所以就打算再试试面试机会。笔试题是一道多线程相关的编程题，要求在白板上使用面向对象的方式解决；在白板上写编程题总感觉没法发挥正常水平，题目类似的解决思路之前也在工作中遇见过或是看过类似的博客文章，最后做完题才发现自己理解错题意，没有多加思考。为了吸取经验教训，乘着这次机会总结一">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
+    root: '',
+    scheme: 'Gemini',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -133,7 +133,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/09/13/analysis-report-concurrent-reduce/">
+  <link rel="canonical" href="http://yoursite.com/2020/09/13/analysis-report-concurrent-reduce/"/>
 
 
 
@@ -149,7 +149,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -167,7 +167,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Z-Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -195,9 +195,9 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -205,9 +205,9 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
@@ -215,9 +215,9 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
@@ -225,9 +225,9 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -235,9 +235,9 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
@@ -250,7 +250,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             搜索
           </a>
@@ -271,7 +271,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -311,8 +313,8 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/13/analysis-report-concurrent-reduce/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zdg">
-      <meta itemprop="description" content>
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/zdg.jpg">
     </span>
 
@@ -353,8 +355,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-11-02T14:39:45+08:00">
-                2020-11-02
+              <time title="更新于" itemprop="dateModified" datetime="2023-03-08T13:03:14+08:00">
+                2023-03-08
               </time>
             
           </span>
@@ -371,7 +373,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv">本文总阅读量
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
             </span>
           
 
@@ -386,7 +388,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,451 字
+                  1.4k 字
                 </span>
               
 
@@ -402,7 +404,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6 分钟
+                  5 分钟
                 </span>
               
             </div>
@@ -424,13 +426,17 @@
 
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上周有天晚上笔者接到一个某知名互联网大厂的面试官打来的电话问最近看不看机会，想让我做一个笔试，由于自己也一直有在复习，所以就打算再试试面试机会。笔试题是一道多线程相关的编程题，要求在白板上使用面向对象的方式解决；在白板上写编程题总感觉没法发挥正常水平，题目类似的解决思路之前也在工作中遇见过或是看过类似的博客文章，最后做完题才发现自己理解错题意，没有多加思考。为了吸取经验教训，乘着这次机会总结一次相关问题。<strong>本文为问题总结,可能有误望谅解</strong>。</p>
-<h2 id="编程题"><a href="#编程题" class="headerlink" title="编程题"></a>编程题</h2><a id="more"></a>
-<p>编程题大致题意是：<strong>有一个数字9，然后线程A每次减2，线程B每次减3，这个数字不能减到小于0，如果数字不够线程减时则线程停止</strong>。<br>这道题需要注意的问题是不能将数字减到小于0，由此可以得到第一种解法，两个线程同步执行，线程A减完之后线程B再执行。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> count = <span class="number">9</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Solution solutoin = <span class="keyword">new</span> Solution();</span><br><span class="line">        <span class="keyword">new</span> Thread(<span class="keyword">new</span> Task(<span class="number">2</span>,solutoin)).start();</span><br><span class="line">        <span class="keyword">new</span> Thread(<span class="keyword">new</span> Task(<span class="number">3</span>,solutoin)).start();</span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">            ;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Task</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> num;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">final</span> Solution solutoin;</span><br><span class="line"></span><br><span class="line">        Task(<span class="keyword">int</span> num, Solution solutoin)&#123;</span><br><span class="line">            <span class="keyword">this</span>.num = num;</span><br><span class="line">            <span class="keyword">this</span>.solutoin = solutoin;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">while</span> (<span class="keyword">true</span>)&#123;</span><br><span class="line">                <span class="keyword">synchronized</span> (solutoin)&#123;</span><br><span class="line">                    System.out.println(Thread.currentThread().getName() + <span class="string">"减之前"</span> + solutoin.count);</span><br><span class="line">                    <span class="keyword">if</span>(solutoin.count &lt; num)&#123;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    solutoin.count -= num;</span><br><span class="line">                    System.out.println(Thread.currentThread().getName() + <span class="string">"减之后"</span> + solutoin.count);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>使用锁同步线程缺点也显而易见，多线程并发执行变成了多线程排队串行，性能差。第二种解法是使用原子类来解决<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> AtomicLong count = <span class="keyword">new</span> AtomicLong(<span class="number">9</span>);</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Solution solutoin = <span class="keyword">new</span> Solution();</span><br><span class="line">        <span class="keyword">new</span> Thread(<span class="keyword">new</span> Task(<span class="number">2</span>,solutoin)).start();</span><br><span class="line">        <span class="keyword">new</span> Thread(<span class="keyword">new</span> Task(<span class="number">3</span>,solutoin)).start();</span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">            ;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Task</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> num;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">final</span> Solution solutoin;</span><br><span class="line"></span><br><span class="line">        Task(<span class="keyword">int</span> num, Solution solutoin)&#123;</span><br><span class="line">            <span class="keyword">this</span>.num = num;</span><br><span class="line">            <span class="keyword">this</span>.solutoin = solutoin;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">while</span> (<span class="keyword">true</span>)&#123;</span><br><span class="line">                System.out.println(Thread.currentThread().getName() + <span class="string">"减之前"</span> + solutoin.count);</span><br><span class="line">                <span class="keyword">if</span>(solutoin.count.get() &lt; num)&#123;</span><br><span class="line">                    System.out.println(Thread.currentThread().getName() + <span class="string">"停止"</span> + solutoin.count);</span><br><span class="line">                    <span class="keyword">return</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                solutoin.count.addAndGet(-num);</span><br><span class="line">                System.out.println(Thread.currentThread().getName() + <span class="string">"减之后"</span> + solutoin.count);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="编程题"><a href="#编程题" class="headerlink" title="编程题"></a>编程题</h2><span id="more"></span>
+
+<p>编程题大致题意是：<strong>有一个数字9，然后线程A每次减2，线程B每次减3，这个数字不能减到小于0，如果数字不够线程减时则线程停止</strong>。<br>这道题需要注意的问题是不能将数字减到小于0，由此可以得到第一种解法，两个线程同步执行，线程A减完之后线程B再执行。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">9</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Solution</span> <span class="variable">solutoin</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Solution</span>();</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">Thread</span>(<span class="keyword">new</span> <span class="title class_">Task</span>(<span class="number">2</span>,solutoin)).start();</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">Thread</span>(<span class="keyword">new</span> <span class="title class_">Task</span>(<span class="number">3</span>,solutoin)).start();</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            ;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">Task</span> <span class="keyword">implements</span> <span class="title class_">Runnable</span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="type">int</span> num;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">final</span> Solution solutoin;</span><br><span class="line"></span><br><span class="line">        Task(<span class="type">int</span> num, Solution solutoin)&#123;</span><br><span class="line">            <span class="built_in">this</span>.num = num;</span><br><span class="line">            <span class="built_in">this</span>.solutoin = solutoin;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">            <span class="keyword">while</span> (<span class="literal">true</span>)&#123;</span><br><span class="line">                <span class="keyword">synchronized</span> (solutoin)&#123;</span><br><span class="line">                    System.out.println(Thread.currentThread().getName() + <span class="string">&quot;减之前&quot;</span> + solutoin.count);</span><br><span class="line">                    <span class="keyword">if</span>(solutoin.count &lt; num)&#123;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    solutoin.count -= num;</span><br><span class="line">                    System.out.println(Thread.currentThread().getName() + <span class="string">&quot;减之后&quot;</span> + solutoin.count);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用锁同步线程缺点也显而易见，多线程并发执行变成了多线程排队串行，性能差。第二种解法是使用原子类来解决</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="type">AtomicLong</span> <span class="variable">count</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AtomicLong</span>(<span class="number">9</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Solution</span> <span class="variable">solutoin</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Solution</span>();</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">Thread</span>(<span class="keyword">new</span> <span class="title class_">Task</span>(<span class="number">2</span>,solutoin)).start();</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">Thread</span>(<span class="keyword">new</span> <span class="title class_">Task</span>(<span class="number">3</span>,solutoin)).start();</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            ;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">Task</span> <span class="keyword">implements</span> <span class="title class_">Runnable</span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="type">int</span> num;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">final</span> Solution solutoin;</span><br><span class="line"></span><br><span class="line">        Task(<span class="type">int</span> num, Solution solutoin)&#123;</span><br><span class="line">            <span class="built_in">this</span>.num = num;</span><br><span class="line">            <span class="built_in">this</span>.solutoin = solutoin;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">            <span class="keyword">while</span> (<span class="literal">true</span>)&#123;</span><br><span class="line">                System.out.println(Thread.currentThread().getName() + <span class="string">&quot;减之前&quot;</span> + solutoin.count);</span><br><span class="line">                <span class="keyword">if</span>(solutoin.count.get() &lt; num)&#123;</span><br><span class="line">                    System.out.println(Thread.currentThread().getName() + <span class="string">&quot;停止&quot;</span> + solutoin.count);</span><br><span class="line">                    <span class="keyword">return</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                solutoin.count.addAndGet(-num);</span><br><span class="line">                System.out.println(Thread.currentThread().getName() + <span class="string">&quot;减之后&quot;</span> + solutoin.count);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>使用原子类AtomicLong来解决，然后这种方式还是存在问题，当两个线程都执行到if(solutoin.count.get() &lt; num)这行代码时，如果此时数字为3，两个线程分别执行 solutoin.count.addAndGet(-num)，此时数字减为-2，出现”库存超卖问题”。为了避免这个问题，再对代码做出修改，减之后判断结果是否小于0，如果小于0则回滚。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="keyword">true</span>)&#123;</span><br><span class="line">        System.out.println(Thread.currentThread().getName() + <span class="string">"减之前"</span> + solutoin.count);</span><br><span class="line">        <span class="comment">//修改,先减再判断，不足则回滚</span></span><br><span class="line">        <span class="keyword">if</span>(solutoin.count.addAndGet(-num) &lt; <span class="number">0</span>)&#123;</span><br><span class="line">            solutoin.count.addAndGet(num);</span><br><span class="line">            System.out.println(Thread.currentThread().getName() + <span class="string">"停止"</span> + solutoin.count);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(Thread.currentThread().getName() + <span class="string">"减之后"</span> + solutoin.count);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>)&#123;</span><br><span class="line">        System.out.println(Thread.currentThread().getName() + <span class="string">&quot;减之前&quot;</span> + solutoin.count);</span><br><span class="line">        <span class="comment">//修改,先减再判断，不足则回滚</span></span><br><span class="line">        <span class="keyword">if</span>(solutoin.count.addAndGet(-num) &lt; <span class="number">0</span>)&#123;</span><br><span class="line">            solutoin.count.addAndGet(num);</span><br><span class="line">            System.out.println(Thread.currentThread().getName() + <span class="string">&quot;停止&quot;</span> + solutoin.count);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(Thread.currentThread().getName() + <span class="string">&quot;减之后&quot;</span> + solutoin.count);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>使用这种方式可以避免”库存超卖问题”,但是又会带来新的问题，如果此时数字减为2，两个线程都执行到if(solutoin.count.addAndGet(-num) &lt; 0)，线程B将2减为-1，线程A将-1减为-3，线程B回滚数字为0并终止，线程A回滚数字为2并终止。此时数字为2，还是可以再让线程A执行一次，造成误差。</p>
-<p>为了解决”库存超卖问题”和避免误差，使用版本号的思路来解决<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//当前版本</span></span><br><span class="line">    <span class="keyword">long</span> currentCount;</span><br><span class="line">    <span class="keyword">while</span> ((currentCount = solutoin.count.get())&gt;=num)&#123;</span><br><span class="line">        System.out.println(Thread.currentThread().getName() + <span class="string">"减之前"</span> + solutoin.count);</span><br><span class="line">        <span class="keyword">if</span>(solutoin.count.compareAndSet(currentCount,currentCount - num))&#123;</span><br><span class="line">            System.out.println(Thread.currentThread().getName() + <span class="string">"减之后"</span> + solutoin.count);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>为了解决”库存超卖问题”和避免误差，使用版本号的思路来解决</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//当前版本</span></span><br><span class="line">    <span class="type">long</span> currentCount;</span><br><span class="line">    <span class="keyword">while</span> ((currentCount = solutoin.count.get())&gt;=num)&#123;</span><br><span class="line">        System.out.println(Thread.currentThread().getName() + <span class="string">&quot;减之前&quot;</span> + solutoin.count);</span><br><span class="line">        <span class="keyword">if</span>(solutoin.count.compareAndSet(currentCount,currentCount - num))&#123;</span><br><span class="line">            System.out.println(Thread.currentThread().getName() + <span class="string">&quot;减之后&quot;</span> + solutoin.count);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 <p>在每次更新数字时，比较当前的版本是否是上一个版本，如果版本相同则更新不同则继续判断执行。这种方式可以避免”库存超卖问题”和误差，但是缺点就是线程一直在不断执行循环开销比较大。</p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>按照目前的求职环境，如果想要去大厂，在白板写笔试题在所难免。笔者之所有有这次面试机会是因为在2019年10月份投递过其中一个部门，当时经历过一轮电话简历面，几天后再加一轮在线笔试。当时的笔试是一道多线程相关的题目和一道算法题，要求在一个小时内完成；由于没有刷过算法题，最后只完成了多线程相关的题。这次面试过后也有几次其他部门的面试官捞过我的简历让我去面试，并没有每次都参加了面试，只在今年3月份参加过一次，一面就被问到很多分布式相关技术，这方面的知识还是比较欠缺，有些应用过但没有熟悉其中的原理，结果也可想而知。上周的面试之所以答应参加是因为正好也想换一份工作，但立马就参加笔试确实不是明智之举。言归正传，多线程技术是每个程序员进阶都需要掌握的，学习多线程需要结合理论知识和加以实践才能掌握的很好，因为多线程的执行结果往往并不如你所想，需要考虑多很多细节问题。</p>
 
@@ -450,7 +456,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/分析报告/" rel="tag"># 分析报告</a>
+            <a href="/tags/%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" rel="tag"># 分析报告</a>
           
         </div>
       
@@ -544,10 +550,12 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/images/zdg.jpg" alt="zdg">
+              <img class="site-author-image" itemprop="image"
+                src="/images/zdg.jpg"
+                alt="" />
             
-              <p class="site-author-name" itemprop="name">zdg</p>
-              <p class="site-description motion-element" itemprop="description">forever yong</p>
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
           <nav class="site-state motion-element">
@@ -555,7 +563,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
@@ -564,22 +572,13 @@
             
 
             
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
 
             
               
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -635,7 +634,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编程题"><span class="nav-number">2.</span> <span class="nav-text">编程题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">3.</span> <span class="nav-text">后记</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E7%A8%8B%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">编程题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="nav-number">3.</span> <span class="nav-text">后记</span></a></li></ol></div>
             
 
           </div>
@@ -655,7 +654,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -718,6 +717,8 @@
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
         
+          <span id="scrollpercent"><span>0</span>%</span>
+        
       </div>
     
 
@@ -752,6 +753,9 @@
 
 
 
+
+  
+  
 
 
 
@@ -797,6 +801,11 @@
     <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
   
 
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+  
+
 
   
 
@@ -809,6 +818,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
