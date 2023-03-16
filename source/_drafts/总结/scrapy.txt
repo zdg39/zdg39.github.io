@@ -1,4 +1,0 @@
-css选择器 
-.fl_tb dt a::attr(href):获取class="fl_tb"的元素下的搜索的dt下的所有a元素的href属性
-
-python中不为空的集合可以直接当做布尔true,为空则为false
