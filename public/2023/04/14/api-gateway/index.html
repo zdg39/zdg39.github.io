@@ -99,15 +99,15 @@
 <meta property="og:site_name" content="Z-Blog">
 <meta property="og:description" content="前言随着公司业务的不断扩展，我们的应用程序数量和规模越来越大。为了更好地管理这些应用程序和保护它们的安全性，我们决定实施 API 网关。API 网关是一种将所有应用程序请求路由到相应服务的中间层，从而提高应用程序的可伸缩性和可用性的技术。它还提供了安全认证、流量管理和监控等功能，以保护我们的应用程序不受恶意攻击和过载请求的影响。在本文中，我们将介绍 API 网关的概念、优点和如何在公司技术架构现状">
 <meta property="og:locale">
-<meta property="og:image" content="http://yoursite.com/source/images/api-gateway/api-gateway.png">
-<meta property="og:image" content="http://yoursite.com/source/images/api-gateway/current-status.png">
-<meta property="og:image" content="http://yoursite.com/source/images/api-gateway/architecture.png">
+<meta property="og:image" content="http://yoursite.com/images/api-gateway/api-gateway.png">
+<meta property="og:image" content="http://yoursite.com/images/api-gateway/current-status.png">
+<meta property="og:image" content="http://yoursite.com/images/api-gateway/architecture.png">
 <meta property="article:published_time" content="2023-04-14T04:00:10.000Z">
-<meta property="article:modified_time" content="2023-04-14T04:54:34.752Z">
+<meta property="article:modified_time" content="2023-04-14T05:01:53.673Z">
 <meta property="article:author" content="zdg">
 <meta property="article:tag" content="网关">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/source/images/api-gateway/api-gateway.png">
+<meta name="twitter:image" content="http://yoursite.com/images/api-gateway/api-gateway.png">
 
 
 
@@ -359,7 +359,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2023-04-14T12:54:34+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2023-04-14T13:01:53+08:00">
                 2023-04-14
               </time>
             
@@ -429,7 +429,7 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>随着公司业务的不断扩展，我们的应用程序数量和规模越来越大。为了更好地管理这些应用程序和保护它们的安全性，我们决定实施 API 网关。API 网关是一种将所有应用程序请求路由到相应服务的中间层，从而提高应用程序的可伸缩性和可用性的技术。它还提供了安全认证、流量管理和监控等功能，以保护我们的应用程序不受恶意攻击和过载请求的影响。在本文中，我们将介绍 API 网关的概念、优点和如何在公司技术架构现状下实施 API 网关。<strong>本文为个人技术分享，由于技术水平有限，可能有误望谅解</strong></p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>随着公司业务的不断扩展，我们的应用程序数量和规模越来越大。为了更好地管理这些应用程序和保护它们的安全性，我们决定实施 API 网关。API 网关是一种将所有应用程序请求路由到相应服务的中间层，从而提高应用程序的可伸缩性和可用性的技术。它还提供了安全认证、流量管理和监控等功能，以保护我们的应用程序不受恶意攻击和过载请求的影响。在本文中，我们将介绍 API 网关的概念、优点和如何在公司技术架构现状下实施 API 网关。<strong>本文为个人技术分享，由于技术水平有限，可能有误望谅解。</strong></p>
 <h2 id="API-网关"><a href="#API-网关" class="headerlink" title="API 网关"></a>API 网关</h2><span id="more"></span>
 
 <h3 id="什么是-API-网关"><a href="#什么是-API-网关" class="headerlink" title="什么是 API 网关"></a>什么是 API 网关</h3><p>API 网关为客户与服务系统之间的交互提供了统一的接口，也是管理请求和响应的中心点，选择一个适合的 API 网关，可以有效地简化开发并提高系统的运维与管理效率。 API 网关在微服务架构中是系统设计的一个解决方案，用来整合各个不同模块的微服务，统一协调服务。API 网关作为一个系统访问的切面，对外提供统一的入口供客户端访问，隐藏系统架构实现的细节，让微服务使用更为友好；并集成了一些通用特性（如鉴权、限流、熔断），避免每个微服务单独开发，提升效率，使系统更加标准化，比如身份验证、监控、负载均衡、限流、降级与应用检测等功能。</p>
@@ -456,10 +456,10 @@
 <li>安全性</li>
 <li>性能</li>
 </ul>
-<p><img src="/source/images/api-gateway/api-gateway.png"></p>
+<p><img src="/images/api-gateway/api-gateway.png"></p>
 <p><strong>考虑到需要 Java 技术栈，并且目前只需要支持 http 协议代理，所以最终使用 Spring Cloud Gateway 网关。未来是否会有 http→rpc，或者 http→grpc？如果会有这种需求还需要综合考虑协议转换二次开发成本。</strong></p>
-<h2 id="目前现状"><a href="#目前现状" class="headerlink" title="目前现状"></a>目前现状</h2><p><img src="/source/images/api-gateway/current-status.png"></p>
-<h2 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h2><p><img src="/source/images/api-gateway/architecture.png"></p>
+<h2 id="目前现状"><a href="#目前现状" class="headerlink" title="目前现状"></a>目前现状</h2><p><img src="/images/api-gateway/current-status.png"></p>
+<h2 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h2><p><img src="/images/api-gateway/architecture.png"></p>
 <h3 id="多级网关"><a href="#多级网关" class="headerlink" title="多级网关"></a>多级网关</h3><p>目前系统架构部署了多级网关，需要再增加一层 API 网关。同时使用 LBS（负载均衡系统）和 Nginx 多级网关可以带来一些好处，例如：</p>
 <ol>
 <li>提高系统的可用性和可靠性：通过使用 LBS 和 Nginx 多级网关，可以将流量分散到多个服务器上，从而减轻单个服务器的压力。当其中一个服务器出现故障时，负载均衡系统会将流量重新路由到其他可用的服务器上，从而提高整个系统的可用性和可靠性。</li>
@@ -477,9 +477,9 @@
 <li>协议转换：将客户端的请求转换为后端服务器能够处理的协议格式，从而兼容不同的协议和应用程序。</li>
 </ol>
 <p>总之，Nginx 作为网关可以实现多种功能，提高系统的可用性、性能和安全性。</p>
-<h2 id="功能模块"><a href="#功能模块" class="headerlink" title="功能模块"></a>功能模块</h2><ul>
-<li>功能模块接入按照需求优先级排序</li>
-</ul>
+<h2 id="功能模块"><a href="#功能模块" class="headerlink" title="功能模块"></a>功能模块</h2><blockquote>
+<p>功能模块接入按照需求优先级排序</p>
+</blockquote>
 <h3 id="服务注册发现"><a href="#服务注册发现" class="headerlink" title="服务注册发现"></a>服务注册发现</h3><p>目前公司使用的服务发现组件 Consul，Java 应用和 Golang 应用使用了两套环境，Java 应用之间通过 Dubbo 和 Consul 技术栈通信，Golang 应用之间通过 Grpc+Consul 技术栈通信，Java 应用和 Golang 应用之间通过 Golang 应用的 Consul 集群实现服务发现。Dubbo 版本使用的是 2.7.x 版本，使用的还是“接口粒度”的服务发现，发布一个接口 Consul 便会有一条记录；Golang 则使用的是“应用粒度”的服务发现，一个应用只会有一条记录，而 Spring Cloud 通过注册中心只同步了应用与实例地址，消费方可以基于实例地址与服务提供方建立连接,所以服务发现组件使用 Golang 环境能快速接入省去了长时间的技术改造成本。</p>
 <h3 id="动态配置"><a href="#动态配置" class="headerlink" title="动态配置"></a>动态配置</h3><p>动态配置使用 Nacos 组件即可。</p>
 <h3 id="动态路由"><a href="#动态路由" class="headerlink" title="动态路由"></a>动态路由</h3><p>动态路由需要自定义拓展路由配置加载策略，将路由配置放在 Nacos 组件即可，之后上下线新的业务系统更加灵活。</p>
